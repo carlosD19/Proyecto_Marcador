@@ -14,6 +14,10 @@ namespace Marcador
     public partial class FrmInicio : Form
     {
         private String Pin;
+        private FrmDocente frmDocente;
+        private FrmCurso frmCurso;
+        private FrmHorario frmHorario;
+
         public FrmInicio()
         {
             InitializeComponent();
@@ -100,6 +104,69 @@ namespace Marcador
             {
                 MessageBox.Show("Listo");
             }
+        }
+
+        private void agregarDocente_Click(object sender, EventArgs e)
+        {
+            frmDocente = new FrmDocente(1);
+            frmDocente.Show(this);
+            Hide();
+        }
+
+        private void modificarDocente_Click(object sender, EventArgs e)
+        {
+            frmDocente = new FrmDocente(2);
+            frmDocente.Show(this);
+            Hide();
+        }
+
+        private void eliminarDocente_Click(object sender, EventArgs e)
+        {
+            frmDocente = new FrmDocente(3);
+            frmDocente.Show(this);
+            Hide();
+        }
+
+        private void agregarCurso_Click(object sender, EventArgs e)
+        {
+            frmCurso = new FrmCurso(1);
+            frmCurso.Show(this);
+            Hide();
+        }
+
+        private void modificarCurso_Click(object sender, EventArgs e)
+        {
+            frmCurso = new FrmCurso(2);
+            frmCurso.Show(this);
+            Hide();
+        }
+
+        private void eliminarCurso_Click(object sender, EventArgs e)
+        {
+            frmCurso = new FrmCurso(3);
+            frmCurso.Show(this);
+            Hide();
+        }
+
+        private void agregarHorario_Click(object sender, EventArgs e)
+        {
+            frmHorario = new FrmHorario(1);
+            frmHorario.Show(this);
+            Hide();
+        }
+
+        private void modificarHorario_Click(object sender, EventArgs e)
+        {
+            frmHorario = new FrmHorario(2);
+            frmHorario.Show(this);
+            Hide();
+        }
+
+        private void eliminarHorario_Click(object sender, EventArgs e)
+        {
+            frmHorario = new FrmHorario(3);
+            frmHorario.Show(this);
+            Hide();
         }
     }
 }

@@ -22,8 +22,9 @@ namespace Marcador
         public FrmDocente()
         {
             InitializeComponent();
-            funcion = 1;
+            funcion = 2;
             CambiarTexto();
+            cbxSexo.SelectedIndex = 0;
         }
 
         public FrmDocente(int fun)
@@ -32,6 +33,7 @@ namespace Marcador
             CenterToScreen();
             funcion = fun;
             CambiarTexto();
+            cbxSexo.SelectedIndex = 0;
         }
 
         private void CambiarTexto()
@@ -91,7 +93,35 @@ namespace Marcador
 
         private void Modificar()
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (!ced.Equals(""))
+                {
+                    int rePin = Int32.Parse(txtRePin.Text.Trim());
+                    docente.Cedula = txtCed.Text.Trim();
+                    docente.ApellidoUno = txtApeUno.Text.Trim();
+                    docente.ApellidoDos = txtApeDos.Text.Trim();
+                    docente.Email = txtEmail.Text.Trim();
+                    docente.Nombre = txtNombre.Text.Trim();
+                    docente.Pin = Int32.Parse(txtPin.Text.Trim());
+                    docente.Telefono = Int32.Parse(txtTel.Text.Trim());
+                    docente.Activo = true;
+                    if (cbxSexo.Text.Equals("Masculino"))
+                    {
+                        docente.Sexo = true;
+                    }
+                    else
+                    {
+                        docente.Sexo = false;
+                    }
+                    bol.VerificarDocente(docente, false, ruta, ced, rePin);
+                    CargarTabla();
+                }
+            }
+            catch (Exception ex)
+            {
+                lblError.Text = ex.Message;
+            }
         }
 
         private void Guardar()
@@ -121,6 +151,55 @@ namespace Marcador
             catch (Exception ex)
             {
                 lblError.Text = ex.Message;
+            }
+        }
+
+        private void FrmDocente_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Owner != null)
+            {
+                Owner.Show();
+            }
+        }
+
+        private void dgvDocentes_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                if (funcion == 2 || funcion == 3)
+                {
+                    int row = e.RowIndex;
+
+                    if (row >= 0)
+                    {
+                        docente = dgvDocentes.CurrentRow.DataBoundItem as Docente;
+                        CargarDatos();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                lblError.Text = "Error al seleccionar fila.";
+            }
+        }
+
+        private void CargarDatos()
+        {
+            txtCed.Text = docente.Cedula;
+            txtApeUno.Text = docente.ApellidoUno;
+            txtApeDos.Text = docente.ApellidoDos;
+            txtEmail.Text = docente.Email;
+            txtNombre.Text = docente.Nombre;
+            txtPin.Text = docente.Pin.ToString();
+            txtTel.Text = docente.Telefono.ToString();
+            ced = docente.Cedula;
+            if (docente.Sexo)
+            {
+                cbxSexo.SelectedIndex = 0;
+            }
+            else
+            {
+                cbxSexo.SelectedIndex = 1;
             }
         }
     }

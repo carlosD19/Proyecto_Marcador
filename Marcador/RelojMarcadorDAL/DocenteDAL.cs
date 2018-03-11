@@ -103,7 +103,7 @@ namespace RelojMarcadorDAL
                 docente.AppendChild(xTel);
 
                 XmlElement xPin = doc.CreateElement("pin");
-                xPin.InnerText = docenteP.Telefono.ToString();
+                xPin.InnerText = docenteP.Pin.ToString();
                 docente.AppendChild(xPin);
 
                 XmlElement xActivo = doc.CreateElement("activo");
@@ -223,7 +223,7 @@ namespace RelojMarcadorDAL
                 {
                     if (item.FirstChild.InnerText == ced)
                     {
-                        if (item.LastChild.InnerText == "true")
+                        if (item.LastChild.InnerText.Equals("True"))
                         {
                             XmlNode nodoOld = item;
                             docentes.ReplaceChild(docen, nodoOld);

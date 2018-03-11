@@ -53,7 +53,7 @@ namespace RelojMarcadorDAL
                 {
                     if (item.FirstChild.InnerText == cod)
                     {
-                        if (item.LastChild.InnerText == "true")
+                        if (item.LastChild.InnerText.Equals("True"))
                         {
                             XmlNode nodoOld = item;
                             horarios.ReplaceChild(horar, nodoOld);

@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -72,7 +73,7 @@
             // txtRePin
             // 
             this.txtRePin.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRePin.Location = new System.Drawing.Point(414, 431);
+            this.txtRePin.Location = new System.Drawing.Point(419, 450);
             this.txtRePin.Name = "txtRePin";
             this.txtRePin.Size = new System.Drawing.Size(199, 25);
             this.txtRePin.TabIndex = 40;
@@ -82,7 +83,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(414, 410);
+            this.label6.Location = new System.Drawing.Point(419, 429);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 18);
             this.label6.TabIndex = 39;
@@ -96,7 +97,7 @@
             this.cbxSexo.Items.AddRange(new object[] {
             "Masculino",
             "Femenino"});
-            this.cbxSexo.Location = new System.Drawing.Point(414, 223);
+            this.cbxSexo.Location = new System.Drawing.Point(419, 242);
             this.cbxSexo.Name = "cbxSexo";
             this.cbxSexo.Size = new System.Drawing.Size(199, 25);
             this.cbxSexo.TabIndex = 38;
@@ -104,7 +105,7 @@
             // txtPin
             // 
             this.txtPin.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPin.Location = new System.Drawing.Point(414, 378);
+            this.txtPin.Location = new System.Drawing.Point(419, 397);
             this.txtPin.Name = "txtPin";
             this.txtPin.Size = new System.Drawing.Size(199, 25);
             this.txtPin.TabIndex = 37;
@@ -112,7 +113,7 @@
             // txtTel
             // 
             this.txtTel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTel.Location = new System.Drawing.Point(414, 329);
+            this.txtTel.Location = new System.Drawing.Point(419, 348);
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(199, 25);
             this.txtTel.TabIndex = 36;
@@ -120,7 +121,7 @@
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(414, 276);
+            this.txtEmail.Location = new System.Drawing.Point(419, 295);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(199, 25);
             this.txtEmail.TabIndex = 35;
@@ -128,7 +129,7 @@
             // txtCed
             // 
             this.txtCed.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCed.Location = new System.Drawing.Point(104, 378);
+            this.txtCed.Location = new System.Drawing.Point(109, 397);
             this.txtCed.Name = "txtCed";
             this.txtCed.Size = new System.Drawing.Size(199, 25);
             this.txtCed.TabIndex = 34;
@@ -136,7 +137,7 @@
             // txtApeDos
             // 
             this.txtApeDos.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApeDos.Location = new System.Drawing.Point(104, 329);
+            this.txtApeDos.Location = new System.Drawing.Point(109, 348);
             this.txtApeDos.Name = "txtApeDos";
             this.txtApeDos.Size = new System.Drawing.Size(199, 25);
             this.txtApeDos.TabIndex = 33;
@@ -144,7 +145,7 @@
             // txtApeUno
             // 
             this.txtApeUno.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApeUno.Location = new System.Drawing.Point(104, 276);
+            this.txtApeUno.Location = new System.Drawing.Point(109, 295);
             this.txtApeUno.Name = "txtApeUno";
             this.txtApeUno.Size = new System.Drawing.Size(199, 25);
             this.txtApeUno.TabIndex = 32;
@@ -152,7 +153,7 @@
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(104, 223);
+            this.txtNombre.Location = new System.Drawing.Point(109, 242);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(199, 25);
             this.txtNombre.TabIndex = 31;
@@ -160,9 +161,9 @@
             // btnAceptar
             // 
             this.btnAceptar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.Location = new System.Drawing.Point(531, 462);
+            this.btnAceptar.Location = new System.Drawing.Point(649, 439);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(82, 36);
+            this.btnAceptar.Size = new System.Drawing.Size(85, 36);
             this.btnAceptar.TabIndex = 30;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -173,7 +174,7 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(411, 357);
+            this.label9.Location = new System.Drawing.Point(416, 376);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(37, 18);
             this.label9.TabIndex = 29;
@@ -184,7 +185,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(411, 308);
+            this.label8.Location = new System.Drawing.Point(416, 327);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(70, 18);
             this.label8.TabIndex = 28;
@@ -195,7 +196,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(411, 255);
+            this.label7.Location = new System.Drawing.Point(416, 274);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 18);
             this.label7.TabIndex = 27;
@@ -206,7 +207,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(411, 201);
+            this.label5.Location = new System.Drawing.Point(416, 220);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 18);
             this.label5.TabIndex = 26;
@@ -217,7 +218,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(101, 308);
+            this.label4.Location = new System.Drawing.Point(106, 327);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 18);
             this.label4.TabIndex = 25;
@@ -228,7 +229,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(101, 255);
+            this.label3.Location = new System.Drawing.Point(106, 274);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 18);
             this.label3.TabIndex = 24;
@@ -239,7 +240,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(101, 201);
+            this.label2.Location = new System.Drawing.Point(106, 220);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 18);
             this.label2.TabIndex = 23;
@@ -250,7 +251,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(101, 357);
+            this.label1.Location = new System.Drawing.Point(106, 376);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 18);
             this.label1.TabIndex = 22;
@@ -279,10 +280,19 @@
             this.pinDataGridViewTextBoxColumn,
             this.activoDataGridViewCheckBoxColumn});
             this.dgvDocentes.DataSource = this.docenteBindingSource;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDocentes.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDocentes.Location = new System.Drawing.Point(34, 26);
             this.dgvDocentes.Name = "dgvDocentes";
             this.dgvDocentes.Size = new System.Drawing.Size(745, 172);
             this.dgvDocentes.TabIndex = 41;
+            this.dgvDocentes.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDocentes_CellMouseClick);
             // 
             // docenteBindingSource
             // 
@@ -359,7 +369,6 @@
             this.pinDataGridViewTextBoxColumn.DataPropertyName = "Pin";
             this.pinDataGridViewTextBoxColumn.HeaderText = "Pin";
             this.pinDataGridViewTextBoxColumn.Name = "pinDataGridViewTextBoxColumn";
-            this.pinDataGridViewTextBoxColumn.Visible = false;
             this.pinDataGridViewTextBoxColumn.Width = 50;
             // 
             // activoDataGridViewCheckBoxColumn
@@ -397,6 +406,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmDocente";
             this.Text = "FrmDocente";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmDocente_FormClosing);
             this.Load += new System.EventHandler(this.FrmDocente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocentes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.docenteBindingSource)).EndInit();

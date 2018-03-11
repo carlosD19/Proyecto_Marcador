@@ -8,3 +8,13 @@ C:\Users\pc\Documents\GitHub\Progra-lll\Marcador\RelojMarcadorBOL\obj\Debug\Relo
 C:\Users\pc\Documents\GitHub\Progra-lll\Marcador\RelojMarcadorBOL\obj\Debug\RelojMarcadorBOL.csproj.CoreCompileInputs.cache
 C:\Users\pc\Documents\GitHub\Progra-lll\Marcador\RelojMarcadorBOL\obj\Debug\RelojMarcadorBOL.dll
 C:\Users\pc\Documents\GitHub\Progra-lll\Marcador\RelojMarcadorBOL\obj\Debug\RelojMarcadorBOL.pdb
+C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorBOL\bin\Debug\RelojMarcadorBOL.dll
+C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorBOL\bin\Debug\RelojMarcadorBOL.pdb
+C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorBOL\bin\Debug\RelojMarcadorDAL.dll
+C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorBOL\bin\Debug\RelojMarcadorENL.dll
+C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorBOL\bin\Debug\RelojMarcadorDAL.pdb
+C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorBOL\bin\Debug\RelojMarcadorENL.pdb
+C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorBOL\obj\Debug\RelojMarcadorBOL.csprojResolveAssemblyReference.cache
+C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorBOL\obj\Debug\RelojMarcadorBOL.csproj.CoreCompileInputs.cache
+C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorBOL\obj\Debug\RelojMarcadorBOL.dll
+C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorBOL\obj\Debug\RelojMarcadorBOL.pdb

@@ -16,3 +16,4 @@ C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\Marcador\obj\Debug\Reloj
 C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\Marcador\obj\Debug\RelojMarcador.csproj.CoreCompileInputs.cache
 C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\Marcador\obj\Debug\Marcador.exe
 C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\Marcador\obj\Debug\Marcador.pdb
+C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\Marcador\obj\Debug\RelojMarcador.csprojResolveAssemblyReference.cache

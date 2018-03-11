@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <Docentes>
   <docente>
     <cedula>207970377</cedula>
@@ -8,7 +8,7 @@
     <sexo>True</sexo>
     <email>carlos.d.m.s@hotmail.com</email>
     <telefono>86478778</telefono>
-    <pin>86478778</pin>
+    <pin>1000</pin>
     <activo>True</activo>
   </docente>
 </Docentes>

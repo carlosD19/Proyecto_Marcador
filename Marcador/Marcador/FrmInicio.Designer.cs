@@ -106,20 +106,23 @@
             // agregarDocente
             // 
             this.agregarDocente.Name = "agregarDocente";
-            this.agregarDocente.Size = new System.Drawing.Size(134, 22);
+            this.agregarDocente.Size = new System.Drawing.Size(152, 22);
             this.agregarDocente.Text = "Agregar";
+            this.agregarDocente.Click += new System.EventHandler(this.agregarDocente_Click);
             // 
             // modificarDocente
             // 
             this.modificarDocente.Name = "modificarDocente";
-            this.modificarDocente.Size = new System.Drawing.Size(134, 22);
+            this.modificarDocente.Size = new System.Drawing.Size(152, 22);
             this.modificarDocente.Text = "Modificar";
+            this.modificarDocente.Click += new System.EventHandler(this.modificarDocente_Click);
             // 
             // eliminarDocente
             // 
             this.eliminarDocente.Name = "eliminarDocente";
-            this.eliminarDocente.Size = new System.Drawing.Size(134, 22);
+            this.eliminarDocente.Size = new System.Drawing.Size(152, 22);
             this.eliminarDocente.Text = "Eliminar";
+            this.eliminarDocente.Click += new System.EventHandler(this.eliminarDocente_Click);
             // 
             // cursoToolStripMenuItem
             // 
@@ -134,20 +137,23 @@
             // agregarCurso
             // 
             this.agregarCurso.Name = "agregarCurso";
-            this.agregarCurso.Size = new System.Drawing.Size(134, 22);
+            this.agregarCurso.Size = new System.Drawing.Size(152, 22);
             this.agregarCurso.Text = "Agregar";
+            this.agregarCurso.Click += new System.EventHandler(this.agregarCurso_Click);
             // 
             // modificarCurso
             // 
             this.modificarCurso.Name = "modificarCurso";
-            this.modificarCurso.Size = new System.Drawing.Size(134, 22);
+            this.modificarCurso.Size = new System.Drawing.Size(152, 22);
             this.modificarCurso.Text = "Modificar";
+            this.modificarCurso.Click += new System.EventHandler(this.modificarCurso_Click);
             // 
             // eliminarCurso
             // 
             this.eliminarCurso.Name = "eliminarCurso";
-            this.eliminarCurso.Size = new System.Drawing.Size(134, 22);
+            this.eliminarCurso.Size = new System.Drawing.Size(152, 22);
             this.eliminarCurso.Text = "Eliminar";
+            this.eliminarCurso.Click += new System.EventHandler(this.eliminarCurso_Click);
             // 
             // horarioToolStripMenuItem
             // 
@@ -162,20 +168,23 @@
             // agregarHorario
             // 
             this.agregarHorario.Name = "agregarHorario";
-            this.agregarHorario.Size = new System.Drawing.Size(134, 22);
+            this.agregarHorario.Size = new System.Drawing.Size(152, 22);
             this.agregarHorario.Text = "Agregar";
+            this.agregarHorario.Click += new System.EventHandler(this.agregarHorario_Click);
             // 
             // modificarHorario
             // 
             this.modificarHorario.Name = "modificarHorario";
-            this.modificarHorario.Size = new System.Drawing.Size(134, 22);
+            this.modificarHorario.Size = new System.Drawing.Size(152, 22);
             this.modificarHorario.Text = "Modificar";
+            this.modificarHorario.Click += new System.EventHandler(this.modificarHorario_Click);
             // 
             // eliminarHorario
             // 
             this.eliminarHorario.Name = "eliminarHorario";
-            this.eliminarHorario.Size = new System.Drawing.Size(134, 22);
+            this.eliminarHorario.Size = new System.Drawing.Size(152, 22);
             this.eliminarHorario.Text = "Eliminar";
+            this.eliminarHorario.Click += new System.EventHandler(this.eliminarHorario_Click);
             // 
             // groupBox1
             // 
@@ -409,8 +418,9 @@
             this.asignaciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.docenteCursoToolStripMenuItem,
             this.cursoHorarioToolStripMenuItem});
+            this.asignaciónToolStripMenuItem.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.asignaciónToolStripMenuItem.Name = "asignaciónToolStripMenuItem";
-            this.asignaciónToolStripMenuItem.Size = new System.Drawing.Size(78, 21);
+            this.asignaciónToolStripMenuItem.Size = new System.Drawing.Size(91, 21);
             this.asignaciónToolStripMenuItem.Text = "Asignación";
             // 
             // docenteCursoToolStripMenuItem

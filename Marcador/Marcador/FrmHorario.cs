@@ -166,5 +166,13 @@ namespace Marcador
                 lblError.Text = ex.Message;
             }
         }
+
+        private void FrmHorario_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Owner != null)
+            {
+                Owner.Show();
+            }
+        }
     }
 }
