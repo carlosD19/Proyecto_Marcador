@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDocente));
             this.txtRePin = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -51,8 +54,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvDocentes = new System.Windows.Forms.DataGridView();
-            this.lblError = new System.Windows.Forms.Label();
             this.docenteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lblError = new System.Windows.Forms.Label();
             this.cedulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoUnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -256,6 +259,14 @@
             // dgvDocentes
             // 
             this.dgvDocentes.AutoGenerateColumns = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDocentes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDocentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDocentes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cedulaDataGridViewTextBoxColumn,
@@ -272,7 +283,10 @@
             this.dgvDocentes.Name = "dgvDocentes";
             this.dgvDocentes.Size = new System.Drawing.Size(745, 172);
             this.dgvDocentes.TabIndex = 41;
-            this.dgvDocentes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDocentes_CellFormatting);
+            // 
+            // docenteBindingSource
+            // 
+            this.docenteBindingSource.DataSource = typeof(RelojMarcadorENL.Docente);
             // 
             // lblError
             // 
@@ -284,13 +298,11 @@
             this.lblError.Size = new System.Drawing.Size(0, 18);
             this.lblError.TabIndex = 42;
             // 
-            // docenteBindingSource
-            // 
-            this.docenteBindingSource.DataSource = typeof(RelojMarcadorENL.Docente);
-            // 
             // cedulaDataGridViewTextBoxColumn
             // 
             this.cedulaDataGridViewTextBoxColumn.DataPropertyName = "Cedula";
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cedulaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.cedulaDataGridViewTextBoxColumn.Frozen = true;
             this.cedulaDataGridViewTextBoxColumn.HeaderText = "Cedula";
             this.cedulaDataGridViewTextBoxColumn.Name = "cedulaDataGridViewTextBoxColumn";
@@ -299,6 +311,8 @@
             // nombreDataGridViewTextBoxColumn
             // 
             this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombreDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
             this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
             // 
@@ -319,9 +333,9 @@
             // Sexo
             // 
             this.Sexo.DataPropertyName = "Sexo";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.NullValue = "False";
-            this.Sexo.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.NullValue = "False";
+            this.Sexo.DefaultCellStyle = dataGridViewCellStyle4;
             this.Sexo.HeaderText = "Sexo";
             this.Sexo.Name = "Sexo";
             this.Sexo.ReadOnly = true;

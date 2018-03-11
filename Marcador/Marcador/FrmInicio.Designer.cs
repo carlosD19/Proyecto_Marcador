@@ -63,6 +63,9 @@
             this.btnReportes = new System.Windows.Forms.Button();
             this.lblHora = new System.Windows.Forms.Label();
             this.timerHora = new System.Windows.Forms.Timer(this.components);
+            this.asignaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.docenteCursoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cursoHorarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -70,7 +73,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agregarToolStripMenuItem1});
+            this.agregarToolStripMenuItem1,
+            this.asignaciónToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(815, 25);
@@ -96,7 +100,7 @@
             this.eliminarDocente});
             this.docenteToolStripMenuItem.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.docenteToolStripMenuItem.Name = "docenteToolStripMenuItem";
-            this.docenteToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.docenteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.docenteToolStripMenuItem.Text = "Docente";
             // 
             // agregarDocente
@@ -124,7 +128,7 @@
             this.modificarCurso,
             this.eliminarCurso});
             this.cursoToolStripMenuItem.Name = "cursoToolStripMenuItem";
-            this.cursoToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.cursoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.cursoToolStripMenuItem.Text = "Curso";
             // 
             // agregarCurso
@@ -152,7 +156,7 @@
             this.modificarHorario,
             this.eliminarHorario});
             this.horarioToolStripMenuItem.Name = "horarioToolStripMenuItem";
-            this.horarioToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.horarioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.horarioToolStripMenuItem.Text = "Horario";
             // 
             // agregarHorario
@@ -400,6 +404,27 @@
             // 
             this.timerHora.Tick += new System.EventHandler(this.timerHora_Tick);
             // 
+            // asignaciónToolStripMenuItem
+            // 
+            this.asignaciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.docenteCursoToolStripMenuItem,
+            this.cursoHorarioToolStripMenuItem});
+            this.asignaciónToolStripMenuItem.Name = "asignaciónToolStripMenuItem";
+            this.asignaciónToolStripMenuItem.Size = new System.Drawing.Size(78, 21);
+            this.asignaciónToolStripMenuItem.Text = "Asignación";
+            // 
+            // docenteCursoToolStripMenuItem
+            // 
+            this.docenteCursoToolStripMenuItem.Name = "docenteCursoToolStripMenuItem";
+            this.docenteCursoToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.docenteCursoToolStripMenuItem.Text = "Docente-Curso";
+            // 
+            // cursoHorarioToolStripMenuItem
+            // 
+            this.cursoHorarioToolStripMenuItem.Name = "cursoHorarioToolStripMenuItem";
+            this.cursoHorarioToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.cursoHorarioToolStripMenuItem.Text = "Curso-Horario";
+            // 
             // FrmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -457,6 +482,9 @@
         private System.Windows.Forms.Button btnDos;
         private System.Windows.Forms.Button btnUno;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.ToolStripMenuItem asignaciónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem docenteCursoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cursoHorarioToolStripMenuItem;
     }
 }
 

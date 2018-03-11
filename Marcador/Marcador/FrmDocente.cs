@@ -123,18 +123,5 @@ namespace Marcador
                 lblError.Text = ex.Message;
             }
         }
-
-        private void dgvDocentes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            if (e.ColumnIndex == 4)
-            {
-                if (e.Value is bool)
-                {
-                    bool value = (bool)e.Value;
-                    e.Value = (value) ? "Masculino" : "Feminino";
-                    e.FormattingApplied = true;
-                }
-            }
-        }
     }
 }

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marcador", "Marcador\Marcador.csproj", "{ADD00193-D431-45E1-AB32-20CCECA9BE53}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RelojMarcador", "Marcador\RelojMarcador.csproj", "{ADD00193-D431-45E1-AB32-20CCECA9BE53}"
 	ProjectSection(ProjectDependencies) = postProject
 		{684D3B9F-6EEF-41B3-AB85-4C0F706EB695} = {684D3B9F-6EEF-41B3-AB85-4C0F706EB695}
 		{9CFF01F3-811B-4BA0-B6AF-F1ACD132C3BE} = {9CFF01F3-811B-4BA0-B6AF-F1ACD132C3BE}
