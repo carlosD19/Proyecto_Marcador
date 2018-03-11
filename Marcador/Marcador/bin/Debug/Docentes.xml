@@ -3,12 +3,24 @@
   <docente>
     <cedula>207970377</cedula>
     <nombre>Carlos</nombre>
-    <primerApellido>Martinez</primerApellido>
+    <primerApellido>Martínez</primerApellido>
     <segundoApellido>Sequeira</segundoApellido>
     <sexo>True</sexo>
     <email>carlos.d.m.s@hotmail.com</email>
     <telefono>86478778</telefono>
     <pin>1010</pin>
+    <estado>False</estado>
+    <activo>True</activo>
+  </docente>
+  <docente>
+    <cedula>207500700</cedula>
+    <nombre>Jeniffer</nombre>
+    <primerApellido>Martínez</primerApellido>
+    <segundoApellido>Sequeira</segundoApellido>
+    <sexo>False</sexo>
+    <email>jennim24@hotmail.com</email>
+    <telefono>61316016</telefono>
+    <pin>1234</pin>
     <estado>False</estado>
     <activo>True</activo>
   </docente>

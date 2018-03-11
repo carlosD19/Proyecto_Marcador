@@ -53,12 +53,15 @@ namespace Marcador
             {
                 case 1:
                     Guardar();
+                    LimpiarTexto();
                     break;
                 case 2:
                     Modificar();
+                    LimpiarTexto();
                     break;
                 case 3:
                     Eliminar();
+                    LimpiarTexto();
                     break;
                 default:
                     break;
@@ -177,6 +180,11 @@ namespace Marcador
             {
                 Owner.Show();
             }
+        }
+        private void LimpiarTexto()
+        {
+            txtCodigo.Text = "";
+            cod = "";
         }
     }
 }

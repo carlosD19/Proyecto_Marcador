@@ -69,12 +69,15 @@ namespace Marcador
             {
                 case 1:
                     Guardar();
+                    LimpiarTexto();
                     break;
                 case 2:
                     Modificar();
+                    LimpiarTexto();
                     break;
                 case 3:
                     Eliminar();
+                    LimpiarTexto();
                     break;
                 default:
                     break;
@@ -124,6 +127,10 @@ namespace Marcador
                     bol.VerificarDocente(docente, false, ruta, ced, rePin);
                     CargarTabla();
                 }
+            }
+            catch (FormatException ex)
+            {
+                lblError.Text = "Re-Pin necesario.";
             }
             catch (Exception ex)
             {
@@ -211,6 +218,39 @@ namespace Marcador
                     cbxSexo.SelectedIndex = 1;
                 }
             }
+        }
+
+        private void dgvDocentes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 6)
+            {
+                if (Convert.ToBoolean(dgvDocentes.Rows[e.RowIndex].Cells["Sexo1"].Value) == true)
+                {
+                    dgvDocentes.Rows[e.RowIndex].Cells["Sexo"].Value = "Masculino";
+                }
+                else
+                {
+                    dgvDocentes.Rows[e.RowIndex].Cells["Sexo"].Value = "Femenino";
+                }
+            }
+        }
+
+        private void txtNombre_TextChanged_1(object sender, EventArgs e)
+        {
+            lblError.Text = "";
+        }
+        private void LimpiarTexto()
+        {
+            txtCed.Text = "";
+            txtApeDos.Text = "";
+            txtApeUno.Text = "";
+            txtEmail.Text = "";
+            txtNombre.Text = "";
+            txtPin.Text = "";
+            txtRePin.Text = "";
+            txtTel.Text = "";
+            txtEmail.Text = "";
+            ced = "";
         }
     }
 }

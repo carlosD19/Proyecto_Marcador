@@ -50,12 +50,15 @@ namespace Marcador
             {
                 case 1:
                     Guardar();
+                    LimpiarTexto();
                     break;
                 case 2:
                     Modificar();
+                    LimpiarTexto();
                     break;
                 case 3:
                     Eliminar();
+                    LimpiarTexto();
                     break;
                 default:
                     break;
@@ -192,6 +195,12 @@ namespace Marcador
                 dtFinal.Value = curso.FechaFin;
                 cod = curso.Codigo;
             }
+        }
+        private void LimpiarTexto()
+        {
+            txtAula.Text = "";
+            txtCod.Text = "";
+            txtNombre.Text = "";
         }
     }
 }

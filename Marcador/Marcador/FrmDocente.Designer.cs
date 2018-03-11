@@ -30,10 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDocente));
             this.txtRePin = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -61,7 +60,8 @@
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoUnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sexo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Sexo1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,6 +77,7 @@
             this.txtRePin.Name = "txtRePin";
             this.txtRePin.Size = new System.Drawing.Size(199, 25);
             this.txtRePin.TabIndex = 40;
+            this.txtRePin.TextChanged += new System.EventHandler(this.txtNombre_TextChanged_1);
             // 
             // label6
             // 
@@ -109,6 +110,7 @@
             this.txtPin.Name = "txtPin";
             this.txtPin.Size = new System.Drawing.Size(199, 25);
             this.txtPin.TabIndex = 37;
+            this.txtPin.TextChanged += new System.EventHandler(this.txtNombre_TextChanged_1);
             // 
             // txtTel
             // 
@@ -117,6 +119,7 @@
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(199, 25);
             this.txtTel.TabIndex = 36;
+            this.txtTel.TextChanged += new System.EventHandler(this.txtNombre_TextChanged_1);
             // 
             // txtEmail
             // 
@@ -125,6 +128,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(199, 25);
             this.txtEmail.TabIndex = 35;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtNombre_TextChanged_1);
             // 
             // txtCed
             // 
@@ -133,6 +137,7 @@
             this.txtCed.Name = "txtCed";
             this.txtCed.Size = new System.Drawing.Size(199, 25);
             this.txtCed.TabIndex = 34;
+            this.txtCed.TextChanged += new System.EventHandler(this.txtNombre_TextChanged_1);
             // 
             // txtApeDos
             // 
@@ -141,6 +146,7 @@
             this.txtApeDos.Name = "txtApeDos";
             this.txtApeDos.Size = new System.Drawing.Size(199, 25);
             this.txtApeDos.TabIndex = 33;
+            this.txtApeDos.TextChanged += new System.EventHandler(this.txtNombre_TextChanged_1);
             // 
             // txtApeUno
             // 
@@ -149,6 +155,7 @@
             this.txtApeUno.Name = "txtApeUno";
             this.txtApeUno.Size = new System.Drawing.Size(199, 25);
             this.txtApeUno.TabIndex = 32;
+            this.txtApeUno.TextChanged += new System.EventHandler(this.txtNombre_TextChanged_1);
             // 
             // txtNombre
             // 
@@ -157,6 +164,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(199, 25);
             this.txtNombre.TabIndex = 31;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged_1);
             // 
             // btnAceptar
             // 
@@ -274,24 +282,26 @@
             this.nombreDataGridViewTextBoxColumn,
             this.apellidoUnoDataGridViewTextBoxColumn,
             this.apellidoDosDataGridViewTextBoxColumn,
+            this.Sexo1,
             this.Sexo,
             this.telefonoDataGridViewTextBoxColumn,
             this.emailDataGridViewTextBoxColumn,
             this.pinDataGridViewTextBoxColumn,
             this.activoDataGridViewCheckBoxColumn});
             this.dgvDocentes.DataSource = this.docenteBindingSource;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDocentes.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDocentes.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDocentes.Location = new System.Drawing.Point(34, 26);
             this.dgvDocentes.Name = "dgvDocentes";
             this.dgvDocentes.Size = new System.Drawing.Size(745, 172);
             this.dgvDocentes.TabIndex = 41;
+            this.dgvDocentes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDocentes_CellFormatting);
             this.dgvDocentes.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDocentes_CellMouseClick);
             // 
             // docenteBindingSource
@@ -344,16 +354,20 @@
             this.apellidoDosDataGridViewTextBoxColumn.ReadOnly = true;
             this.apellidoDosDataGridViewTextBoxColumn.Width = 150;
             // 
+            // Sexo1
+            // 
+            this.Sexo1.DataPropertyName = "Sexo";
+            this.Sexo1.HeaderText = "Sexo1";
+            this.Sexo1.Name = "Sexo1";
+            this.Sexo1.ReadOnly = true;
+            this.Sexo1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Sexo1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Sexo1.Visible = false;
+            // 
             // Sexo
             // 
-            this.Sexo.DataPropertyName = "Sexo";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.NullValue = "False";
-            this.Sexo.DefaultCellStyle = dataGridViewCellStyle4;
             this.Sexo.HeaderText = "Sexo";
             this.Sexo.Name = "Sexo";
-            this.Sexo.ReadOnly = true;
-            this.Sexo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // telefonoDataGridViewTextBoxColumn
             // 
@@ -452,7 +466,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoUnoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoDosDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Sexo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sexo1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sexo;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pinDataGridViewTextBoxColumn;
