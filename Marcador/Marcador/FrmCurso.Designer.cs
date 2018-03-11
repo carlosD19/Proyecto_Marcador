@@ -46,14 +46,14 @@
             this.dtInicio = new System.Windows.Forms.DateTimePicker();
             this.dtFinal = new System.Windows.Forms.DateTimePicker();
             this.dgvCursos = new System.Windows.Forms.DataGridView();
-            this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lblError = new System.Windows.Forms.Label();
             this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaIniDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaFinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.activoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.cursoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lblError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCursos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cursoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -109,6 +109,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(218, 26);
             this.txtNombre.TabIndex = 8;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtCod_TextChanged);
             // 
             // txtAula
             // 
@@ -117,6 +118,7 @@
             this.txtAula.Name = "txtAula";
             this.txtAula.Size = new System.Drawing.Size(218, 26);
             this.txtAula.TabIndex = 9;
+            this.txtAula.TextChanged += new System.EventHandler(this.txtCod_TextChanged);
             // 
             // btnAceptar
             // 
@@ -147,6 +149,7 @@
             this.txtCod.Name = "txtCod";
             this.txtCod.Size = new System.Drawing.Size(218, 26);
             this.txtCod.TabIndex = 34;
+            this.txtCod.TextChanged += new System.EventHandler(this.txtCod_TextChanged);
             // 
             // label6
             // 
@@ -217,19 +220,6 @@
             this.dgvCursos.TabIndex = 37;
             this.dgvCursos.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCursos_CellMouseClick);
             // 
-            // cursoBindingSource
-            // 
-            this.cursoBindingSource.DataSource = typeof(RelojMarcadorENL.Curso);
-            // 
-            // lblError
-            // 
-            this.lblError.AutoSize = true;
-            this.lblError.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblError.Location = new System.Drawing.Point(2, 372);
-            this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(0, 18);
-            this.lblError.TabIndex = 38;
-            // 
             // codigoDataGridViewTextBoxColumn
             // 
             this.codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
@@ -272,6 +262,20 @@
             this.activoDataGridViewCheckBoxColumn.HeaderText = "Activo";
             this.activoDataGridViewCheckBoxColumn.Name = "activoDataGridViewCheckBoxColumn";
             this.activoDataGridViewCheckBoxColumn.Width = 55;
+            // 
+            // cursoBindingSource
+            // 
+            this.cursoBindingSource.DataSource = typeof(RelojMarcadorENL.Curso);
+            // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.BackColor = System.Drawing.Color.Transparent;
+            this.lblError.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.Location = new System.Drawing.Point(2, 372);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(0, 18);
+            this.lblError.TabIndex = 38;
             // 
             // FrmCurso
             // 

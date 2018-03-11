@@ -202,5 +202,10 @@ namespace Marcador
             txtCod.Text = "";
             txtNombre.Text = "";
         }
+
+        private void txtCod_TextChanged(object sender, EventArgs e)
+        {
+            lblError.Text = "";
+        }
     }
 }
