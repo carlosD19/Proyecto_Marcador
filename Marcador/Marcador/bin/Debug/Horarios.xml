@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Horarios>
+  <horario>
+    <codigo>001</codigo>
+    <dia>8/3/2018 00:00:00</dia>
+    <horaInicio>8/3/2018 13:00:00</horaInicio>
+    <horaFinal>8/3/2018 16:30:00</horaFinal>
+    <activo>True</activo>
+  </horario>
+  <horario>
+    <codigo>003</codigo>
+    <dia>6/3/2018 00:00:00</dia>
+    <horaInicio>8/3/2018 08:00:00</horaInicio>
+    <horaFinal>8/3/2018 11:00:00</horaFinal>
+    <activo>True</activo>
+  </horario>
+  <horario>
+    <codigo>004</codigo>
+    <dia>9/3/2018 00:00:00</dia>
+    <horaInicio>8/3/2018 13:30:00</horaInicio>
+    <horaFinal>8/3/2018 17:00:00</horaFinal>
+    <activo>True</activo>
+  </horario>
+  <horario>
+    <codigo>005</codigo>
+    <dia>10/3/2018 00:00:00</dia>
+    <horaInicio>8/3/2018 08:00:00</horaInicio>
+    <horaFinal>8/3/2018 11:30:00</horaFinal>
+    <activo>True</activo>
+  </horario>
+  <horario>
+    <codigo>006</codigo>
+    <dia>5/3/2018 00:00:00</dia>
+    <horaInicio>8/3/2018 18:00:00</horaInicio>
+    <horaFinal>8/3/2018 21:30:00</horaFinal>
+    <activo>False</activo>
+  </horario>
+</Horarios>

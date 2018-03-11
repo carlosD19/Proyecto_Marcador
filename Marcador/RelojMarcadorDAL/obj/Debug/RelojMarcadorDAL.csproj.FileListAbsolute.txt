@@ -1,0 +1,8 @@
+C:\Users\pc\Documents\GitHub\Progra-lll\Marcador\RelojMarcadorDAL\bin\Debug\RelojMarcadorDAL.dll
+C:\Users\pc\Documents\GitHub\Progra-lll\Marcador\RelojMarcadorDAL\bin\Debug\RelojMarcadorDAL.pdb
+C:\Users\pc\Documents\GitHub\Progra-lll\Marcador\RelojMarcadorDAL\bin\Debug\RelojMarcadorENL.dll
+C:\Users\pc\Documents\GitHub\Progra-lll\Marcador\RelojMarcadorDAL\bin\Debug\RelojMarcadorENL.pdb
+C:\Users\pc\Documents\GitHub\Progra-lll\Marcador\RelojMarcadorDAL\obj\Debug\RelojMarcadorDAL.csprojResolveAssemblyReference.cache
+C:\Users\pc\Documents\GitHub\Progra-lll\Marcador\RelojMarcadorDAL\obj\Debug\RelojMarcadorDAL.csproj.CoreCompileInputs.cache
+C:\Users\pc\Documents\GitHub\Progra-lll\Marcador\RelojMarcadorDAL\obj\Debug\RelojMarcadorDAL.dll
+C:\Users\pc\Documents\GitHub\Progra-lll\Marcador\RelojMarcadorDAL\obj\Debug\RelojMarcadorDAL.pdb

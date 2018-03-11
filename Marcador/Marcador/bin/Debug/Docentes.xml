@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Docentes>
+  <docente>
+    <cedula>207970377</cedula>
+    <nombre>Carlos</nombre>
+    <primerApellido>Martinez</primerApellido>
+    <segundoApellido>Sequeira</segundoApellido>
+    <sexo>True</sexo>
+    <email>carlos.d.m.s@hotmail.com</email>
+    <telefono>86478778</telefono>
+    <pin>86478778</pin>
+    <activo>True</activo>
+  </docente>
+</Docentes>

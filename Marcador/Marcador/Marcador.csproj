@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ADD00193-D431-45E1-AB32-20CCECA9BE53}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Marcador</RootNamespace>
+    <AssemblyName>Marcador</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FrmCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCurso.Designer.cs">
+      <DependentUpon>FrmCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocente.Designer.cs">
+      <DependentUpon>FrmDocente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHorario.Designer.cs">
+      <DependentUpon>FrmHorario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInicio.Designer.cs">
+      <DependentUpon>FrmInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmCurso.resx">
+      <DependentUpon>FrmCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocente.resx">
+      <DependentUpon>FrmDocente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHorario.resx">
+      <DependentUpon>FrmHorario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInicio.resx">
+      <DependentUpon>FrmInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\DataSources\RelojMarcadorENL.Curso.datasource" />
+    <None Include="Properties\DataSources\RelojMarcadorENL.Docente.datasource" />
+    <None Include="Properties\DataSources\RelojMarcadorENL.Horario.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RelojMarcadorBOL\RelojMarcadorBOL.csproj">
+      <Project>{684D3B9F-6EEF-41B3-AB85-4C0F706EB695}</Project>
+      <Name>RelojMarcadorBOL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RelojMarcadorDAL\RelojMarcadorDAL.csproj">
+      <Project>{14AF826C-88B7-4AC5-ADCE-E1C944398007}</Project>
+      <Name>RelojMarcadorDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RelojMarcadorENL\RelojMarcadorENL.csproj">
+      <Project>{9cff01f3-811b-4ba0-b6af-f1acd132c3be}</Project>
+      <Name>RelojMarcadorENL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

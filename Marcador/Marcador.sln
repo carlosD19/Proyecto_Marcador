@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2024
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marcador", "Marcador\Marcador.csproj", "{ADD00193-D431-45E1-AB32-20CCECA9BE53}"
+	ProjectSection(ProjectDependencies) = postProject
+		{684D3B9F-6EEF-41B3-AB85-4C0F706EB695} = {684D3B9F-6EEF-41B3-AB85-4C0F706EB695}
+		{9CFF01F3-811B-4BA0-B6AF-F1ACD132C3BE} = {9CFF01F3-811B-4BA0-B6AF-F1ACD132C3BE}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RelojMarcadorDAL", "RelojMarcadorDAL\RelojMarcadorDAL.csproj", "{14AF826C-88B7-4AC5-ADCE-E1C944398007}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9CFF01F3-811B-4BA0-B6AF-F1ACD132C3BE} = {9CFF01F3-811B-4BA0-B6AF-F1ACD132C3BE}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RelojMarcadorBOL", "RelojMarcadorBOL\RelojMarcadorBOL.csproj", "{684D3B9F-6EEF-41B3-AB85-4C0F706EB695}"
+	ProjectSection(ProjectDependencies) = postProject
+		{14AF826C-88B7-4AC5-ADCE-E1C944398007} = {14AF826C-88B7-4AC5-ADCE-E1C944398007}
+		{9CFF01F3-811B-4BA0-B6AF-F1ACD132C3BE} = {9CFF01F3-811B-4BA0-B6AF-F1ACD132C3BE}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RelojMarcadorENL", "RelojMarcadorENL\RelojMarcadorENL.csproj", "{9CFF01F3-811B-4BA0-B6AF-F1ACD132C3BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ADD00193-D431-45E1-AB32-20CCECA9BE53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADD00193-D431-45E1-AB32-20CCECA9BE53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADD00193-D431-45E1-AB32-20CCECA9BE53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADD00193-D431-45E1-AB32-20CCECA9BE53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14AF826C-88B7-4AC5-ADCE-E1C944398007}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14AF826C-88B7-4AC5-ADCE-E1C944398007}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14AF826C-88B7-4AC5-ADCE-E1C944398007}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14AF826C-88B7-4AC5-ADCE-E1C944398007}.Release|Any CPU.Build.0 = Release|Any CPU
+		{684D3B9F-6EEF-41B3-AB85-4C0F706EB695}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{684D3B9F-6EEF-41B3-AB85-4C0F706EB695}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{684D3B9F-6EEF-41B3-AB85-4C0F706EB695}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{684D3B9F-6EEF-41B3-AB85-4C0F706EB695}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CFF01F3-811B-4BA0-B6AF-F1ACD132C3BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CFF01F3-811B-4BA0-B6AF-F1ACD132C3BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CFF01F3-811B-4BA0-B6AF-F1ACD132C3BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CFF01F3-811B-4BA0-B6AF-F1ACD132C3BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E26436C1-790F-4E26-9D6F-321CC6FF36F2}
+	EndGlobalSection
+EndGlobal
