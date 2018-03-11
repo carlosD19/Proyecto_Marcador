@@ -316,6 +316,7 @@
             this.cedulaDataGridViewTextBoxColumn.Frozen = true;
             this.cedulaDataGridViewTextBoxColumn.HeaderText = "Cedula";
             this.cedulaDataGridViewTextBoxColumn.Name = "cedulaDataGridViewTextBoxColumn";
+            this.cedulaDataGridViewTextBoxColumn.ReadOnly = true;
             this.cedulaDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // nombreDataGridViewTextBoxColumn
@@ -325,12 +326,14 @@
             this.nombreDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
             this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // apellidoUnoDataGridViewTextBoxColumn
             // 
             this.apellidoUnoDataGridViewTextBoxColumn.DataPropertyName = "ApellidoUno";
             this.apellidoUnoDataGridViewTextBoxColumn.HeaderText = "Primer Apellido";
             this.apellidoUnoDataGridViewTextBoxColumn.Name = "apellidoUnoDataGridViewTextBoxColumn";
+            this.apellidoUnoDataGridViewTextBoxColumn.ReadOnly = true;
             this.apellidoUnoDataGridViewTextBoxColumn.Width = 150;
             // 
             // apellidoDosDataGridViewTextBoxColumn
@@ -338,6 +341,7 @@
             this.apellidoDosDataGridViewTextBoxColumn.DataPropertyName = "ApellidoDos";
             this.apellidoDosDataGridViewTextBoxColumn.HeaderText = "Segundo Apellido";
             this.apellidoDosDataGridViewTextBoxColumn.Name = "apellidoDosDataGridViewTextBoxColumn";
+            this.apellidoDosDataGridViewTextBoxColumn.ReadOnly = true;
             this.apellidoDosDataGridViewTextBoxColumn.Width = 150;
             // 
             // Sexo
@@ -356,12 +360,14 @@
             this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
             this.telefonoDataGridViewTextBoxColumn.HeaderText = "Teléfono";
             this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
+            this.telefonoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // emailDataGridViewTextBoxColumn
             // 
             this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
             this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
             this.emailDataGridViewTextBoxColumn.Width = 200;
             // 
             // pinDataGridViewTextBoxColumn
@@ -369,6 +375,8 @@
             this.pinDataGridViewTextBoxColumn.DataPropertyName = "Pin";
             this.pinDataGridViewTextBoxColumn.HeaderText = "Pin";
             this.pinDataGridViewTextBoxColumn.Name = "pinDataGridViewTextBoxColumn";
+            this.pinDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pinDataGridViewTextBoxColumn.Visible = false;
             this.pinDataGridViewTextBoxColumn.Width = 50;
             // 
             // activoDataGridViewCheckBoxColumn
@@ -376,6 +384,7 @@
             this.activoDataGridViewCheckBoxColumn.DataPropertyName = "Activo";
             this.activoDataGridViewCheckBoxColumn.HeaderText = "Activo";
             this.activoDataGridViewCheckBoxColumn.Name = "activoDataGridViewCheckBoxColumn";
+            this.activoDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // FrmDocente
             // 

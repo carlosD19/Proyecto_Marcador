@@ -4,3 +4,9 @@ C:\Users\pc\Documents\GitHub\Progra-lll\Marcador\RelojMarcadorENL\obj\Debug\Relo
 C:\Users\pc\Documents\GitHub\Progra-lll\Marcador\RelojMarcadorENL\obj\Debug\RelojMarcadorENL.csproj.CoreCompileInputs.cache
 C:\Users\pc\Documents\GitHub\Progra-lll\Marcador\RelojMarcadorENL\obj\Debug\RelojMarcadorENL.dll
 C:\Users\pc\Documents\GitHub\Progra-lll\Marcador\RelojMarcadorENL\obj\Debug\RelojMarcadorENL.pdb
+C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorENL\bin\Debug\RelojMarcadorENL.dll
+C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorENL\bin\Debug\RelojMarcadorENL.pdb
+C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorENL\obj\Debug\RelojMarcadorENL.csprojResolveAssemblyReference.cache
+C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorENL\obj\Debug\RelojMarcadorENL.csproj.CoreCompileInputs.cache
+C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorENL\obj\Debug\RelojMarcadorENL.dll
+C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorENL\obj\Debug\RelojMarcadorENL.pdb

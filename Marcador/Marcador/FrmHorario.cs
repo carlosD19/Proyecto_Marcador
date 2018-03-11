@@ -1,7 +1,6 @@
 ﻿using RelojMarcadorBOL;
 using RelojMarcadorENL;
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 
@@ -69,6 +68,7 @@ namespace Marcador
         {
             horarioBOL = new HorarioBOL();
             horario = new Horario();
+            cod = "";
             ruta = "Horarios.xml";
             horarioBOL.CrearArchivo(ruta, "Horarios");
             CargarTabla();
@@ -106,11 +106,14 @@ namespace Marcador
 
         private void CargarDatos()
         {
-            txtCodigo.Text = horario.Codigo;
-            dtDia.Value = horario.Dia;
-            dtInicio.Value = horario.HoraIni;
-            dtFin.Value = horario.HoraFin;
-            cod = horario.Codigo;
+            if (horario.Activo)
+            {
+                txtCodigo.Text = horario.Codigo;
+                dtDia.Value = horario.Dia;
+                dtInicio.Value = horario.HoraIni;
+                dtFin.Value = horario.HoraFin;
+                cod = horario.Codigo;
+            }
         }
         private void Guardar()
         {
@@ -158,6 +161,7 @@ namespace Marcador
                 if (!cod.Equals(""))
                 {
                     horario.Activo = false;
+                    horarioBOL.EliminarHorario(horario, cod, ruta);
                     CargarTabla();
                 }
             }

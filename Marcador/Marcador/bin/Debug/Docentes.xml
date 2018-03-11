@@ -8,7 +8,8 @@
     <sexo>True</sexo>
     <email>carlos.d.m.s@hotmail.com</email>
     <telefono>86478778</telefono>
-    <pin>1000</pin>
+    <pin>1010</pin>
+    <estado>False</estado>
     <activo>True</activo>
   </docente>
 </Docentes>

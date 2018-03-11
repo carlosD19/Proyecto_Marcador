@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Cursos>
+  <curso>
+    <codigo>ISW-411</codigo>
+    <nombre>Programación lll</nombre>
+    <aula>108</aula>
+    <fechaInicio>15/3/2018 00:00:00</fechaInicio>
+    <fechaFinal>20/7/2018 00:00:00</fechaFinal>
+    <activo>True</activo>
+  </curso>
+</Cursos>

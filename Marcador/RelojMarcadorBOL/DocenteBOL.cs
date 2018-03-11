@@ -2,9 +2,6 @@
 using RelojMarcadorENL;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RelojMarcadorBOL
 {
@@ -69,6 +66,11 @@ namespace RelojMarcadorBOL
         public void EliminarDocente(Docente docente, string ced, string ruta)
         {
             dal.EliminarDocente(docente, ced, ruta);
+        }
+
+        public void ModificarEstado(Docente docente, string ruta)
+        {
+            dal.ModificarEstado(docente, ruta);
         }
     }
 }

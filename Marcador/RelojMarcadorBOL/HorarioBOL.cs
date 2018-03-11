@@ -2,9 +2,6 @@
 using RelojMarcadorDAL;
 using RelojMarcadorENL;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RelojMarcadorBOL
 {
@@ -59,7 +56,7 @@ namespace RelojMarcadorBOL
 
         public void EliminarHorario(Horario horario, string cod, string ruta)
         {
-            dal.Eliminar(horario, cod, ruta);
+            dal.EliminarHorario(horario, cod, ruta);
         }
     }
 }

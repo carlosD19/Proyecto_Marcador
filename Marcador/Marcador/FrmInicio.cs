@@ -1,23 +1,21 @@
-﻿using System;
+﻿using RelojMarcadorBOL;
+using RelojMarcadorENL;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Marcador
 {
     public partial class FrmInicio : Form
     {
-        private String Pin;
+        private String pin;
         private FrmDocente frmDocente;
         private FrmCurso frmCurso;
         private FrmHorario frmHorario;
-
+        private List<Docente> docentes;
+        private DocenteBOL docenteBOL;
+        private string rutaDoc;
         public FrmInicio()
         {
             InitializeComponent();
@@ -26,8 +24,11 @@ namespace Marcador
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            docenteBOL = new DocenteBOL();
+            rutaDoc = "Docentes.xml";
             timerHora.Start();
             ChangeControlStyles(btnEliminar, ControlStyles.Selectable, false);
+            docentes = docenteBOL.CargarTodo(rutaDoc);
         }
 
         private void timerHora_Tick(object sender, EventArgs e)
@@ -59,22 +60,22 @@ namespace Marcador
             if (!txtCuatro.Text.Equals(""))
             {
                 txtCuatro.Text = "";
-                Pin = Pin.Remove(Pin.Length - 1);
+                pin = pin.Remove(pin.Length - 1);
             }
             else if (!txtTres.Text.Equals(""))
             {
                 txtTres.Text = "";
-                Pin = Pin.Remove(Pin.Length - 1);
+                pin = pin.Remove(pin.Length - 1);
             }
             else if (!txtDos.Text.Equals(""))
             {
                 txtDos.Text = "";
-                Pin = Pin.Remove(Pin.Length - 1);
+                pin = pin.Remove(pin.Length - 1);
             }
             else if (!txtUno.Text.Equals(""))
             {
                 txtUno.Text = "";
-                Pin = Pin.Remove(Pin.Length - 1);
+                pin = pin.Remove(pin.Length - 1);
             }
         }
 
@@ -83,26 +84,52 @@ namespace Marcador
             if (txtUno.Text.Equals(""))
             {
                 txtUno.Text = ((Button)sender).Text;
-                Pin += ((Button)sender).Text;
+                pin += ((Button)sender).Text;
             }
             else if (txtDos.Text.Equals(""))
             {
                 txtDos.Text = ((Button)sender).Text;
-                Pin += ((Button)sender).Text;
+                pin += ((Button)sender).Text;
             }
             else if (txtTres.Text.Equals(""))
             {
                 txtTres.Text = ((Button)sender).Text;
-                Pin += ((Button)sender).Text;
+                pin += ((Button)sender).Text;
             }
             else if (txtCuatro.Text.Equals(""))
             {
                 txtCuatro.Text = ((Button)sender).Text;
-                Pin += ((Button)sender).Text;
+                pin += ((Button)sender).Text;
             }
             if (!txtCuatro.Text.Equals(""))
             {
-                MessageBox.Show("Listo");
+                VerificarPin();
+            }
+        }
+        private void VerificarPin()
+        {
+            foreach (Docente doc in docentes)
+            {
+                if (doc.Activo)
+                {
+                    if (doc.Pin.ToString().Equals(pin))
+                    {
+                        if (!doc.Estado)
+                        {
+                            MessageBox.Show(doc.Nombre + "\nEntrada Registrada.");
+                            doc.Estado = true;
+                            docenteBOL.ModificarEstado(doc, rutaDoc);
+                            docentes = docenteBOL.CargarTodo(rutaDoc);
+                        }
+                        else
+                        {
+                            MessageBox.Show(doc.Nombre + "\nSalida Registrada.");
+                            doc.Estado = false;
+                            docenteBOL.ModificarEstado(doc, rutaDoc);
+                            docentes = docenteBOL.CargarTodo(rutaDoc);
+                        }
+                    }
+                }
             }
         }
 

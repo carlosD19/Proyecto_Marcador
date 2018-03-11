@@ -102,16 +102,13 @@ namespace RelojMarcadorDAL
                 xCod.InnerText = horarioP.Codigo;
                 horario.AppendChild(xCod);
 
-
                 XmlElement xDia = doc.CreateElement("dia");
                 xDia.InnerText = horarioP.Dia.ToString();
                 horario.AppendChild(xDia);
 
-
                 XmlElement xInicio = doc.CreateElement("horaInicio");
                 xInicio.InnerText = horarioP.HoraIni.ToString();
                 horario.AppendChild(xInicio);
-
 
                 XmlElement xFinal = doc.CreateElement("horaFinal");
                 xFinal.InnerText = horarioP.HoraFin.ToString();
@@ -120,7 +117,6 @@ namespace RelojMarcadorDAL
                 XmlElement xActivo = doc.CreateElement("activo");
                 xActivo.InnerText = horarioP.Activo.ToString();
                 horario.AppendChild(xActivo);
-
 
                 return horario;
             }
@@ -162,7 +158,7 @@ namespace RelojMarcadorDAL
             }
         }
 
-        public void Eliminar(Horario horario, string codigo, string ruta)
+        public void EliminarHorario(Horario horario, string codigo, string ruta)
         {
             try
             {

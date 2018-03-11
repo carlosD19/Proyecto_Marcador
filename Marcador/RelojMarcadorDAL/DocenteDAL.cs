@@ -2,9 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 
 namespace RelojMarcadorDAL
@@ -47,21 +44,80 @@ namespace RelojMarcadorDAL
             {
                 if (!VerificarExistencia(docenteP.Cedula, ruta))
                 {
-                    rutaXML = ruta;
-                    doc.Load(rutaXML);
+                    if (!VerificarPin(docenteP.Pin, ruta))
+                    {
+                        rutaXML = ruta;
+                        doc.Load(rutaXML);
 
-                    XmlNode horario = CrearDocente(docenteP);
+                        XmlNode horario = CrearDocente(docenteP);
 
-                    XmlNode nodoRaiz = doc.DocumentElement;
+                        XmlNode nodoRaiz = doc.DocumentElement;
 
-                    nodoRaiz.InsertAfter(horario, nodoRaiz.LastChild);
+                        nodoRaiz.InsertAfter(horario, nodoRaiz.LastChild);
 
-                    doc.Save(rutaXML);
+                        doc.Save(rutaXML);
+                    }
                 }
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
+            }
+        }
+
+        private bool VerificarPin(int pin, string ruta)
+        {
+            try
+            {
+                rutaXML = ruta;
+                doc.Load(rutaXML);
+
+                XmlNode docentes = doc.DocumentElement;
+
+                XmlNodeList listaDocentes = doc.SelectNodes("Docentes/docente");
+
+                foreach (XmlNode item in listaDocentes)
+                {
+                    if (item.SelectSingleNode("pin").InnerText.Equals(pin.ToString()))
+                    {
+                        throw new Exception("Pin inválido.");
+                    }
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void ModificarEstado(Docente docente, string ruta)
+        {
+            try
+            {
+                rutaXML = ruta;
+                doc.Load(rutaXML);
+                XmlElement docentes = doc.DocumentElement;
+
+                XmlNodeList listaDocentes = doc.SelectNodes("Docentes/docente");
+                XmlNode docen = CrearDocente(docente);
+
+                foreach (XmlNode item in listaDocentes)
+                {
+                    if (item.FirstChild.InnerText == docente.Cedula)
+                    {
+                        if (item.LastChild.InnerText.Equals("True"))
+                        {
+                            XmlNode nodoOld = item;
+                            docentes.ReplaceChild(docen, nodoOld);
+                        }
+                    }
+                }
+                doc.Save(rutaXML);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al modificar horario.");
             }
         }
 
@@ -75,16 +131,13 @@ namespace RelojMarcadorDAL
                 xCed.InnerText = docenteP.Cedula;
                 docente.AppendChild(xCed);
 
-
                 XmlElement xNom = doc.CreateElement("nombre");
                 xNom.InnerText = docenteP.Nombre;
                 docente.AppendChild(xNom);
 
-
                 XmlElement xApeUno = doc.CreateElement("primerApellido");
                 xApeUno.InnerText = docenteP.ApellidoUno;
                 docente.AppendChild(xApeUno);
-
 
                 XmlElement xApeDos = doc.CreateElement("segundoApellido");
                 xApeDos.InnerText = docenteP.ApellidoDos;
@@ -106,10 +159,13 @@ namespace RelojMarcadorDAL
                 xPin.InnerText = docenteP.Pin.ToString();
                 docente.AppendChild(xPin);
 
+                XmlElement xEstado = doc.CreateElement("estado");
+                xEstado.InnerText = docenteP.Estado.ToString();
+                docente.AppendChild(xEstado);
+
                 XmlElement xActivo = doc.CreateElement("activo");
                 xActivo.InnerText = docenteP.Activo.ToString();
                 docente.AppendChild(xActivo);
-
 
                 return docente;
             }
@@ -158,7 +214,7 @@ namespace RelojMarcadorDAL
 
                 foreach (XmlNode item in listaDocentes)
                 {
-                    if (item.FirstChild.InnerText == cedula)
+                    if (item.FirstChild.InnerText.Equals(cedula))
                     {
                         XmlNode nodoOld = item;
                         docentes.ReplaceChild(docen, nodoOld);
@@ -198,6 +254,7 @@ namespace RelojMarcadorDAL
                     docente.Sexo = Boolean.Parse(unDocente.SelectSingleNode("sexo").InnerText);
                     docente.Pin = Int32.Parse(unDocente.SelectSingleNode("pin").InnerText);
                     docente.Activo = Boolean.Parse(unDocente.SelectSingleNode("activo").InnerText);
+                    docente.Estado = Boolean.Parse(unDocente.SelectSingleNode("estado").InnerText);
                     docentes.Add(docente);
                 }
                 return docentes;

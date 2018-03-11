@@ -1,13 +1,6 @@
 ﻿using RelojMarcadorBOL;
 using RelojMarcadorENL;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Marcador
@@ -22,7 +15,8 @@ namespace Marcador
         public FrmDocente()
         {
             InitializeComponent();
-            funcion = 2;
+            CenterToScreen();
+            funcion = 1;
             CambiarTexto();
             cbxSexo.SelectedIndex = 0;
         }
@@ -58,6 +52,7 @@ namespace Marcador
         {
             docente = new Docente();
             bol = new DocenteBOL();
+            ced = "";
             ruta = "Docentes.xml";
             bol.CrearArchivo(ruta, "Docentes");
             CargarTabla();
@@ -88,7 +83,19 @@ namespace Marcador
 
         private void Eliminar()
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (!ced.Equals(""))
+                {
+                    docente.Activo = false;
+                    bol.EliminarDocente(docente, ced, ruta);
+                    CargarTabla();
+                }
+            }
+            catch (Exception ex)
+            {
+                lblError.Text = ex.Message;
+            }
         }
 
         private void Modificar()
@@ -185,21 +192,24 @@ namespace Marcador
 
         private void CargarDatos()
         {
-            txtCed.Text = docente.Cedula;
-            txtApeUno.Text = docente.ApellidoUno;
-            txtApeDos.Text = docente.ApellidoDos;
-            txtEmail.Text = docente.Email;
-            txtNombre.Text = docente.Nombre;
-            txtPin.Text = docente.Pin.ToString();
-            txtTel.Text = docente.Telefono.ToString();
-            ced = docente.Cedula;
-            if (docente.Sexo)
+            if (docente.Activo)
             {
-                cbxSexo.SelectedIndex = 0;
-            }
-            else
-            {
-                cbxSexo.SelectedIndex = 1;
+                txtCed.Text = docente.Cedula;
+                txtApeUno.Text = docente.ApellidoUno;
+                txtApeDos.Text = docente.ApellidoDos;
+                txtEmail.Text = docente.Email;
+                txtNombre.Text = docente.Nombre;
+                txtPin.Text = docente.Pin.ToString();
+                txtTel.Text = docente.Telefono.ToString();
+                ced = docente.Cedula;
+                if (docente.Sexo)
+                {
+                    cbxSexo.SelectedIndex = 0;
+                }
+                else
+                {
+                    cbxSexo.SelectedIndex = 1;
+                }
             }
         }
     }

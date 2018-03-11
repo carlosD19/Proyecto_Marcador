@@ -17,6 +17,6 @@ namespace RelojMarcadorENL
         public int Telefono { get; set; }
         public int Pin { get; set; }
         public bool Activo { get; set; }
-        
+        public bool Estado { get; set; }
     }
 }
