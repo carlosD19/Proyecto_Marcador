@@ -103,10 +103,28 @@ namespace Marcador
             }
             if (!txtCuatro.Text.Equals(""))
             {
-                VerificarPin();
+                if (VerificarPin())
+                {
+                    LimpiarTexto();
+                }
+                else
+                {
+                    MessageBox.Show("Pin Incorrecto");
+                    LimpiarTexto();
+                }
             }
         }
-        private void VerificarPin()
+
+        private void LimpiarTexto()
+        {
+            txtUno.Text = "";
+            txtDos.Text = "";
+            txtTres.Text = "";
+            txtCuatro.Text = "";
+            pin = "";
+        }
+
+        private bool VerificarPin()
         {
             foreach (Docente doc in docentes)
             {
@@ -128,9 +146,11 @@ namespace Marcador
                             docenteBOL.ModificarEstado(doc, rutaDoc);
                             docentes = docenteBOL.CargarTodo(rutaDoc);
                         }
+                        return true;
                     }
                 }
             }
+            return false;
         }
 
         private void agregarDocente_Click(object sender, EventArgs e)
@@ -193,6 +213,20 @@ namespace Marcador
         {
             frmHorario = new FrmHorario(3);
             frmHorario.Show(this);
+            Hide();
+        }
+
+        private void docenteCursoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmDocenteCurso frm = new FrmDocenteCurso();
+            frm.Show(this);
+            Hide();
+        }
+
+        private void cursoHorarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCursoHorario frm = new FrmCursoHorario();
+            frm.Show(this);
             Hide();
         }
     }

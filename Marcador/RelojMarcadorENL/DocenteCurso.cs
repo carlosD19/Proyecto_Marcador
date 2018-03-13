@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace RelojMarcadorENL
 {
-    public class Horario
+    public class DocenteCurso
     {
-        public string Codigo { get; set; }
-        public DateTime Dia { get; set; }
-        public DateTime HoraIni { get; set; }
-        public DateTime HoraFin { get; set; }
+        public string CedDocente { get; set; }
+        public string CodCurso { get; set; }
+        public string CodHorario { get; set; }
         public Boolean Activo { get; set; }
     }
 }

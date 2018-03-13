@@ -44,6 +44,9 @@
             this.agregarHorario = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarHorario = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarHorario = new System.Windows.Forms.ToolStripMenuItem();
+            this.asignaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.docenteCursoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cursoHorarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnCero = new System.Windows.Forms.Button();
@@ -63,9 +66,6 @@
             this.btnReportes = new System.Windows.Forms.Button();
             this.lblHora = new System.Windows.Forms.Label();
             this.timerHora = new System.Windows.Forms.Timer(this.components);
-            this.asignaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.docenteCursoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cursoHorarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -100,27 +100,27 @@
             this.eliminarDocente});
             this.docenteToolStripMenuItem.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.docenteToolStripMenuItem.Name = "docenteToolStripMenuItem";
-            this.docenteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.docenteToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.docenteToolStripMenuItem.Text = "Docente";
             // 
             // agregarDocente
             // 
             this.agregarDocente.Name = "agregarDocente";
-            this.agregarDocente.Size = new System.Drawing.Size(152, 22);
+            this.agregarDocente.Size = new System.Drawing.Size(134, 22);
             this.agregarDocente.Text = "Agregar";
             this.agregarDocente.Click += new System.EventHandler(this.agregarDocente_Click);
             // 
             // modificarDocente
             // 
             this.modificarDocente.Name = "modificarDocente";
-            this.modificarDocente.Size = new System.Drawing.Size(152, 22);
+            this.modificarDocente.Size = new System.Drawing.Size(134, 22);
             this.modificarDocente.Text = "Modificar";
             this.modificarDocente.Click += new System.EventHandler(this.modificarDocente_Click);
             // 
             // eliminarDocente
             // 
             this.eliminarDocente.Name = "eliminarDocente";
-            this.eliminarDocente.Size = new System.Drawing.Size(152, 22);
+            this.eliminarDocente.Size = new System.Drawing.Size(134, 22);
             this.eliminarDocente.Text = "Eliminar";
             this.eliminarDocente.Click += new System.EventHandler(this.eliminarDocente_Click);
             // 
@@ -131,27 +131,27 @@
             this.modificarCurso,
             this.eliminarCurso});
             this.cursoToolStripMenuItem.Name = "cursoToolStripMenuItem";
-            this.cursoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cursoToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.cursoToolStripMenuItem.Text = "Curso";
             // 
             // agregarCurso
             // 
             this.agregarCurso.Name = "agregarCurso";
-            this.agregarCurso.Size = new System.Drawing.Size(152, 22);
+            this.agregarCurso.Size = new System.Drawing.Size(134, 22);
             this.agregarCurso.Text = "Agregar";
             this.agregarCurso.Click += new System.EventHandler(this.agregarCurso_Click);
             // 
             // modificarCurso
             // 
             this.modificarCurso.Name = "modificarCurso";
-            this.modificarCurso.Size = new System.Drawing.Size(152, 22);
+            this.modificarCurso.Size = new System.Drawing.Size(134, 22);
             this.modificarCurso.Text = "Modificar";
             this.modificarCurso.Click += new System.EventHandler(this.modificarCurso_Click);
             // 
             // eliminarCurso
             // 
             this.eliminarCurso.Name = "eliminarCurso";
-            this.eliminarCurso.Size = new System.Drawing.Size(152, 22);
+            this.eliminarCurso.Size = new System.Drawing.Size(134, 22);
             this.eliminarCurso.Text = "Eliminar";
             this.eliminarCurso.Click += new System.EventHandler(this.eliminarCurso_Click);
             // 
@@ -162,29 +162,53 @@
             this.modificarHorario,
             this.eliminarHorario});
             this.horarioToolStripMenuItem.Name = "horarioToolStripMenuItem";
-            this.horarioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.horarioToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.horarioToolStripMenuItem.Text = "Horario";
             // 
             // agregarHorario
             // 
             this.agregarHorario.Name = "agregarHorario";
-            this.agregarHorario.Size = new System.Drawing.Size(152, 22);
+            this.agregarHorario.Size = new System.Drawing.Size(134, 22);
             this.agregarHorario.Text = "Agregar";
             this.agregarHorario.Click += new System.EventHandler(this.agregarHorario_Click);
             // 
             // modificarHorario
             // 
             this.modificarHorario.Name = "modificarHorario";
-            this.modificarHorario.Size = new System.Drawing.Size(152, 22);
+            this.modificarHorario.Size = new System.Drawing.Size(134, 22);
             this.modificarHorario.Text = "Modificar";
             this.modificarHorario.Click += new System.EventHandler(this.modificarHorario_Click);
             // 
             // eliminarHorario
             // 
             this.eliminarHorario.Name = "eliminarHorario";
-            this.eliminarHorario.Size = new System.Drawing.Size(152, 22);
+            this.eliminarHorario.Size = new System.Drawing.Size(134, 22);
             this.eliminarHorario.Text = "Eliminar";
             this.eliminarHorario.Click += new System.EventHandler(this.eliminarHorario_Click);
+            // 
+            // asignaciónToolStripMenuItem
+            // 
+            this.asignaciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.docenteCursoToolStripMenuItem,
+            this.cursoHorarioToolStripMenuItem});
+            this.asignaciónToolStripMenuItem.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.asignaciónToolStripMenuItem.Name = "asignaciónToolStripMenuItem";
+            this.asignaciónToolStripMenuItem.Size = new System.Drawing.Size(91, 21);
+            this.asignaciónToolStripMenuItem.Text = "Asignación";
+            // 
+            // docenteCursoToolStripMenuItem
+            // 
+            this.docenteCursoToolStripMenuItem.Name = "docenteCursoToolStripMenuItem";
+            this.docenteCursoToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.docenteCursoToolStripMenuItem.Text = "Docente-Curso";
+            this.docenteCursoToolStripMenuItem.Click += new System.EventHandler(this.docenteCursoToolStripMenuItem_Click);
+            // 
+            // cursoHorarioToolStripMenuItem
+            // 
+            this.cursoHorarioToolStripMenuItem.Name = "cursoHorarioToolStripMenuItem";
+            this.cursoHorarioToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.cursoHorarioToolStripMenuItem.Text = "Curso-Horario";
+            this.cursoHorarioToolStripMenuItem.Click += new System.EventHandler(this.cursoHorarioToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
@@ -412,28 +436,6 @@
             // timerHora
             // 
             this.timerHora.Tick += new System.EventHandler(this.timerHora_Tick);
-            // 
-            // asignaciónToolStripMenuItem
-            // 
-            this.asignaciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.docenteCursoToolStripMenuItem,
-            this.cursoHorarioToolStripMenuItem});
-            this.asignaciónToolStripMenuItem.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.asignaciónToolStripMenuItem.Name = "asignaciónToolStripMenuItem";
-            this.asignaciónToolStripMenuItem.Size = new System.Drawing.Size(91, 21);
-            this.asignaciónToolStripMenuItem.Text = "Asignación";
-            // 
-            // docenteCursoToolStripMenuItem
-            // 
-            this.docenteCursoToolStripMenuItem.Name = "docenteCursoToolStripMenuItem";
-            this.docenteCursoToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.docenteCursoToolStripMenuItem.Text = "Docente-Curso";
-            // 
-            // cursoHorarioToolStripMenuItem
-            // 
-            this.cursoHorarioToolStripMenuItem.Name = "cursoHorarioToolStripMenuItem";
-            this.cursoHorarioToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.cursoHorarioToolStripMenuItem.Text = "Curso-Horario";
             // 
             // FrmInicio
             // 

@@ -38,7 +38,7 @@ namespace RelojMarcadorDAL
             }
         }
 
-        public void AñadirDocente(Docente docenteP, string ruta)
+        public void AnnadirDocente(Docente docenteP, string ruta)
         {
             try
             {

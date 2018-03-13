@@ -54,7 +54,7 @@ namespace RelojMarcadorBOL
             }
             else if (funcion)
             {
-                dal.AñadirDocente(docente, ruta);
+                dal.AnnadirDocente(docente, ruta);
             }
         }
 

@@ -154,6 +154,7 @@
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvHorarios.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvHorarios.Location = new System.Drawing.Point(276, 55);
+            this.dgvHorarios.MultiSelect = false;
             this.dgvHorarios.Name = "dgvHorarios";
             this.dgvHorarios.Size = new System.Drawing.Size(563, 220);
             this.dgvHorarios.TabIndex = 24;

@@ -51,11 +51,23 @@
     <Compile Include="FrmCurso.Designer.cs">
       <DependentUpon>FrmCurso.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCursoHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCursoHorario.Designer.cs">
+      <DependentUpon>FrmCursoHorario.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDocente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmDocente.Designer.cs">
       <DependentUpon>FrmDocente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDocenteCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDocenteCurso.Designer.cs">
+      <DependentUpon>FrmDocenteCurso.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmHorario.cs">
       <SubType>Form</SubType>
@@ -74,8 +86,14 @@
     <EmbeddedResource Include="FrmCurso.resx">
       <DependentUpon>FrmCurso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmCursoHorario.resx">
+      <DependentUpon>FrmCursoHorario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmDocente.resx">
       <DependentUpon>FrmDocente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDocenteCurso.resx">
+      <DependentUpon>FrmDocenteCurso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmHorario.resx">
       <DependentUpon>FrmHorario.cs</DependentUpon>

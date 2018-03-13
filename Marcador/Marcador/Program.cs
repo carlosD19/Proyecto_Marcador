@@ -16,7 +16,7 @@ namespace Marcador
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmHorario());
+            Application.Run(new FrmInicio());
         }
     }
 }

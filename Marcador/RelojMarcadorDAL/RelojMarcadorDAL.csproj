@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CursoDAL.cs" />
+    <Compile Include="CursoHorarioDAL.cs" />
+    <Compile Include="DocenteCursoDAL.cs" />
     <Compile Include="DocenteDAL.cs" />
     <Compile Include="HorarioDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -54,8 +54,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvDocentes = new System.Windows.Forms.DataGridView();
-            this.docenteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lblError = new System.Windows.Forms.Label();
             this.cedulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoUnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +64,8 @@
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.activoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.docenteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lblError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocentes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.docenteBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -298,25 +298,12 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDocentes.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDocentes.Location = new System.Drawing.Point(34, 26);
+            this.dgvDocentes.MultiSelect = false;
             this.dgvDocentes.Name = "dgvDocentes";
             this.dgvDocentes.Size = new System.Drawing.Size(745, 172);
             this.dgvDocentes.TabIndex = 41;
             this.dgvDocentes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDocentes_CellFormatting);
             this.dgvDocentes.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDocentes_CellMouseClick);
-            // 
-            // docenteBindingSource
-            // 
-            this.docenteBindingSource.DataSource = typeof(RelojMarcadorENL.Docente);
-            // 
-            // lblError
-            // 
-            this.lblError.AutoSize = true;
-            this.lblError.BackColor = System.Drawing.Color.Transparent;
-            this.lblError.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblError.Location = new System.Drawing.Point(4, 495);
-            this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(0, 18);
-            this.lblError.TabIndex = 42;
             // 
             // cedulaDataGridViewTextBoxColumn
             // 
@@ -399,6 +386,20 @@
             this.activoDataGridViewCheckBoxColumn.HeaderText = "Activo";
             this.activoDataGridViewCheckBoxColumn.Name = "activoDataGridViewCheckBoxColumn";
             this.activoDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // docenteBindingSource
+            // 
+            this.docenteBindingSource.DataSource = typeof(RelojMarcadorENL.Docente);
+            // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.BackColor = System.Drawing.Color.Transparent;
+            this.lblError.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.Location = new System.Drawing.Point(4, 495);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(0, 18);
+            this.lblError.TabIndex = 42;
             // 
             // FrmDocente
             // 

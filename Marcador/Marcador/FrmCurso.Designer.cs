@@ -31,7 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCurso));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -206,16 +208,19 @@
             this.fechaFinDataGridViewTextBoxColumn,
             this.activoDataGridViewCheckBoxColumn});
             this.dgvCursos.DataSource = this.cursoBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCursos.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCursos.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvCursos.Location = new System.Drawing.Point(267, 70);
+            this.dgvCursos.MultiSelect = false;
             this.dgvCursos.Name = "dgvCursos";
+            this.dgvCursos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
+            this.dgvCursos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCursos.Size = new System.Drawing.Size(558, 240);
             this.dgvCursos.TabIndex = 37;
             this.dgvCursos.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCursos_CellMouseClick);
@@ -240,21 +245,25 @@
             this.aulaDataGridViewTextBoxColumn.DataPropertyName = "Aula";
             this.aulaDataGridViewTextBoxColumn.HeaderText = "Aula";
             this.aulaDataGridViewTextBoxColumn.Name = "aulaDataGridViewTextBoxColumn";
-            this.aulaDataGridViewTextBoxColumn.Width = 80;
+            this.aulaDataGridViewTextBoxColumn.Width = 50;
             // 
             // fechaIniDataGridViewTextBoxColumn
             // 
             this.fechaIniDataGridViewTextBoxColumn.DataPropertyName = "FechaIni";
+            dataGridViewCellStyle3.Format = "M";
+            this.fechaIniDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.fechaIniDataGridViewTextBoxColumn.HeaderText = "Fecha Inicio";
             this.fechaIniDataGridViewTextBoxColumn.Name = "fechaIniDataGridViewTextBoxColumn";
-            this.fechaIniDataGridViewTextBoxColumn.Width = 80;
+            this.fechaIniDataGridViewTextBoxColumn.Width = 95;
             // 
             // fechaFinDataGridViewTextBoxColumn
             // 
             this.fechaFinDataGridViewTextBoxColumn.DataPropertyName = "FechaFin";
+            dataGridViewCellStyle4.Format = "M";
+            this.fechaFinDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.fechaFinDataGridViewTextBoxColumn.HeaderText = "Fecha Final";
             this.fechaFinDataGridViewTextBoxColumn.Name = "fechaFinDataGridViewTextBoxColumn";
-            this.fechaFinDataGridViewTextBoxColumn.Width = 80;
+            this.fechaFinDataGridViewTextBoxColumn.Width = 95;
             // 
             // activoDataGridViewCheckBoxColumn
             // 
@@ -282,7 +291,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(846, 416);
+            this.ClientSize = new System.Drawing.Size(846, 403);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.dgvCursos);
             this.Controls.Add(this.dtFinal);
