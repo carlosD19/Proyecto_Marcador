@@ -16,7 +16,7 @@ namespace Marcador
         //private List<Docente> docentes;
         //private DocenteBOL docenteBOL;
         private ReporteBOL reporteBOL;
-        private string rutaDoc;
+        //private string rutaDoc;
         public FrmInicio()
         {
             InitializeComponent();
@@ -27,7 +27,7 @@ namespace Marcador
         {
             //docenteBOL = new DocenteBOL();
             reporteBOL = new ReporteBOL();
-            rutaDoc = "Docentes.xml";
+            //rutaDoc = "Docentes.xml";
             timerHora.Start();
             ChangeControlStyles(btnEliminar, ControlStyles.Selectable, false);
             //docentes = docenteBOL.CargarTodo(rutaDoc);
@@ -125,15 +125,23 @@ namespace Marcador
             txtCuatro.Text = "";
             pin = "";
         }
-        
+
         private bool VerificarPin()
         {
-            if (reporteBOL.VerificarRegistro(Int32.Parse(pin)))
+            try
             {
-                MessageBox.Show("Registro Correcto.");
-                return true;
+                if (reporteBOL.VerificarRegistro(Int32.Parse(pin), "Reportes.xml"))
+                {
+                    MessageBox.Show("Registro Correcto.");
+                    return true;
+                }
+
             }
-            MessageBox.Show("Registro Incorrecto.");
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
             return false;
             //foreach (Docente doc in docentes)
             //{

@@ -15,13 +15,17 @@ namespace RelojMarcadorBOL
         {
             dal = new ReporteDAL();
         }
-        public bool VerificarRegistro(int pin)
+        public bool VerificarRegistro(int pin, string ruta)
         {
             if (pin < 0)
             {
                 throw new Exception("Docente requerido.");
             }
-            return dal.VerificarRegistro(pin);
+            if (String.IsNullOrEmpty(ruta))
+            {
+                throw new Exception("Ruta requerida.");
+            }
+            return dal.VerificarRegistro(pin, ruta);
         }
     }
 }
