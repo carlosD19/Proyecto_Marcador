@@ -52,5 +52,10 @@ namespace RelojMarcadorBOL
         {
             dal.EliminarCurHor(cursoHorario, ruta);
         }
+
+        public List<CursoHorario> CargarTodo(string ruta)
+        {
+            return dal.CargarTodo(ruta);
+        }
     }
 }

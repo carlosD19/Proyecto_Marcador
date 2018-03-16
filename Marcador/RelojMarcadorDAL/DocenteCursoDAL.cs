@@ -43,19 +43,44 @@ namespace RelojMarcadorDAL
 
         public void ModificarDocCur(DocenteCurso docenteCurso, string ruta)
         {
-            throw new NotImplementedException();
+            try
+            {
+                rutaXML = ruta;
+                doc.Load(rutaXML);
+                XmlElement docentes = doc.DocumentElement;
+
+                XmlNodeList listaDocentes = doc.SelectNodes("DocentesCursos/docenteCurso");
+                XmlNode docen = CrearDocenteCurso(docenteCurso);
+
+                foreach (XmlNode item in listaDocentes)
+                {
+                    if (item.FirstChild.InnerText == docenteCurso.CedDocente)
+                    {
+                        if (item.LastChild.InnerText.Equals("True"))
+                        {
+                            XmlNode nodoOld = item;
+                            docentes.ReplaceChild(docen, nodoOld);
+                        }
+                    }
+                }
+                doc.Save(rutaXML);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al modificar asignación.");
+            }
         }
 
         public void AsignarDocCur(DocenteCurso docenteCurso, string ruta)
         {
             try
             {
-                if (!VerificarExistencia(docenteCurso, ruta))
+                if (!VerificarAsignacion(docenteCurso, ruta))
                 {
                     rutaXML = ruta;
                     doc.Load(rutaXML);
 
-                    XmlNode docCur = CrearDocente(docenteCurso);
+                    XmlNode docCur = CrearDocenteCurso(docenteCurso);
 
                     XmlNode nodoRaiz = doc.DocumentElement;
 
@@ -70,12 +95,39 @@ namespace RelojMarcadorDAL
             }
         }
 
-        private bool VerificarExistencia(DocenteCurso docenteCurso, string ruta)
+        private bool VerificarAsignacion(DocenteCurso docenteCurso, string ruta)
         {
-            
+            try
+            {
+                rutaXML = ruta;
+                doc.Load(rutaXML);
+
+                XmlNode docCurso = doc.DocumentElement;
+
+                XmlNodeList listaDocCur = doc.SelectNodes("DocentesCursos/docenteCurso");
+
+                foreach (XmlNode docente in listaDocCur)
+                {
+                    if (docente.SelectSingleNode("cedDocente").InnerText.Equals(docenteCurso.CedDocente))
+                    {
+                        if (docente.SelectSingleNode("codCurso").InnerText.Equals(docenteCurso.CodCurso))
+                        {
+                            if (docente.SelectSingleNode("codHorario").InnerText.Equals(docenteCurso.CodHorario))
+                            {
+                                throw new Exception("La asignacion ya existe.");
+                            }
+                        }
+                    }
+                }
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
-        private XmlNode CrearDocente(DocenteCurso docenteCurso)
+        private XmlNode CrearDocenteCurso(DocenteCurso docenteCurso)
         {
             try
             {
@@ -101,13 +153,41 @@ namespace RelojMarcadorDAL
             }
             catch (Exception ex)
             {
-                throw new Exception("Error al crear docente.");
+                throw new Exception("Error al crear asignación docente-curso.");
             }
         }
 
         public void EliminarDocCur(DocenteCurso docenteCurso, string ruta)
         {
-            throw new NotImplementedException();
+            try
+            {
+                rutaXML = ruta;
+                doc.Load(rutaXML);
+                XmlElement docentes = doc.DocumentElement;
+
+                XmlNodeList listaDocentes = doc.SelectNodes("DocentesCursos/docenteCurso");
+                XmlNode docCurso = CrearDocenteCurso(docenteCurso);
+
+                foreach (XmlNode item in listaDocentes)
+                {
+                    if (item.SelectSingleNode("cedDocente").InnerText.Equals(docenteCurso.CedDocente))
+                    {
+                        if (item.SelectSingleNode("codCurso").InnerText.Equals(docenteCurso.CodCurso))
+                        {
+                            if (item.SelectSingleNode("codHorario").InnerText.Equals(docenteCurso.CodHorario))
+                            {
+                                XmlNode nodoOld = item;
+                                docentes.ReplaceChild(docCurso, nodoOld);
+                            }
+                        }
+                    }
+                }
+                doc.Save(rutaXML);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al eliminar asignación.");
+            }
         }
     }
 }

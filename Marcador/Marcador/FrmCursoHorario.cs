@@ -16,9 +16,13 @@ namespace Marcador
     {
         private CursoBOL cursoBOL;
         private HorarioBOL horarioBOL;
+        private Curso curso;
+        private Horario horario;
+        private CursoHorario cursoHorario;
         private string rutaCurso;
         private string rutaHorario;
-
+        private string rutaCurHor;
+        private CursoHorarioBOL cursoHorarioBOL;
         public FrmCursoHorario()
         {
             InitializeComponent();
@@ -29,14 +33,29 @@ namespace Marcador
         {
             cursoBOL = new CursoBOL();
             horarioBOL = new HorarioBOL();
+            cursoHorarioBOL = new CursoHorarioBOL();
+            curso = new Curso();
+            horario = new Horario();
+            cursoHorario = new CursoHorario();
             rutaCurso = "Cursos.xml";
             rutaHorario = "Horarios.xml";
+            rutaCurHor = "CursosHorarios.xml";
+            cursoHorarioBOL.CrearArchivo(rutaCurHor, "CursosHorarios");
             CargarTablas();
         }
 
         private void btnAsignar_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                cursoHorario.Activo = true;
+                cursoHorarioBOL.VerificarDocCur(cursoHorario, rutaCurHor, true);
+                lblError.Text = "Asignación realizada.";
+            }
+            catch (Exception ex)
+            {
+                lblError.Text = ex.Message;
+            }
         }
 
         private void CargarTablas()
@@ -63,6 +82,18 @@ namespace Marcador
             {
                 Owner.Show();
             }
+        }
+
+        private void dgvCursos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            cursoHorario.CodCurso = dgvCursos.Rows[e.RowIndex].Cells[0].Value.ToString();
+            lblCurCod.Text = cursoHorario.CodCurso;
+        }
+
+        private void dgvHorarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            cursoHorario.CodHorario = dgvHorarios.Rows[e.RowIndex].Cells[0].Value.ToString();
+            lblHorCod.Text = cursoHorario.CodHorario;
         }
     }
 }

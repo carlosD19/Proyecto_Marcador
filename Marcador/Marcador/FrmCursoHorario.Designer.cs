@@ -32,15 +32,20 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCursoHorario));
             this.dgvCursos = new System.Windows.Forms.DataGridView();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Aula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaIni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvHorarios = new System.Windows.Forms.DataGridView();
             this.Codigo1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dia = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,11 +54,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAsignar = new System.Windows.Forms.Button();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Aula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaIni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblError = new System.Windows.Forms.Label();
+            this.lblCurCod = new System.Windows.Forms.Label();
+            this.lblHorCod = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCursos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHorarios)).BeginInit();
             this.SuspendLayout();
@@ -100,6 +103,47 @@
             this.dgvCursos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCursos.Size = new System.Drawing.Size(595, 150);
             this.dgvCursos.TabIndex = 0;
+            this.dgvCursos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCursos_CellClick);
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.Width = 87;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 130;
+            // 
+            // Aula
+            // 
+            this.Aula.HeaderText = "Aula";
+            this.Aula.Name = "Aula";
+            this.Aula.ReadOnly = true;
+            this.Aula.Width = 55;
+            // 
+            // FechaIni
+            // 
+            dataGridViewCellStyle2.Format = "M";
+            dataGridViewCellStyle2.NullValue = null;
+            this.FechaIni.DefaultCellStyle = dataGridViewCellStyle2;
+            this.FechaIni.HeaderText = "Fecha Inicio";
+            this.FechaIni.Name = "FechaIni";
+            this.FechaIni.ReadOnly = true;
+            this.FechaIni.Width = 140;
+            // 
+            // FechaFin
+            // 
+            dataGridViewCellStyle3.Format = "M";
+            this.FechaFin.DefaultCellStyle = dataGridViewCellStyle3;
+            this.FechaFin.HeaderText = "Fecha Fin";
+            this.FechaFin.Name = "FechaFin";
+            this.FechaFin.ReadOnly = true;
+            this.FechaFin.Width = 140;
             // 
             // dgvHorarios
             // 
@@ -132,6 +176,7 @@
             this.dgvHorarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHorarios.Size = new System.Drawing.Size(592, 150);
             this.dgvHorarios.TabIndex = 1;
+            this.dgvHorarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHorarios_CellClick);
             // 
             // Codigo1
             // 
@@ -201,45 +246,37 @@
             this.btnAsignar.UseVisualStyleBackColor = true;
             this.btnAsignar.Click += new System.EventHandler(this.btnAsignar_Click);
             // 
-            // Codigo
+            // lblError
             // 
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            this.Codigo.Width = 87;
+            this.lblError.AutoSize = true;
+            this.lblError.BackColor = System.Drawing.Color.Transparent;
+            this.lblError.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.Location = new System.Drawing.Point(3, 486);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(0, 18);
+            this.lblError.TabIndex = 5;
             // 
-            // Nombre
+            // lblCurCod
             // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 130;
+            this.lblCurCod.AutoSize = true;
+            this.lblCurCod.BackColor = System.Drawing.Color.Transparent;
+            this.lblCurCod.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCurCod.Location = new System.Drawing.Point(728, 191);
+            this.lblCurCod.Name = "lblCurCod";
+            this.lblCurCod.Size = new System.Drawing.Size(54, 17);
+            this.lblCurCod.TabIndex = 6;
+            this.lblCurCod.Text = "Código";
             // 
-            // Aula
+            // lblHorCod
             // 
-            this.Aula.HeaderText = "Aula";
-            this.Aula.Name = "Aula";
-            this.Aula.ReadOnly = true;
-            this.Aula.Width = 55;
-            // 
-            // FechaIni
-            // 
-            dataGridViewCellStyle2.Format = "M";
-            dataGridViewCellStyle2.NullValue = null;
-            this.FechaIni.DefaultCellStyle = dataGridViewCellStyle2;
-            this.FechaIni.HeaderText = "Fecha Inicio";
-            this.FechaIni.Name = "FechaIni";
-            this.FechaIni.ReadOnly = true;
-            this.FechaIni.Width = 140;
-            // 
-            // FechaFin
-            // 
-            dataGridViewCellStyle3.Format = "M";
-            this.FechaFin.DefaultCellStyle = dataGridViewCellStyle3;
-            this.FechaFin.HeaderText = "Fecha Fin";
-            this.FechaFin.Name = "FechaFin";
-            this.FechaFin.ReadOnly = true;
-            this.FechaFin.Width = 140;
+            this.lblHorCod.AutoSize = true;
+            this.lblHorCod.BackColor = System.Drawing.Color.Transparent;
+            this.lblHorCod.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHorCod.Location = new System.Drawing.Point(728, 392);
+            this.lblHorCod.Name = "lblHorCod";
+            this.lblHorCod.Size = new System.Drawing.Size(54, 17);
+            this.lblHorCod.TabIndex = 7;
+            this.lblHorCod.Text = "Código";
             // 
             // FrmCursoHorario
             // 
@@ -247,6 +284,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(867, 505);
+            this.Controls.Add(this.lblHorCod);
+            this.Controls.Add(this.lblCurCod);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnAsignar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -279,5 +319,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Aula;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaIni;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaFin;
+        private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.Label lblCurCod;
+        private System.Windows.Forms.Label lblHorCod;
     }
 }

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<CursosHorarios>
+  <cursoHorario>
+    <codCurso>ISW-411</codCurso>
+    <codHorario>003</codHorario>
+    <activo>True</activo>
+  </cursoHorario>
+  <cursoHorario>
+    <codCurso>ISW-411</codCurso>
+    <codHorario>004</codHorario>
+    <activo>True</activo>
+  </cursoHorario>
+  <cursoHorario>
+    <codCurso>LEIN-400</codCurso>
+    <codHorario>005</codHorario>
+    <activo>True</activo>
+  </cursoHorario>
+</CursosHorarios>

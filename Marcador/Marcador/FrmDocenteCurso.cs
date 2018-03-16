@@ -17,9 +17,17 @@ namespace Marcador
         private CursoBOL cursoBOL;
         private HorarioBOL horarioBOL;
         private DocenteBOL docenteBOL;
+        private CursoHorarioBOL cursoHorarioBOL;
+        private DocenteCursoBOL docenteCursoBOL;
+        private DocenteCurso docenteCurso;
         private string rutaCurso;
         private string rutaHorario;
         private string rutaDocente;
+        private string rutaCurHor;
+        private string rutaDocCur;
+        private List<Curso> cursos;
+        private List<Horario> horarios;
+        private List<CursoHorario> cursosH;
 
         public FrmDocenteCurso()
         {
@@ -30,28 +38,42 @@ namespace Marcador
         private void FrmDocenteCurso_Load(object sender, EventArgs e)
         {
             cursoBOL = new CursoBOL();
+            docenteCursoBOL = new DocenteCursoBOL();
             horarioBOL = new HorarioBOL();
             docenteBOL = new DocenteBOL();
+            cursoHorarioBOL = new CursoHorarioBOL();
+            docenteCurso = new DocenteCurso();
+            rutaDocCur = "DocentesCursos.xml";
             rutaCurso = "Cursos.xml";
             rutaHorario = "Horarios.xml";
             rutaDocente = "Docentes.xml";
+            rutaCurHor = "CursosHorarios.xml";
+            cursos = cursoBOL.CargarTodo(rutaCurso);
+            horarios = horarioBOL.CargarTodo(rutaHorario);
+            cursosH = cursoHorarioBOL.CargarTodo(rutaCurHor);
+            docenteCursoBOL.CrearArchivo(rutaDocCur, "DocentesCursos");
             CargarTablas();
         }
 
         private void CargarTablas()
         {
-            foreach (Curso c in cursoBOL.CargarTodo(rutaCurso))
+            string codTest = "";
+
+            foreach (CursoHorario curHor in cursosH)
             {
-                if (c.Activo)
+                if (!codTest.Equals(curHor.CodCurso))
                 {
-                    dgvCursos.Rows.Add(c.Codigo, c.Nombre, c.Aula, c.FechaIni, c.FechaFin);
-                }
-            }
-            foreach (Horario h in horarioBOL.CargarTodo(rutaHorario))
-            {
-                if (h.Activo)
-                {
-                    dgvHorarios.Rows.Add(h.Codigo, h.Dia, h.HoraIni, h.HoraFin);
+                    codTest = curHor.CodCurso;
+                    foreach (Curso c in cursos)
+                    {
+                        if (curHor.CodCurso.Equals(c.Codigo))
+                        {
+                            if (c.Activo)
+                            {
+                                dgvCursos.Rows.Add(c.Codigo, c.Nombre, c.Aula, c.FechaIni, c.FechaFin);
+                            }
+                        }
+                    }
                 }
             }
             foreach (Docente d in docenteBOL.CargarTodo(rutaDocente))
@@ -74,7 +96,14 @@ namespace Marcador
 
         private void btnAsignar_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                docenteCursoBOL.VerificarDocCur(docenteCurso, rutaDocCur, true);
+            }
+            catch (Exception ex)
+            {
+                lblError.Text = ex.Message;
+            }
         }
 
         private void FrmDocenteCurso_FormClosing(object sender, FormClosingEventArgs e)
@@ -83,6 +112,34 @@ namespace Marcador
             {
                 Owner.Show();
             }
+        }
+
+        private void dgvCursos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dgvHorarios.Rows.Clear();
+            string cod = dgvCursos.Rows[e.RowIndex].Cells[0].Value.ToString();
+            foreach (CursoHorario item in cursosH)
+            {
+                if (cod.Equals(item.CodCurso))
+                {
+                    foreach (Horario h in horarios)
+                    {
+                        if (item.CodHorario.Equals(h.Codigo))
+                        {
+                            dgvHorarios.Rows.Add(h.Codigo, h.Dia, h.HoraIni, h.HoraFin);
+                        }
+                    }
+                }
+            }
+
+        }
+
+        private void dgvHorarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            docenteCurso.CedDocente = dgvDocentes.Rows[e.RowIndex].Cells[0].Value.ToString();
+            docenteCurso.CodCurso = dgvCursos.Rows[e.RowIndex].Cells[0].Value.ToString();
+            docenteCurso.CodHorario = dgvHorarios.Rows[e.RowIndex].Cells[0].Value.ToString();
+            docenteCurso.Activo = true;
         }
     }
 }

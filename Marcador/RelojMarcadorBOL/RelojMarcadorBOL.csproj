@@ -46,6 +46,7 @@
     <Compile Include="DocenteCursoBOL.cs" />
     <Compile Include="HorarioBOL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReporteBOL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RelojMarcadorDAL\RelojMarcadorDAL.csproj">

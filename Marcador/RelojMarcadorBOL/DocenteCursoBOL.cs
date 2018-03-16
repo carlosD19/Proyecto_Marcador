@@ -26,7 +26,7 @@ namespace RelojMarcadorBOL
             dal.CrearArchivo(ruta, nodoRaiz);
         }
 
-        public void VerificarDocCur(DocenteCurso docenteCurso,string ruta, Boolean funcion)
+        public void VerificarDocCur(DocenteCurso docenteCurso, string ruta, Boolean funcion)
         {
             if (String.IsNullOrEmpty(docenteCurso.CedDocente))
             {
@@ -50,7 +50,7 @@ namespace RelojMarcadorBOL
             }
         }
 
-        public void EliminarDocCur(DocenteCurso docenteCurso,string ruta)
+        public void EliminarDocCur(DocenteCurso docenteCurso, string ruta)
         {
             dal.EliminarDocCur(docenteCurso, ruta);
         }

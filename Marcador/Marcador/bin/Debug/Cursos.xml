@@ -8,4 +8,12 @@
     <fechaFinal>20/7/2018 00:00:00</fechaFinal>
     <activo>True</activo>
   </curso>
+  <curso>
+    <codigo>LEIN-400</codigo>
+    <nombre>Inglés lV</nombre>
+    <aula>105</aula>
+    <fechaInicio>20/3/2018 00:00:00</fechaInicio>
+    <fechaFinal>20/7/2018 00:00:00</fechaFinal>
+    <activo>True</activo>
+  </curso>
 </Cursos>
