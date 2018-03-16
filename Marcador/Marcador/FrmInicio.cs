@@ -130,12 +130,11 @@ namespace Marcador
         {
             try
             {
-                if (reporteBOL.VerificarRegistro(Int32.Parse(pin), "Reportes.xml"))
+                if (reporteBOL.VerificarPIN(Int32.Parse(pin)))
                 {
                     MessageBox.Show("Registro Correcto.");
                     return true;
                 }
-
             }
             catch (Exception ex)
             {

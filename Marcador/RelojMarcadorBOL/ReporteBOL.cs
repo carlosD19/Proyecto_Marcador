@@ -27,5 +27,10 @@ namespace RelojMarcadorBOL
             }
             return dal.VerificarRegistro(pin, ruta);
         }
+
+        public bool VerificarPIN(int pin)
+        {
+            return dal.VerificarPin(pin);
+        }
     }
 }

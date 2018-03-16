@@ -103,22 +103,34 @@ namespace RelojMarcadorDAL
                 XmlNodeList listaDocCur = doc.SelectNodes("DocentesCursos/docenteCurso");
                 foreach (XmlNode item in listaDocCur)
                 {
-                    if (item.SelectSingleNode("cedDocente").InnerText.Equals(docente.Cedula))
+                    DocenteCurso dc = new DocenteCurso();
+                    dc.CedDocente = item.SelectSingleNode("cedDocente").InnerText;
+                    dc.CodCurso = item.SelectSingleNode("codCurso").InnerText;
+                    dc.CodHorario = item.SelectSingleNode("codHorario").InnerText;
+                    if (dc.CedDocente.Equals(docente.Cedula))
                     {
                         foreach (Curso c in cursoDAL.CargarTodo("Cursos.xml"))
                         {
-                            if (item.SelectSingleNode("CodCurso").InnerText.Equals(c.Codigo))
+                            if (dc.CodCurso.Equals(c.Codigo))
                             {
-                                curso.FechaIni = c.FechaIni;
-                                curso.FechaFin = c.FechaFin;
-                                foreach (Horario h in horarioDAL.CargarTodo("Horarios.xml"))
+                                int num = DateTime.Now.Date.CompareTo(c.FechaIni);
+                                int num2 = DateTime.Now.Date.CompareTo(c.FechaFin);
+                                if (num == 1 || num == 0 && num2 == -1 || num2 == 0)
                                 {
-                                    if (item.SelectSingleNode("codHorario").InnerText.Equals(h.Codigo))
+                                    foreach (Horario h in horarioDAL.CargarTodo("Horarios.xml"))
                                     {
-                                        horario.Dia = h.Dia;
-                                        horario.HoraIni = h.HoraIni;
-                                        horario.HoraFin = h.HoraFin;
-                                        return true;
+                                        if (dc.CodHorario.Equals(h.Codigo))
+                                        {
+                                            string d = DateTime.Now.Date.ToString("dddd");
+                                            string d2 = h.Dia.ToString("dddd");
+                                            if (d2.Equals(d))
+                                            {
+                                                horario.Dia = h.Dia;
+                                                horario.HoraIni = h.HoraIni;
+                                                horario.HoraFin = h.HoraFin;
+                                                return true;
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -133,7 +145,7 @@ namespace RelojMarcadorDAL
             }
         }
 
-        private bool VerificarPin(int pin)
+        public bool VerificarPin(int pin)
         {
             try
             {
@@ -145,11 +157,19 @@ namespace RelojMarcadorDAL
                         {
                             docente.Cedula = item.Cedula;
                             docente.Estado = item.Estado;
-                            return true;
+                            if (VerificarAsig())
+                            {
+                                
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
                         }
                     }
                 }
-                throw new Exception("Pin Incorrecto.");
+                throw new Exception("Problemas al verificar pin.");
             }
             catch (Exception ex)
             {
@@ -193,6 +213,11 @@ namespace RelojMarcadorDAL
             {
                 throw new Exception("Error al crear docente.");
             }
+        }
+
+        private bool ValidarEstado()
+        {
+            return false;
         }
     }
 }
