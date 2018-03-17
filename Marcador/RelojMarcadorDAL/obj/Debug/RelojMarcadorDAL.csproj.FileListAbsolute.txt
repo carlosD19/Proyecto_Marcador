@@ -14,3 +14,4 @@ C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorDAL\obj\Deb
 C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorDAL\obj\Debug\RelojMarcadorDAL.csproj.CoreCompileInputs.cache
 C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorDAL\obj\Debug\RelojMarcadorDAL.dll
 C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorDAL\obj\Debug\RelojMarcadorDAL.pdb
+C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorDAL\obj\Debug\RelojMarcadorDAL.csproj.CopyComplete

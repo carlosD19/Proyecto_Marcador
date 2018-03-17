@@ -182,13 +182,14 @@ namespace RelojMarcadorDAL
             float final = horario.HoraFin.Hour + float.Parse("," + horario.HoraFin.Minute);
             float actual = DateTime.Now.Hour + float.Parse("," + DateTime.Now.Minute);
             float resta = actual - inicio;
+            float resta2 = actual - final;
             if (!docente.Estado)
             {
-                if (resta > 1 && resta < 0)
+                if (resta > 1 && resta2 < 0)
                 {
                     return true;
                 }
-                else if (resta < 1 && resta < 0)
+                else if (resta < 1 && resta2 < 0)
                 {
                     return true;
                 }

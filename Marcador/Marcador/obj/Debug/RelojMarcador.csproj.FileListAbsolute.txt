@@ -19,3 +19,4 @@ C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\Marcador\obj\Debug\Marca
 C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\Marcador\obj\Debug\RelojMarcador.csprojResolveAssemblyReference.cache
 C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\Marcador\obj\Debug\Marcador.FrmCursoHorario.resources
 C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\Marcador\obj\Debug\Marcador.FrmDocenteCurso.resources
+C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\Marcador\obj\Debug\RelojMarcador.csproj.CopyComplete

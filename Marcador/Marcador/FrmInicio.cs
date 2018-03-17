@@ -13,14 +13,19 @@ namespace Marcador
         private FrmDocente frmDocente;
         private FrmCurso frmCurso;
         private FrmHorario frmHorario;
-        //private List<Docente> docentes;
-        //private DocenteBOL docenteBOL;
         private ReporteBOL reporteBOL;
-        //private string rutaDoc;
+        private string desc;
         public FrmInicio()
         {
             InitializeComponent();
             CenterToScreen();
+        }
+        public FrmInicio(string pin, string desc)
+        {
+            InitializeComponent();
+            CenterToScreen();
+            this.pin = pin;
+            this.desc = desc;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -128,49 +133,21 @@ namespace Marcador
 
         private bool VerificarPin()
         {
-            try
-            {
-                if (reporteBOL.VerificarPIN(Int32.Parse(pin)))
-                {
-                    MessageBox.Show("Registro Correcto.");
-                    return true;
-                }
-                else
-                {
-                    MessageBox.Show("No tiene curso hoy.");
-                    return false;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
 
+            if (reporteBOL.VerificarPIN(Int32.Parse(pin)))
+            {
+                FrmOpciones frm = new FrmOpciones(true, pin);
+                frm.Show(this);
+                Hide();
+                return true;
             }
-            return false;
-            //foreach (Docente doc in docentes)
-            //{
-            //    if (doc.Activo)
-            //    {
-            //        if (doc.Pin.ToString().Equals(pin))
-            //        {
-            //            if (!doc.Estado)
-            //            {
-            //                MessageBox.Show(doc.Nombre + "\nEntrada Registrada.");
-            //                doc.Estado = true;
-            //                docenteBOL.ModificarEstado(doc, rutaDoc);
-            //                docentes = docenteBOL.CargarTodo(rutaDoc);
-            //            }
-            //            else
-            //            {
-            //                MessageBox.Show(doc.Nombre + "\nSalida Registrada.");
-            //                doc.Estado = false;
-            //                docenteBOL.ModificarEstado(doc, rutaDoc);
-            //                docentes = docenteBOL.CargarTodo(rutaDoc);
-            //            }
-            //            return true;
-            //        }
-            //    }
-            //}
+            else
+            {
+                FrmOpciones frm = new FrmOpciones(false, pin);
+                frm.Show(this);
+                Hide();
+                return false;
+            }
         }
 
         private void agregarDocente_Click(object sender, EventArgs e)
