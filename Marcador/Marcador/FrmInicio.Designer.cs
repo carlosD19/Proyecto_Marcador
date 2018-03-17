@@ -66,6 +66,7 @@
             this.btnReportes = new System.Windows.Forms.Button();
             this.lblHora = new System.Windows.Forms.Label();
             this.timerHora = new System.Windows.Forms.Timer(this.components);
+            this.lblError = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -421,6 +422,7 @@
             this.btnReportes.Text = "Reportes";
             this.btnReportes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnReportes.UseVisualStyleBackColor = false;
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
             // 
             // lblHora
             // 
@@ -437,12 +439,23 @@
             // 
             this.timerHora.Tick += new System.EventHandler(this.timerHora_Tick);
             // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.BackColor = System.Drawing.Color.Transparent;
+            this.lblError.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.Location = new System.Drawing.Point(335, 407);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(0, 17);
+            this.lblError.TabIndex = 5;
+            // 
             // FrmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(815, 434);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnReportes);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
@@ -497,6 +510,7 @@
         private System.Windows.Forms.ToolStripMenuItem asignaciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem docenteCursoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cursoHorarioToolStripMenuItem;
+        private System.Windows.Forms.Label lblError;
     }
 }
 

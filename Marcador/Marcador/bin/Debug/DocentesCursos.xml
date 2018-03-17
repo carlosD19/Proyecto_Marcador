@@ -1,11 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <DocentesCursos>
-  <docenteCurso>
-    <cedDocente>207970377</cedDocente>
-    <codCurso>ISW-411</codCurso>
-    <codHorario>003</codHorario>
-    <activo>True</activo>
-  </docenteCurso>
   <docenteCurso>
     <cedDocente>207970377</cedDocente>
     <codCurso>ISW-411</codCurso>

@@ -99,6 +99,7 @@
             this.Name = "FrmOpciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FrmOpciones";
+            this.Load += new System.EventHandler(this.FrmOpciones_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

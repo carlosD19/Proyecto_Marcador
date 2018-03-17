@@ -14,28 +14,22 @@ namespace Marcador
         private FrmCurso frmCurso;
         private FrmHorario frmHorario;
         private ReporteBOL reporteBOL;
+        private Reporte reporte;
         private string desc;
         public FrmInicio()
         {
             InitializeComponent();
             CenterToScreen();
         }
-        public FrmInicio(string pin, string desc)
-        {
-            InitializeComponent();
-            CenterToScreen();
-            this.pin = pin;
-            this.desc = desc;
-        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //docenteBOL = new DocenteBOL();
             reporteBOL = new ReporteBOL();
-            //rutaDoc = "Docentes.xml";
+            reporte = new Reporte();
+            desc = "";
+            pin = "";
             timerHora.Start();
             ChangeControlStyles(btnEliminar, ControlStyles.Selectable, false);
-            //docentes = docenteBOL.CargarTodo(rutaDoc);
         }
 
         private void timerHora_Tick(object sender, EventArgs e)
@@ -114,14 +108,16 @@ namespace Marcador
                 {
                     if (VerificarPin())
                     {
-                        LimpiarTexto();
+                        reporteBOL.Guardar(reporte, desc);
                     }
+                    LimpiarTexto();
                 }
             }
             catch (Exception ex)
             {
+                reporteBOL.Guardar(reporte, desc);
                 LimpiarTexto();
-                MessageBox.Show(ex.Message);
+                lblError.Text = ex.Message;
             }
         }
 
@@ -137,28 +133,36 @@ namespace Marcador
 
         private bool VerificarPin()
         {
-            int num = reporteBOL.VerificarPIN(Int32.Parse(pin));
+            reporte = new Reporte();
+            reporte = reporteBOL.VerificarPIN(Int32.Parse(pin));
+            int num = reporte.Numero;
             if (num == 0)
             {
-                FrmOpciones frm = new FrmOpciones(true, pin);
+                FrmOpciones frm = new FrmOpciones(1, pin, reporte);
                 frm.Show(this);
-                Hide();
-                return true;
+                return false;
             }
             else if (num == 4)
             {
-                FrmOpciones frm = new FrmOpciones(false, pin);
+                FrmOpciones frm = new FrmOpciones(2, pin, reporte);
                 frm.Show(this);
-                Hide();
-                return true;
+                return false;
             }
             else if (num == 1)
             {
+                desc = "Entrada Registrada";
                 throw new Exception("Entrada Registrada.");
             }
-            else if(num == 2)
+            else if (num == 2)
             {
-                throw new Exception("Salida Registrada.");
+                desc = "Salida Anticipada";
+                throw new Exception("Salida Anticipada.");
+            }
+            else if (num == 3)
+            {
+                FrmOpciones frm = new FrmOpciones(3, pin, reporte);
+                frm.Show(this);
+                return false;
             }
             else
             {
@@ -239,6 +243,13 @@ namespace Marcador
         private void cursoHorarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmCursoHorario frm = new FrmCursoHorario();
+            frm.Show(this);
+            Hide();
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            FrmReporte frm = new FrmReporte();
             frm.Show(this);
             Hide();
         }

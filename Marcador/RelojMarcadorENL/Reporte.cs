@@ -11,8 +11,11 @@ namespace RelojMarcadorENL
         public string CedDocente { get; set; }
         public int Ausencia { get; set; }
         public int Tardia { get; set; }
+        public int SalidaAnticipada { get; set; }
         public DateTime HoraEntrada { get; set; }
         public DateTime HoraSalida { get; set; }
-        public String Descripcion { get; set; }
+        public String DescripcionE { get; set; }
+        public String DescripcionS { get; set; }
+        public int Numero { get; set; }
     }
 }

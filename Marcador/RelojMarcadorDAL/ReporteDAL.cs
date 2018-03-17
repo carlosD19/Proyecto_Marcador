@@ -13,7 +13,7 @@ namespace RelojMarcadorDAL
     {
         private XmlDocument doc;
         private string rutaXML;
-        private string rutaDoc;
+        //private string rutaDoc;
         private string rutaAsig;
         private Curso curso;
         private Horario horario;
@@ -33,9 +33,10 @@ namespace RelojMarcadorDAL
             cursoDAL = new CursoDAL();
             horarioDAL = new HorarioDAL();
             docenteDAL = new DocenteDAL();
-            rutaDoc = "Docentes.xml";
+            //rutaDoc = "Docentes.xml";
             rutaAsig = "DocentesCursos.xml";
-            CrearArchivo("Reportes.xml", "Reportes");
+            rutaXML = "Reportes.xml";
+            CrearArchivo(rutaXML, "Reportes");
         }
 
         public void CrearArchivo(string ruta, string nodoRaiz)
@@ -60,39 +61,71 @@ namespace RelojMarcadorDAL
             }
         }
 
-        public void AnnadirReporte(Docente docenteP, string ruta)
+        public void VerificarRegistro(Reporte rep)
         {
-
+            if (rep.Numero == 0 || rep.Numero == 1 || rep.Numero == 4)
+            {
+                Registrar(rep);
+            }
+            else
+            {
+                Modificar(rep);
+            }
         }
 
+        private void Modificar(Reporte rep)
+        {
+            try
+            {
+                doc.Load(rutaXML);
+                XmlElement docentes = doc.DocumentElement;
 
-        //public bool VerificarRegistro(int pin, string ruta)
-        //{
-        //    try
-        //    {
-        //        if (VerificarPin(pin))
-        //        {
-        //            rutaXML = ruta;
-        //            doc.Load(rutaXML);
-        //            if (VerificarAsig())
-        //            {
-        //                //XmlNode reporte = CrearReporte(pin);
+                XmlNodeList listaReportes = doc.SelectNodes("Reportes/reporte");
 
-        //                //XmlNode nodoRaiz = doc.DocumentElement;
 
-        //                //nodoRaiz.InsertAfter(reporte, nodoRaiz.LastChild);
+                foreach (XmlNode item in listaReportes)
+                {
+                    if (item.FirstChild.InnerText == rep.CedDocente)
+                    {
+                        DateTime horaSalida = Convert.ToDateTime(item.SelectSingleNode("horaSalida").InnerText);
+                        if (horaSalida.Hour == 0)
+                        {
+                            rep.DescripcionE = item.SelectSingleNode("descripcionEntrada").InnerText;
+                            rep.Ausencia = Int32.Parse(item.SelectSingleNode("ausencia").InnerText);
+                            rep.HoraEntrada = Convert.ToDateTime(item.SelectSingleNode("horaEntrada").InnerText);
+                            rep.Tardia = Int32.Parse(item.SelectSingleNode("tardia").InnerText);
+                            XmlNode report = CrearReporte(rep);
+                            XmlNode nodoOld = item;
+                            docentes.ReplaceChild(report, nodoOld);
+                        }
+                    }
+                }
+                doc.Save(rutaXML);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al modificar horario.");
+            }
+        }
 
-        //                //doc.Save(rutaXML);
-        //                return true;
-        //            }
-        //        }
-        //        return false;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception(ex.Message);
-        //    }
-        //}
+        public void Registrar(Reporte rep)
+        {
+            try
+            {
+                doc.Load(rutaXML);
+                XmlNode reporte = CrearReporte(rep);
+
+                XmlNode nodoRaiz = doc.DocumentElement;
+
+                nodoRaiz.InsertAfter(reporte, nodoRaiz.LastChild);
+
+                doc.Save(rutaXML);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
 
         private bool VerificarAsig()
         {
@@ -143,8 +176,9 @@ namespace RelojMarcadorDAL
             }
         }
 
-        public int VerificarPin(int pin)
+        public Reporte VerificarPin(int pin)
         {
+            reporte = new Reporte();
             try
             {
                 foreach (Docente item in docenteDAL.CargarTodo("Docentes.xml"))
@@ -154,13 +188,15 @@ namespace RelojMarcadorDAL
                         if (item.Pin == pin)
                         {
                             docente = item;
+                            reporte.CedDocente = item.Cedula;
                             if (VerificarAsig())
                             {
                                 return VerificarHora();
                             }
                             else
                             {
-                                return 4;
+                                reporte.Numero = 4;
+                                return reporte;
                             }
                         }
                     }
@@ -173,8 +209,9 @@ namespace RelojMarcadorDAL
             }
         }
 
-        private int VerificarHora()
+        private Reporte VerificarHora()
         {
+
             float inicio = horario.HoraIni.Hour + float.Parse("," + horario.HoraIni.Minute);
             float final = horario.HoraFin.Hour + float.Parse("," + horario.HoraFin.Minute);
             float actual = DateTime.Now.Hour + float.Parse("," + DateTime.Now.Minute);
@@ -182,43 +219,55 @@ namespace RelojMarcadorDAL
             float resta2 = actual - final;
             if (!docente.Estado)
             {
+                DateTime entrada = Convert.ToDateTime(DateTime.Now.ToString("t"));
+                reporte.HoraEntrada = entrada;
                 docente.Estado = true;
                 if (resta > 1 && resta2 < 0)
                 {
                     docenteDAL.ModificarEstado(docente, "Docentes.xml");
-                    return 0;
+                    reporte.Numero = 0;
+                }
+                else if (inicio < actual)
+                {
+                    reporte.Tardia = 1;
+                    docenteDAL.ModificarEstado(docente, "Docentes.xml");
+                    reporte.Numero = 1;
                 }
                 else if (resta < 1 && resta2 < 0)
                 {
                     docenteDAL.ModificarEstado(docente, "Docentes.xml");
-                    return 1;
+                    reporte.Numero = 1;
                 }
             }
             else
             {
                 docente.Estado = false;
+                DateTime salida = Convert.ToDateTime(DateTime.Now.ToString("t"));
+                reporte.HoraSalida = salida;
                 if (final > actual)
                 {
-
+                    reporte.SalidaAnticipada = 1;
+                    docenteDAL.ModificarEstado(docente, "Docentes.xml");
+                    reporte.Numero = 2;
                 }
                 else if (resta2 > 1)
                 {
-
+                    docenteDAL.ModificarEstado(docente, "Docentes.xml");
+                    reporte.Numero = 3;
                 }
-                docenteDAL.ModificarEstado(docente, "Docentes.xml");
-                return 2;
             }
-            return 10;
+            return reporte;
         }
 
-        private XmlNode CrearReporte(int pin)
+        private XmlNode CrearReporte(Reporte r)
         {
+            reporte = r;
             try
             {
                 XmlNode report = this.doc.CreateElement("reporte");
 
                 XmlElement xCed = this.doc.CreateElement("cedDocente");
-                xCed.InnerText = docente.Cedula;
+                xCed.InnerText = reporte.CedDocente;
                 report.AppendChild(xCed);
 
                 XmlElement xAusencia = this.doc.CreateElement("ausencia");
@@ -229,6 +278,10 @@ namespace RelojMarcadorDAL
                 xTardia.InnerText = reporte.Tardia.ToString();
                 report.AppendChild(xTardia);
 
+                XmlElement xSal = this.doc.CreateElement("salidaAnticipada");
+                xSal.InnerText = reporte.SalidaAnticipada.ToString();
+                report.AppendChild(xSal);
+
                 XmlElement xEntrada = this.doc.CreateElement("horaEntrada");
                 xEntrada.InnerText = reporte.HoraEntrada.ToString();
                 report.AppendChild(xEntrada);
@@ -237,9 +290,13 @@ namespace RelojMarcadorDAL
                 xSalida.InnerText = reporte.HoraSalida.ToString();
                 report.AppendChild(xSalida);
 
-                XmlElement xDesc = this.doc.CreateElement("descripcion");
-                xDesc.InnerText = reporte.Descripcion;
+                XmlElement xDesc = this.doc.CreateElement("descripcionEntrada");
+                xDesc.InnerText = reporte.DescripcionE;
                 report.AppendChild(xDesc);
+
+                XmlElement xDesc1 = this.doc.CreateElement("descripcionSalida");
+                xDesc1.InnerText = reporte.DescripcionS;
+                report.AppendChild(xDesc1);
 
                 return report;
             }
@@ -247,11 +304,6 @@ namespace RelojMarcadorDAL
             {
                 throw new Exception("Error al crear docente.");
             }
-        }
-
-        private bool ValidarEstado()
-        {
-            return false;
         }
     }
 }

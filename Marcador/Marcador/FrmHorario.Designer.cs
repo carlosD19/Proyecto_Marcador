@@ -45,17 +45,17 @@
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.dgvHorarios = new System.Windows.Forms.DataGridView();
+            this.dtDia = new System.Windows.Forms.DateTimePicker();
+            this.dtFin = new System.Windows.Forms.DateTimePicker();
+            this.dtInicio = new System.Windows.Forms.DateTimePicker();
+            this.lblError = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.codigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.horaIniDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.horaFinDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.activoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.horarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dtDia = new System.Windows.Forms.DateTimePicker();
-            this.dtFin = new System.Windows.Forms.DateTimePicker();
-            this.dtInicio = new System.Windows.Forms.DateTimePicker();
-            this.lblError = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHorarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.horarioBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -160,6 +160,62 @@
             this.dgvHorarios.TabIndex = 24;
             this.dgvHorarios.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvHorarios_CellMouseClick);
             // 
+            // dtDia
+            // 
+            this.dtDia.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtDia.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtDia.Location = new System.Drawing.Point(43, 128);
+            this.dtDia.MinDate = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
+            this.dtDia.Name = "dtDia";
+            this.dtDia.Size = new System.Drawing.Size(198, 26);
+            this.dtDia.TabIndex = 25;
+            this.dtDia.Value = new System.DateTime(2018, 3, 8, 0, 0, 0, 0);
+            // 
+            // dtFin
+            // 
+            this.dtFin.CalendarFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtFin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtFin.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtFin.Location = new System.Drawing.Point(43, 249);
+            this.dtFin.Name = "dtFin";
+            this.dtFin.ShowUpDown = true;
+            this.dtFin.Size = new System.Drawing.Size(198, 26);
+            this.dtFin.TabIndex = 28;
+            this.dtFin.Value = new System.DateTime(2018, 3, 8, 11, 30, 0, 0);
+            // 
+            // dtInicio
+            // 
+            this.dtInicio.CalendarFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtInicio.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtInicio.Location = new System.Drawing.Point(43, 183);
+            this.dtInicio.Name = "dtInicio";
+            this.dtInicio.ShowUpDown = true;
+            this.dtInicio.Size = new System.Drawing.Size(198, 26);
+            this.dtInicio.TabIndex = 29;
+            this.dtInicio.Value = new System.DateTime(2018, 3, 8, 8, 0, 0, 0);
+            // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.BackColor = System.Drawing.Color.Transparent;
+            this.lblError.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.Location = new System.Drawing.Point(3, 355);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(0, 17);
+            this.lblError.TabIndex = 30;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(276, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(161, 18);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "Horarios Registrados.";
+            // 
             // codigoDataGridViewTextBoxColumn
             // 
             this.codigoDataGridViewTextBoxColumn.DataPropertyName = "Codigo";
@@ -219,62 +275,6 @@
             // horarioBindingSource
             // 
             this.horarioBindingSource.DataSource = typeof(RelojMarcadorENL.Horario);
-            // 
-            // dtDia
-            // 
-            this.dtDia.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtDia.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtDia.Location = new System.Drawing.Point(43, 128);
-            this.dtDia.MinDate = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
-            this.dtDia.Name = "dtDia";
-            this.dtDia.Size = new System.Drawing.Size(198, 26);
-            this.dtDia.TabIndex = 25;
-            this.dtDia.Value = new System.DateTime(2018, 3, 8, 0, 0, 0, 0);
-            // 
-            // dtFin
-            // 
-            this.dtFin.CalendarFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtFin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtFin.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtFin.Location = new System.Drawing.Point(43, 249);
-            this.dtFin.Name = "dtFin";
-            this.dtFin.ShowUpDown = true;
-            this.dtFin.Size = new System.Drawing.Size(198, 26);
-            this.dtFin.TabIndex = 28;
-            this.dtFin.Value = new System.DateTime(2018, 3, 8, 11, 30, 0, 0);
-            // 
-            // dtInicio
-            // 
-            this.dtInicio.CalendarFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtInicio.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtInicio.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtInicio.Location = new System.Drawing.Point(43, 183);
-            this.dtInicio.Name = "dtInicio";
-            this.dtInicio.ShowUpDown = true;
-            this.dtInicio.Size = new System.Drawing.Size(198, 26);
-            this.dtInicio.TabIndex = 29;
-            this.dtInicio.Value = new System.DateTime(2018, 3, 8, 8, 0, 0, 0);
-            // 
-            // lblError
-            // 
-            this.lblError.AutoSize = true;
-            this.lblError.BackColor = System.Drawing.Color.Transparent;
-            this.lblError.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblError.Location = new System.Drawing.Point(3, 355);
-            this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(0, 17);
-            this.lblError.TabIndex = 30;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(276, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 18);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "Horarios Registrados.";
             // 
             // FrmHorario
             // 
