@@ -159,8 +159,7 @@ namespace RelojMarcadorDAL
                             docente.Estado = item.Estado;
                             if (VerificarAsig())
                             {
-                                
-                                return true;
+                                return VerificarHora();
                             }
                             else
                             {
@@ -175,6 +174,30 @@ namespace RelojMarcadorDAL
             {
                 throw new Exception(ex.Message);
             }
+        }
+
+        private bool VerificarHora()
+        {
+            float inicio = horario.HoraIni.Hour + float.Parse("," + horario.HoraIni.Minute);
+            float final = horario.HoraFin.Hour + float.Parse("," + horario.HoraFin.Minute);
+            float actual = DateTime.Now.Hour + float.Parse("," + DateTime.Now.Minute);
+            float resta = actual - inicio;
+            if (!docente.Estado)
+            {
+                if (resta > 1 && resta < 0)
+                {
+                    return true;
+                }
+                else if (resta < 1 && resta < 0)
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                return false;
+            }
+            return false;
         }
 
         private XmlNode CrearReporte(int pin)

@@ -135,6 +135,11 @@ namespace Marcador
                     MessageBox.Show("Registro Correcto.");
                     return true;
                 }
+                else
+                {
+                    MessageBox.Show("No tiene curso hoy.");
+                    return false;
+                }
             }
             catch (Exception ex)
             {
