@@ -25,10 +25,11 @@ namespace RelojMarcadorBOL
             {
                 throw new Exception("Ruta requerida.");
             }
-            return dal.VerificarRegistro(pin, ruta);
+            //return dal.VerificarRegistro(pin, ruta);
+            return true;
         }
 
-        public bool VerificarPIN(int pin)
+        public int VerificarPIN(int pin)
         {
             return dal.VerificarPin(pin);
         }

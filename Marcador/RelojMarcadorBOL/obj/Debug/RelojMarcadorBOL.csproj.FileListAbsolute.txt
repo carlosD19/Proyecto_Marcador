@@ -16,6 +16,6 @@ C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorBOL\bin\Deb
 C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorBOL\bin\Debug\RelojMarcadorENL.pdb
 C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorBOL\obj\Debug\RelojMarcadorBOL.csprojResolveAssemblyReference.cache
 C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorBOL\obj\Debug\RelojMarcadorBOL.csproj.CoreCompileInputs.cache
+C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorBOL\obj\Debug\RelojMarcadorBOL.csproj.CopyComplete
 C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorBOL\obj\Debug\RelojMarcadorBOL.dll
 C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorBOL\obj\Debug\RelojMarcadorBOL.pdb
-C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorBOL\obj\Debug\RelojMarcadorBOL.csproj.CopyComplete

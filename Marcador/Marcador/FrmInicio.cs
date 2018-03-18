@@ -88,37 +88,40 @@ namespace Marcador
 
         private void btnUno_Click(object sender, EventArgs e)
         {
-            if (txtUno.Text.Equals(""))
+            try
             {
-                txtUno.Text = ((Button)sender).Text;
-                pin += ((Button)sender).Text;
-            }
-            else if (txtDos.Text.Equals(""))
-            {
-                txtDos.Text = ((Button)sender).Text;
-                pin += ((Button)sender).Text;
-            }
-            else if (txtTres.Text.Equals(""))
-            {
-                txtTres.Text = ((Button)sender).Text;
-                pin += ((Button)sender).Text;
-            }
-            else if (txtCuatro.Text.Equals(""))
-            {
-                txtCuatro.Text = ((Button)sender).Text;
-                pin += ((Button)sender).Text;
-            }
-            if (!txtCuatro.Text.Equals(""))
-            {
-                if (VerificarPin())
+                if (txtUno.Text.Equals(""))
                 {
-                    LimpiarTexto();
+                    txtUno.Text = ((Button)sender).Text;
+                    pin += ((Button)sender).Text;
                 }
-                else
+                else if (txtDos.Text.Equals(""))
                 {
-                    MessageBox.Show("Pin Incorrecto");
-                    LimpiarTexto();
+                    txtDos.Text = ((Button)sender).Text;
+                    pin += ((Button)sender).Text;
                 }
+                else if (txtTres.Text.Equals(""))
+                {
+                    txtTres.Text = ((Button)sender).Text;
+                    pin += ((Button)sender).Text;
+                }
+                else if (txtCuatro.Text.Equals(""))
+                {
+                    txtCuatro.Text = ((Button)sender).Text;
+                    pin += ((Button)sender).Text;
+                }
+                if (!txtCuatro.Text.Equals(""))
+                {
+                    if (VerificarPin())
+                    {
+                        LimpiarTexto();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                LimpiarTexto();
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -131,21 +134,34 @@ namespace Marcador
             pin = "";
         }
 
+
         private bool VerificarPin()
         {
-
-            if (reporteBOL.VerificarPIN(Int32.Parse(pin)))
+            int num = reporteBOL.VerificarPIN(Int32.Parse(pin));
+            if (num == 0)
             {
                 FrmOpciones frm = new FrmOpciones(true, pin);
                 frm.Show(this);
                 Hide();
                 return true;
             }
-            else
+            else if (num == 4)
             {
                 FrmOpciones frm = new FrmOpciones(false, pin);
                 frm.Show(this);
                 Hide();
+                return true;
+            }
+            else if (num == 1)
+            {
+                throw new Exception("Entrada Registrada.");
+            }
+            else if(num == 2)
+            {
+                throw new Exception("Salida Registrada.");
+            }
+            else
+            {
                 return false;
             }
         }

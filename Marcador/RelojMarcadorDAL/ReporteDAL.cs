@@ -66,33 +66,33 @@ namespace RelojMarcadorDAL
         }
 
 
-        public bool VerificarRegistro(int pin, string ruta)
-        {
-            try
-            {
-                if (VerificarPin(pin))
-                {
-                    rutaXML = ruta;
-                    doc.Load(rutaXML);
-                    if (VerificarAsig())
-                    {
-                        //XmlNode reporte = CrearReporte(pin);
+        //public bool VerificarRegistro(int pin, string ruta)
+        //{
+        //    try
+        //    {
+        //        if (VerificarPin(pin))
+        //        {
+        //            rutaXML = ruta;
+        //            doc.Load(rutaXML);
+        //            if (VerificarAsig())
+        //            {
+        //                //XmlNode reporte = CrearReporte(pin);
 
-                        //XmlNode nodoRaiz = doc.DocumentElement;
+        //                //XmlNode nodoRaiz = doc.DocumentElement;
 
-                        //nodoRaiz.InsertAfter(reporte, nodoRaiz.LastChild);
+        //                //nodoRaiz.InsertAfter(reporte, nodoRaiz.LastChild);
 
-                        //doc.Save(rutaXML);
-                        return true;
-                    }
-                }
-                return false;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
+        //                //doc.Save(rutaXML);
+        //                return true;
+        //            }
+        //        }
+        //        return false;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw new Exception(ex.Message);
+        //    }
+        //}
 
         private bool VerificarAsig()
         {
@@ -109,25 +109,23 @@ namespace RelojMarcadorDAL
                     dc.CodHorario = item.SelectSingleNode("codHorario").InnerText;
                     if (dc.CedDocente.Equals(docente.Cedula))
                     {
-                        foreach (Curso c in cursoDAL.CargarTodo("Cursos.xml"))
+                        foreach (Horario h in horarioDAL.CargarTodo("Horarios.xml"))
                         {
-                            if (dc.CodCurso.Equals(c.Codigo))
+                            if (dc.CodHorario.Equals(h.Codigo))
                             {
-                                int num = DateTime.Now.Date.CompareTo(c.FechaIni);
-                                int num2 = DateTime.Now.Date.CompareTo(c.FechaFin);
-                                if (num == 1 || num == 0 && num2 == -1 || num2 == 0)
+                                string d = DateTime.Now.Date.ToString("dddd");
+                                string d2 = h.Dia.ToString("dddd");
+                                if (d2.Equals(d))
                                 {
-                                    foreach (Horario h in horarioDAL.CargarTodo("Horarios.xml"))
+                                    horario = h;
+                                    foreach (Curso c in cursoDAL.CargarTodo("Cursos.xml"))
                                     {
-                                        if (dc.CodHorario.Equals(h.Codigo))
+                                        if (dc.CodCurso.Equals(c.Codigo))
                                         {
-                                            string d = DateTime.Now.Date.ToString("dddd");
-                                            string d2 = h.Dia.ToString("dddd");
-                                            if (d2.Equals(d))
+                                            int num = DateTime.Now.Date.CompareTo(c.FechaIni);
+                                            int num2 = DateTime.Now.Date.CompareTo(c.FechaFin);
+                                            if (num == 1 || num == 0 && num2 == -1 || num2 == 0)
                                             {
-                                                horario.Dia = h.Dia;
-                                                horario.HoraIni = h.HoraIni;
-                                                horario.HoraFin = h.HoraFin;
                                                 return true;
                                             }
                                         }
@@ -145,7 +143,7 @@ namespace RelojMarcadorDAL
             }
         }
 
-        public bool VerificarPin(int pin)
+        public int VerificarPin(int pin)
         {
             try
             {
@@ -155,15 +153,14 @@ namespace RelojMarcadorDAL
                     {
                         if (item.Pin == pin)
                         {
-                            docente.Cedula = item.Cedula;
-                            docente.Estado = item.Estado;
+                            docente = item;
                             if (VerificarAsig())
                             {
                                 return VerificarHora();
                             }
                             else
                             {
-                                return false;
+                                return 4;
                             }
                         }
                     }
@@ -176,29 +173,42 @@ namespace RelojMarcadorDAL
             }
         }
 
-        private bool VerificarHora()
+        private int VerificarHora()
         {
             float inicio = horario.HoraIni.Hour + float.Parse("," + horario.HoraIni.Minute);
             float final = horario.HoraFin.Hour + float.Parse("," + horario.HoraFin.Minute);
             float actual = DateTime.Now.Hour + float.Parse("," + DateTime.Now.Minute);
-            float resta = actual - inicio;
+            float resta = inicio - actual;
             float resta2 = actual - final;
             if (!docente.Estado)
             {
+                docente.Estado = true;
                 if (resta > 1 && resta2 < 0)
                 {
-                    return true;
+                    docenteDAL.ModificarEstado(docente, "Docentes.xml");
+                    return 0;
                 }
                 else if (resta < 1 && resta2 < 0)
                 {
-                    return true;
+                    docenteDAL.ModificarEstado(docente, "Docentes.xml");
+                    return 1;
                 }
             }
             else
             {
-                return false;
+                docente.Estado = false;
+                if (final > actual)
+                {
+
+                }
+                else if (resta2 > 1)
+                {
+
+                }
+                docenteDAL.ModificarEstado(docente, "Docentes.xml");
+                return 2;
             }
-            return false;
+            return 10;
         }
 
         private XmlNode CrearReporte(int pin)

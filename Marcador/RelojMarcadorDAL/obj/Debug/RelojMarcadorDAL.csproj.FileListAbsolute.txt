@@ -12,6 +12,6 @@ C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorDAL\bin\Deb
 C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorDAL\bin\Debug\RelojMarcadorENL.pdb
 C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorDAL\obj\Debug\RelojMarcadorDAL.csprojResolveAssemblyReference.cache
 C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorDAL\obj\Debug\RelojMarcadorDAL.csproj.CoreCompileInputs.cache
+C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorDAL\obj\Debug\RelojMarcadorDAL.csproj.CopyComplete
 C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorDAL\obj\Debug\RelojMarcadorDAL.dll
 C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorDAL\obj\Debug\RelojMarcadorDAL.pdb
-C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\RelojMarcadorDAL\obj\Debug\RelojMarcadorDAL.csproj.CopyComplete

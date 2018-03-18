@@ -18,10 +18,12 @@ namespace Marcador
         public FrmOpciones()
         {
             InitializeComponent();
+            CenterToParent();
         }
         public FrmOpciones(Boolean fun, string pin)
         {
             InitializeComponent();
+            CenterToParent();
             funcion = fun;
             p = pin;
             ValidarFuncion();
@@ -39,6 +41,7 @@ namespace Marcador
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             FrmInicio frm = new FrmInicio(p, descripcion);
             frm.Show(this);
             Hide();
