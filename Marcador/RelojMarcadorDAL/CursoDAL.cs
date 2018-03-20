@@ -18,6 +18,11 @@ namespace RelojMarcadorDAL
         {
             doc = new XmlDocument();
         }
+        /// <summary>
+        /// Crea el archivo
+        /// </summary>
+        /// <param name="ruta">ruta del archivo</param>
+        /// <param name="nodoRaiz">nodo raiz del archivo</param>
         public void CrearArchivo(string ruta, string nodoRaiz)
         {
             try
@@ -39,7 +44,11 @@ namespace RelojMarcadorDAL
                 throw new Exception("Error al crear el archivo xml.");
             }
         }
-
+        /// <summary>
+        /// Añade el curso al archivo
+        /// </summary>
+        /// <param name="cursoP">curso que se desea añadir</param>
+        /// <param name="ruta">ruta del archivo</param>
         public void AñadirCurso(Curso cursoP, string ruta)
         {
             try
@@ -63,7 +72,11 @@ namespace RelojMarcadorDAL
                 throw new Exception(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Carga la lista de Cursos
+        /// </summary>
+        /// <param name="ruta">ruta del archivo</param>
+        /// <returns>lista de cursos</returns>
         public List<Curso> CargarTodo(string ruta)
         {
             try
@@ -83,7 +96,7 @@ namespace RelojMarcadorDAL
                     unCurso = listaCursos.Item(i);
                     curso.Codigo = unCurso.SelectSingleNode("codigo").InnerText;
                     curso.Nombre = unCurso.SelectSingleNode("nombre").InnerText;
-                    curso.Aula= Int32.Parse(unCurso.SelectSingleNode("aula").InnerText);
+                    curso.Aula = Int32.Parse(unCurso.SelectSingleNode("aula").InnerText);
                     curso.FechaIni = Convert.ToDateTime(unCurso.SelectSingleNode("fechaInicio").InnerText);
                     curso.FechaFin = Convert.ToDateTime(unCurso.SelectSingleNode("fechaFinal").InnerText);
                     curso.Activo = Boolean.Parse(unCurso.SelectSingleNode("activo").InnerText);
@@ -96,7 +109,12 @@ namespace RelojMarcadorDAL
                 throw new Exception("Error al cargar cursos.");
             }
         }
-
+        /// <summary>
+        /// Desactiva un curso
+        /// </summary>
+        /// <param name="curso">curso que se desea desactivar</param>
+        /// <param name="cod">codigo del curso</param>
+        /// <param name="ruta">ruta del archivo</param>
         public void EliminarCurso(Curso curso, string cod, string ruta)
         {
             try
@@ -122,7 +140,11 @@ namespace RelojMarcadorDAL
                 throw new Exception("Error al eliminar curso.");
             }
         }
-
+        /// <summary>
+        /// Crea el nodo curso
+        /// </summary>
+        /// <param name="cursoP">curso que se va a pasar a nodo</param>
+        /// <returns>el nodo curso</returns>
         private XmlNode CrearCurso(Curso cursoP)
         {
             try
@@ -160,7 +182,12 @@ namespace RelojMarcadorDAL
                 throw new Exception("Error al crear curso.");
             }
         }
-
+        /// <summary>
+        /// Verifica la existen del curso 
+        /// </summary>
+        /// <param name="cod">codigo del curso</param>
+        /// <param name="ruta">ruta del archivo</param>
+        /// <returns>excepcion si existe y false si no</returns>
         private bool VerificarExistencia(string cod, string ruta)
         {
             try
@@ -186,7 +213,12 @@ namespace RelojMarcadorDAL
                 throw new Exception(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Modifica el curso
+        /// </summary>
+        /// <param name="curso">curso que se desea modificar</param>
+        /// <param name="ruta">ruta del archivo</param>
+        /// <param name="cod">codigo del curso</param>
         public void ModificarCurso(Curso curso, string ruta, string cod)
         {
             try

@@ -18,6 +18,11 @@ namespace RelojMarcadorDAL
         {
             doc = new XmlDocument();
         }
+        /// <summary>
+        /// Crea el archivo
+        /// </summary>
+        /// <param name="ruta">ruta del archivo</param>
+        /// <param name="nodoRaiz">nodo raiz del archivo</param>
         public void CrearArchivo(string ruta, string nodoRaiz)
         {
             try
@@ -39,7 +44,11 @@ namespace RelojMarcadorDAL
                 throw new Exception("Error al crear el archivo xml.");
             }
         }
-
+        /// <summary>
+        /// Modifica la asignacion
+        /// </summary>
+        /// <param name="cursoHorario">Asignacion Curso Horario</param>
+        /// <param name="ruta">ruta del archivo</param>
         public void ModificarCurHor(CursoHorario cursoHorario, string ruta)
         {
             try
@@ -72,7 +81,11 @@ namespace RelojMarcadorDAL
                 throw new Exception("Error al modificar asignación.");
             }
         }
-
+        /// <summary>
+        /// Archiva la asignacion
+        /// </summary>
+        /// <param name="cursoHorario">Asignacion Curso Horario</param>
+        /// <param name="ruta">ruta del archivo</param>
         public void AsignarCurHor(CursoHorario cursoHorario, string ruta)
         {
             try
@@ -96,7 +109,11 @@ namespace RelojMarcadorDAL
                 throw new Exception(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Crea el nodo de asignacion
+        /// </summary>
+        /// <param name="cursoHorario">Asignacion Curso Horario</param>
+        /// <returns>ruta del archivo</returns>
         private XmlNode CrearCursoHorario(CursoHorario cursoHorario)
         {
             try
@@ -122,7 +139,12 @@ namespace RelojMarcadorDAL
                 throw new Exception("Error al crear asignación curso-horario.");
             }
         }
-
+        /// <summary>
+        /// Verifica que la asignacion no exista
+        /// </summary>
+        /// <param name="cursoHorario">Asignacion Curso Horario</param>
+        /// <param name="ruta">ruta del archivo</param>
+        /// <returns>excepcion si existe y false si no</returns>
         private bool VerificarAsignacion(CursoHorario cursoHorario, string ruta)
         {
             try
@@ -151,7 +173,11 @@ namespace RelojMarcadorDAL
                 throw new Exception(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Desactiva la asignacion
+        /// </summary>
+        /// <param name="cursoHorario">Asignacion Curso Horario</param>
+        /// <param name="ruta">ruta del archivo</param>
         public void EliminarCurHor(CursoHorario cursoHorario, string ruta)
         {
             try
@@ -181,6 +207,11 @@ namespace RelojMarcadorDAL
                 throw new Exception("Error al eliminar asignación.");
             }
         }
+        /// <summary>
+        /// Carga la lista de asignaciones
+        /// </summary>
+        /// <param name="ruta">ruta del archivo</param>
+        /// <returns>lista de asignaciones</returns>
         public List<CursoHorario> CargarTodo(string ruta)
         {
             try
