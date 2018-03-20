@@ -120,7 +120,9 @@ namespace Marcador
                 lblError.Text = ex.Message;
             }
         }
-
+        /// <summary>
+        /// Limpia los campos de texto
+        /// </summary>
         private void LimpiarTexto()
         {
             txtUno.Text = "";
@@ -129,8 +131,10 @@ namespace Marcador
             txtCuatro.Text = "";
             pin = "";
         }
-
-
+        /// <summary>
+        /// Verifica el pin del docente
+        /// </summary>
+        /// <returns>true si el registro es correcto y false si abrio la ventana de opciones</returns>
         private bool VerificarPin()
         {
             reporte = new Reporte();

@@ -28,7 +28,9 @@ namespace Marcador
             funcion = fun;
             CambiarTexto();
         }
-
+        /// <summary>
+        /// Cambia el texto a los botones
+        /// </summary>
         private void CambiarTexto()
         {
             switch (funcion)
@@ -76,6 +78,9 @@ namespace Marcador
             horarioBOL.CrearArchivo(ruta, "Horarios");
             CargarTabla();
         }
+        /// <summary>
+        /// Carga la tabla horario
+        /// </summary>
         private void CargarTabla()
         {
             dgvHorarios.DataSource = horarioBOL.CargarTodo(ruta);
@@ -106,7 +111,9 @@ namespace Marcador
                 lblError.Text = "Error al seleccionar fila.";
             }
         }
-
+        /// <summary>
+        /// Carga los datos del horario
+        /// </summary>
         private void CargarDatos()
         {
             if (horario.Activo)
@@ -118,6 +125,9 @@ namespace Marcador
                 cod = horario.Codigo;
             }
         }
+        /// <summary>
+        /// Metodo que guarda al horario
+        /// </summary>
         private void Guardar()
         {
             try
@@ -135,7 +145,9 @@ namespace Marcador
                 lblError.Text = ex.Message;
             }
         }
-
+        /// <summary>
+        /// Metodo que modifica al horario
+        /// </summary>
         private void Modificar()
         {
             try
@@ -156,7 +168,9 @@ namespace Marcador
                 lblError.Text = ex.Message;
             }
         }
-
+        /// <summary>
+        /// Metodo que elimina al horario
+        /// </summary>
         private void Eliminar()
         {
             try
@@ -181,6 +195,9 @@ namespace Marcador
                 Owner.Show();
             }
         }
+        /// <summary>
+        /// Limpia los campos de texto
+        /// </summary>
         private void LimpiarTexto()
         {
             txtCodigo.Text = "";

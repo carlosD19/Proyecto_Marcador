@@ -57,7 +57,9 @@ namespace Marcador
                 lblError.Text = ex.Message;
             }
         }
-
+        /// <summary>
+        /// Carga las tablas cursos y horarios
+        /// </summary>
         private void CargarTablas()
         {
             foreach (Curso c in cursoBOL.CargarTodo(rutaCurso))

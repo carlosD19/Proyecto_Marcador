@@ -39,20 +39,27 @@ namespace Marcador
             listaReporte = new List<Reporte>();
             listaReporte = reporteBOL.CargarTodo("Reportes.xml");
             listaHistorial = historialBOL.CargarTodo();
-            dgDocentes.DataSource = docenteBOL.CargarTodo("Docentes.xml");
+            cargarTablaDocente();
         }
-
-        private void dgDocentes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        /// <summary>
+        /// Carga la tabla de docentes
+        /// </summary>
+        private void cargarTablaDocente()
         {
-            if (e.ColumnIndex == 6)
+            foreach (Docente d in docenteBOL.CargarTodo("Docentes.xml"))
             {
-                if (Convert.ToBoolean(dgDocentes.Rows[e.RowIndex].Cells["Sexo1"].Value) == true)
+                string sexo = "";
+                if (d.Sexo)
                 {
-                    dgDocentes.Rows[e.RowIndex].Cells["Sexo"].Value = "Masculino";
+                    sexo = "Masculino";
                 }
                 else
                 {
-                    dgDocentes.Rows[e.RowIndex].Cells["Sexo"].Value = "Femenino";
+                    sexo = "Femenino";
+                }
+                if (d.Activo)
+                {
+                    dgvDocentes.Rows.Add(d.Cedula, d.Nombre, d.ApellidoUno, d.ApellidoDos, sexo, d.Telefono, d.Email);
                 }
             }
         }
@@ -64,18 +71,9 @@ namespace Marcador
                 Owner.Show();
             }
         }
-
-        private void dgDocentes_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            int row = e.RowIndex;
-
-            if (row >= 0)
-            {
-                docente = dgDocentes.CurrentRow.DataBoundItem as Docente;
-                cedula = docente.Cedula;
-            }
-        }
-
+        /// <summary>
+        /// Carga las respectiva tabla
+        /// </summary>
         private void cargarTabla()
         {
             if (funcion == 0)
@@ -92,7 +90,9 @@ namespace Marcador
             }
 
         }
-
+        /// <summary>
+        /// Carga la marcas de los docentes
+        /// </summary>
         private void cargarTablaTRES()
         {
             dgvMarcas.DataSource = null;
@@ -113,7 +113,9 @@ namespace Marcador
                 dgvMarcas.DataSource = listaReporte;
             }
         }
-
+        /// <summary>
+        /// Carga a los destacados
+        /// </summary>
         private void cargarTablaDOS()
         {
             dgvReportes.Rows.Clear();
@@ -127,22 +129,23 @@ namespace Marcador
             {
                 if (bus)
                 {
-                    num1 = r.Ausencia;
-                    num2 = r.Ausencia;
+                    num1 = AusenciasD(r);
+                    num2 = AusenciasD(r);
                     mas = r.CedDocente;
                     menos = r.CedDocente;
                     bus = false;
                 }
                 else
                 {
-                    if (num1 > r.Ausencia)
+                    int aus = AusenciasD(r);
+                    if (num1 > aus)
                     {
-                        num1 = r.Ausencia;
+                        num1 = aus;
                         mas = r.CedDocente;
                     }
-                    if (num2 < r.Ausencia)
+                    if (num2 < aus)
                     {
-                        num2 = r.Ausencia;
+                        num2 = aus;
                         menos = r.CedDocente;
                     }
                 }
@@ -150,7 +153,9 @@ namespace Marcador
             dgvReportes.Rows.Add(mas, "Mas Destacado", num1);
             dgvReportes.Rows.Add(menos, "Menos Destacado", num2);
         }
-
+        /// <summary>
+        /// Carga las tardias y ausencias
+        /// </summary>
         private void cargarTablaUNO()
         {
             dgvReportes.Rows.Clear();
@@ -192,9 +197,14 @@ namespace Marcador
                     anticipada = r.Anticipada;
                     ausencia = r.Ausencia;
                     temp = tardia;
+                    temp2 = anticipada;
                     while (temp != 0 && temp != 1)
                     {
                         temp -= 2;
+                        ausencia++;
+                    } while (temp2 != 0 && temp2 != 1)
+                    {
+                        temp -= 5;
                         ausencia++;
                     }
                     dgvReportes.Rows.Add(r.CedDocente, tardia, ausencia);
@@ -217,6 +227,40 @@ namespace Marcador
                 funcion = 2;
             }
             cargarTabla();
+        }
+
+        private void dgvDocentes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int row = e.RowIndex;
+
+            if (row >= 0)
+            {
+                cedula = dgvDocentes.Rows[e.RowIndex].Cells[0].Value.ToString();
+                MessageBox.Show(cedula);
+            }
+        }
+        /// <summary>
+        /// Valida las ausencias
+        /// </summary>
+        /// <param name="h">Objeto historial</param>
+        /// <returns>las ausencias totales</returns>
+        private int AusenciasD(Historial h)
+        {
+            int tardia = h.Tardia;
+            int anticipada = h.Anticipada;
+            int ausencia = h.Ausencia;
+            int temp = tardia;
+            int temp2 = anticipada;
+            while (temp != 0 && temp != 1)
+            {
+                temp -= 2;
+                ausencia++;
+            } while (temp2 != 0 && temp2 != 1)
+            {
+                temp -= 5;
+                ausencia++;
+            }
+            return ausencia;
         }
     }
 }

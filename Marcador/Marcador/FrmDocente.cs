@@ -29,7 +29,9 @@ namespace Marcador
             CambiarTexto();
             cbxSexo.SelectedIndex = 0;
         }
-
+        /// <summary>
+        /// Cambia el texto a los botones
+        /// </summary>
         private void CambiarTexto()
         {
             switch (funcion)
@@ -57,7 +59,9 @@ namespace Marcador
             bol.CrearArchivo(ruta, "Docentes");
             CargarTabla();
         }
-
+        /// <summary>
+        /// Carga la tabla de docentes
+        /// </summary>
         private void CargarTabla()
         {
             dgvDocentes.DataSource = bol.CargarTodo(ruta);
@@ -83,7 +87,9 @@ namespace Marcador
                     break;
             }
         }
-
+        /// <summary>
+        /// Metodo de eliminar docente
+        /// </summary>
         private void Eliminar()
         {
             try
@@ -100,7 +106,9 @@ namespace Marcador
                 lblError.Text = ex.Message;
             }
         }
-
+        /// <summary>
+        /// Metodo de modificar docente
+        /// </summary>
         private void Modificar()
         {
             try
@@ -137,7 +145,9 @@ namespace Marcador
                 lblError.Text = ex.Message;
             }
         }
-
+        /// <summary>
+        /// Metodo de guardar docente
+        /// </summary>
         private void Guardar()
         {
             try
@@ -196,7 +206,9 @@ namespace Marcador
                 lblError.Text = "Error al seleccionar fila.";
             }
         }
-
+        /// <summary>
+        /// Carga los datos del docente
+        /// </summary>
         private void CargarDatos()
         {
             if (docente.Activo)
@@ -239,6 +251,9 @@ namespace Marcador
         {
             lblError.Text = "";
         }
+        /// <summary>
+        /// Limpia los campos de texto
+        /// </summary>
         private void LimpiarTexto()
         {
             txtCed.Text = "";

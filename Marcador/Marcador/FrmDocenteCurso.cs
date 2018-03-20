@@ -54,7 +54,9 @@ namespace Marcador
             docenteCursoBOL.CrearArchivo(rutaDocCur, "DocentesCursos");
             CargarTablas();
         }
-
+        /// <summary>
+        /// Carga las tablas
+        /// </summary>
         private void CargarTablas()
         {
             string codTest = "";

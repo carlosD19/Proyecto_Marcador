@@ -64,7 +64,9 @@ namespace Marcador
                     break;
             }
         }
-
+        /// <summary>
+        /// Metodo para eliminar curso
+        /// </summary>
         private void Eliminar()
         {
             try
@@ -81,7 +83,9 @@ namespace Marcador
                 lblError.Text = ex.Message;
             }
         }
-
+        /// <summary>
+        /// Metodo para modificar curso
+        /// </summary>
         private void Modificar()
         {
             try
@@ -103,7 +107,9 @@ namespace Marcador
                 lblError.Text = ex.Message;
             }
         }
-
+        /// <summary>
+        /// Metodo de guardar curso
+        /// </summary>
         private void Guardar()
         {
             try
@@ -122,7 +128,9 @@ namespace Marcador
                 lblError.Text = ex.Message;
             }
         }
-
+        /// <summary>
+        /// Cambia el texto a los botones
+        /// </summary>
         private void CambiarTexto()
         {
             switch (funcion)
@@ -140,7 +148,9 @@ namespace Marcador
                     break;
             }
         }
-
+        /// <summary>
+        /// Carga la tabla de los cursos
+        /// </summary>
         private void CargarTabla()
         {
             try
@@ -183,7 +193,9 @@ namespace Marcador
                 lblError.Text = "Error al seleccionar fila.";
             }
         }
-
+        /// <summary>
+        /// Carga los datos del curso
+        /// </summary>
         private void CargarDatos()
         {
             if (curso.Activo)
@@ -196,6 +208,9 @@ namespace Marcador
                 cod = curso.Codigo;
             }
         }
+        /// <summary>
+        /// Limpia los campos de texto
+        /// </summary>
         private void LimpiarTexto()
         {
             txtAula.Text = "";

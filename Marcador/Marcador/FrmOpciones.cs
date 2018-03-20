@@ -33,7 +33,9 @@ namespace Marcador
             r = reporte;
             ValidarFuncion();
         }
-
+        /// <summary>
+        /// Cambia el texto a los radio buttons
+        /// </summary>
         private void ValidarFuncion()
         {
             if (funcion == 2)
@@ -55,7 +57,8 @@ namespace Marcador
             if (rbPrimero.Checked)
             {
                 descripcion = rbPrimero.Text;
-            }else if (rbSegundo.Checked)
+            }
+            else if (rbSegundo.Checked)
             {
                 descripcion = rbSegundo.Text;
             }
