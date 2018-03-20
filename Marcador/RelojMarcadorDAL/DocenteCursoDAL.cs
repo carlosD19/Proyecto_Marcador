@@ -18,7 +18,11 @@ namespace RelojMarcadorDAL
         {
             doc = new XmlDocument();
         }
-
+        /// <summary>
+        /// Crea el archivo
+        /// </summary>
+        /// <param name="ruta">ruta del archivo</param>
+        /// <param name="nodoRaiz">nodo raiz del archivo</param>
         public void CrearArchivo(string ruta, string nodoRaiz)
         {
             try
@@ -40,7 +44,11 @@ namespace RelojMarcadorDAL
                 throw new Exception("Error al crear el archivo xml.");
             }
         }
-
+        /// <summary>
+        /// Modifica la asignacion decente-curso
+        /// </summary>
+        /// <param name="docenteCurso">asigncaion que se desea modificar</param>
+        /// <param name="ruta">ruta del </param>
         public void ModificarDocCur(DocenteCurso docenteCurso, string ruta)
         {
             try
@@ -70,7 +78,11 @@ namespace RelojMarcadorDAL
                 throw new Exception("Error al modificar asignación.");
             }
         }
-
+        /// <summary>
+        /// Asigna Docente y curso 
+        /// </summary>
+        /// <param name="docenteCurso">Asigncacion que se va a archivar</param>
+        /// <param name="ruta">ruta del archivo</param>
         public void AsignarDocCur(DocenteCurso docenteCurso, string ruta)
         {
             try
@@ -94,7 +106,12 @@ namespace RelojMarcadorDAL
                 throw new Exception(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Verifica que la asignacion no exista
+        /// </summary>
+        /// <param name="docenteCurso">asignacion docente curso</param>
+        /// <param name="ruta">ruta del archivo</param>
+        /// <returns>false si no existe</returns>
         private bool VerificarAsignacion(DocenteCurso docenteCurso, string ruta)
         {
             try
@@ -126,7 +143,11 @@ namespace RelojMarcadorDAL
                 throw new Exception(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Crea el nodo de la asignacion
+        /// </summary>
+        /// <param name="docenteCurso">asignacion docente curso</param>
+        /// <returns>nodo docente curso</returns>
         private XmlNode CrearDocenteCurso(DocenteCurso docenteCurso)
         {
             try
@@ -156,7 +177,11 @@ namespace RelojMarcadorDAL
                 throw new Exception("Error al crear asignación docente-curso.");
             }
         }
-
+        /// <summary>
+        /// Elimina la asignacion
+        /// </summary>
+        /// <param name="docenteCurso">asignacion docente curso</param>
+        /// <param name="ruta">ruta del archivo</param>
         public void EliminarDocCur(DocenteCurso docenteCurso, string ruta)
         {
             try
