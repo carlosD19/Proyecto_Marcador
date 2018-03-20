@@ -1,3 +1,6 @@
+C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\Marcador\obj\Debug\Marcador.FrmInicio.resources
+C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\Marcador\obj\Debug\Marcador.FrmOpciones.resources
+C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\Marcador\obj\Debug\Marcador.exe
 C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\Marcador\bin\Debug\Marcador.exe.config
 C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\Marcador\bin\Debug\Marcador.exe
 C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\Marcador\bin\Debug\Marcador.pdb
@@ -13,12 +16,9 @@ C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\Marcador\obj\Debug\Marca
 C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\Marcador\obj\Debug\Marcador.FrmDocente.resources
 C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\Marcador\obj\Debug\Marcador.FrmDocenteCurso.resources
 C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\Marcador\obj\Debug\Marcador.FrmHorario.resources
-C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\Marcador\obj\Debug\Marcador.FrmInicio.resources
-C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\Marcador\obj\Debug\Marcador.FrmOpciones.resources
 C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\Marcador\obj\Debug\Marcador.FrmReporte.resources
 C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\Marcador\obj\Debug\Marcador.Properties.Resources.resources
 C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\Marcador\obj\Debug\RelojMarcador.csproj.GenerateResource.cache
 C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\Marcador\obj\Debug\RelojMarcador.csproj.CoreCompileInputs.cache
 C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\Marcador\obj\Debug\RelojMarcador.csproj.CopyComplete
-C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\Marcador\obj\Debug\Marcador.exe
 C:\Users\pc\Documents\GitHub\Proyecto_Marcador\Marcador\Marcador\obj\Debug\Marcador.pdb

@@ -125,28 +125,28 @@ namespace Marcador
             int num1 = 0;
             int num2 = 0;
             bool bus = true;
-            foreach (Historial r in listaHistorial)
+            foreach (Historial h in listaHistorial)
             {
                 if (bus)
                 {
-                    num1 = AusenciasD(r);
-                    num2 = AusenciasD(r);
-                    mas = r.CedDocente;
-                    menos = r.CedDocente;
+                    num1 = AusenciasD(h);
+                    num2 = AusenciasD(h);
+                    mas = h.CedDocente;
+                    menos = h.CedDocente;
                     bus = false;
                 }
                 else
                 {
-                    int aus = AusenciasD(r);
+                    int aus = AusenciasD(h);
                     if (num1 > aus)
                     {
                         num1 = aus;
-                        mas = r.CedDocente;
+                        mas = h.CedDocente;
                     }
                     if (num2 < aus)
                     {
                         num2 = aus;
-                        menos = r.CedDocente;
+                        menos = h.CedDocente;
                     }
                 }
             }
@@ -176,11 +176,11 @@ namespace Marcador
                         ausencia = r.Ausencia;
                         temp = tardia;
                         temp2 = anticipada;
-                        while (temp != 0 && temp != 1)
+                        while (temp > 1)
                         {
                             temp -= 2;
                             ausencia++;
-                        } while (temp2 != 0 && temp2 != 1)
+                        } while (temp2 > 5)
                         {
                             temp -= 5;
                             ausencia++;
@@ -198,11 +198,11 @@ namespace Marcador
                     ausencia = r.Ausencia;
                     temp = tardia;
                     temp2 = anticipada;
-                    while (temp != 0 && temp != 1)
+                    while (temp > 1)
                     {
                         temp -= 2;
                         ausencia++;
-                    } while (temp2 != 0 && temp2 != 1)
+                    } while (temp2 > 5)
                     {
                         temp -= 5;
                         ausencia++;
@@ -251,11 +251,11 @@ namespace Marcador
             int ausencia = h.Ausencia;
             int temp = tardia;
             int temp2 = anticipada;
-            while (temp != 0 && temp != 1)
+            while (temp > 1)
             {
                 temp -= 2;
                 ausencia++;
-            } while (temp2 != 0 && temp2 != 1)
+            } while (temp2 > 5)
             {
                 temp -= 5;
                 ausencia++;
