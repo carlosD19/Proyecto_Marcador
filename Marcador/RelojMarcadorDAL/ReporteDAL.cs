@@ -13,11 +13,11 @@ namespace RelojMarcadorDAL
     {
         private XmlDocument doc;
         private string rutaXML;
-        //private string rutaDoc;
         private string rutaAsig;
         private Curso curso;
         private Horario horario;
         private Docente docente;
+        private HistorialDAL historialDAL;
         private Reporte reporte;
         private CursoDAL cursoDAL;
         private HorarioDAL horarioDAL;
@@ -30,6 +30,7 @@ namespace RelojMarcadorDAL
             reporte = new Reporte();
             horario = new Horario();
             curso = new Curso();
+            historialDAL = new HistorialDAL();
             cursoDAL = new CursoDAL();
             horarioDAL = new HorarioDAL();
             docenteDAL = new DocenteDAL();
@@ -38,7 +39,51 @@ namespace RelojMarcadorDAL
             rutaXML = "Reportes.xml";
             CrearArchivo(rutaXML, "Reportes");
         }
+        /// <summary>
+        /// Metodo que carga todos los reportes que existen en el archivo
+        /// </summary>
+        /// <param name="ruta">ruta del archivo</param>
+        /// <returns>lista de reportes</returns>
+        public List<Reporte> CargarTodo(string ruta)
+        {
+            try
+            {
+                List<Reporte> reportes = new List<Reporte>();
+                Reporte repo;
+                rutaXML = ruta;
+                doc.Load(rutaXML);
 
+                XmlNodeList listaReportes = doc.SelectNodes("Reportes/reporte");
+
+                XmlNode unReporte;
+
+                for (int i = 0; i < listaReportes.Count; i++)
+                {
+                    repo = new Reporte();
+                    unReporte = listaReportes.Item(i);
+                    repo.CedDocente = unReporte.SelectSingleNode("cedDocente").InnerText;
+                    repo.DescripcionE = unReporte.SelectSingleNode("descripcionEntrada").InnerText;
+                    repo.DescripcionS = unReporte.SelectSingleNode("descripcionSalida").InnerText;
+                    repo.Ausencia = Int32.Parse(unReporte.SelectSingleNode("ausencia").InnerText);
+                    repo.Tardia = Int32.Parse(unReporte.SelectSingleNode("tardia").InnerText);
+                    repo.SalidaAnticipada = Int32.Parse(unReporte.SelectSingleNode("salidaAnticipada").InnerText);
+                    repo.HoraEntrada = Convert.ToDateTime(unReporte.SelectSingleNode("horaEntrada").InnerText);
+                    repo.HoraSalida = Convert.ToDateTime(unReporte.SelectSingleNode("horaSalida").InnerText);
+
+                    reportes.Add(repo);
+                }
+                return reportes;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al cargar reportes.");
+            }
+        }
+        /// <summary>
+        /// Crea el archivo de Reportes
+        /// </summary>
+        /// <param name="ruta">recibe la ruta del archivo</param>
+        /// <param name="nodoRaiz">nodo raiz del archivo para crearlo</param>
         public void CrearArchivo(string ruta, string nodoRaiz)
         {
             try
@@ -60,19 +105,29 @@ namespace RelojMarcadorDAL
                 throw new Exception("Error al crear el archivo xml.");
             }
         }
-
+        /// <summary>
+        /// Verifica si el docente este marcando una salida o una entrada
+        /// </summary>
+        /// <param name="rep">Objeto reporte que se va a archivar</param>
         public void VerificarRegistro(Reporte rep)
         {
             if (rep.Numero == 0 || rep.Numero == 1 || rep.Numero == 4)
             {
                 Registrar(rep);
+                historialDAL.Guardar(rep);
             }
             else
             {
                 Modificar(rep);
+                rep.Tardia = 0;
+                rep.Ausencia = 0;
+                historialDAL.Guardar(rep);
             }
         }
-
+        /// <summary>
+        /// Modifica la hora de salida y la descripcion de docente
+        /// </summary>
+        /// <param name="rep">Reporte que se desea modificar</param>
         private void Modificar(Reporte rep)
         {
             try
@@ -107,7 +162,10 @@ namespace RelojMarcadorDAL
                 throw new Exception("Error al modificar horario.");
             }
         }
-
+        /// <summary>
+        /// Registra la hora de entrada del docente y la descripcion
+        /// </summary>
+        /// <param name="rep">Reporte que se desea modificar</param>
         public void Registrar(Reporte rep)
         {
             try
@@ -126,7 +184,10 @@ namespace RelojMarcadorDAL
                 throw new Exception(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Verifica que el docente tenga una asignacion
+        /// </summary>
+        /// <returns>true = si existe la asigncacion y false = si no existe</returns>
         private bool VerificarAsig()
         {
             try
@@ -175,10 +236,15 @@ namespace RelojMarcadorDAL
                 throw new Exception(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Verifica que el pin sea de un docente
+        /// </summary>
+        /// <param name="pin">pin del docente</param>
+        /// <returns>numero de la funcion que se debe realizar</returns>
         public Reporte VerificarPin(int pin)
         {
             reporte = new Reporte();
+            docente = new Docente();
             try
             {
                 foreach (Docente item in docenteDAL.CargarTodo("Docentes.xml"))
@@ -208,7 +274,10 @@ namespace RelojMarcadorDAL
                 throw new Exception(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Verifica la hora en la que entra o sale el docente
+        /// </summary>
+        /// <returns>el objeto reporte</returns>
         private Reporte VerificarHora()
         {
 
@@ -258,7 +327,11 @@ namespace RelojMarcadorDAL
             }
             return reporte;
         }
-
+        /// <summary>
+        /// Crea el nodo reporte para ser archivado
+        /// </summary>
+        /// <param name="r">Reporte para convertir en nodo</param>
+        /// <returns>El nodo reporte</returns>
         private XmlNode CrearReporte(Reporte r)
         {
             reporte = r;

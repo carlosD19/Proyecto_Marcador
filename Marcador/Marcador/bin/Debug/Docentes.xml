@@ -12,4 +12,16 @@
     <estado>False</estado>
     <activo>True</activo>
   </docente>
+  <docente>
+    <cedula>207500700</cedula>
+    <nombre>Jeniffer</nombre>
+    <primerApellido>Martinez</primerApellido>
+    <segundoApellido>Sequeira</segundoApellido>
+    <sexo>False</sexo>
+    <email>jenim24@hotmail.com</email>
+    <telefono>61316016</telefono>
+    <pin>1234</pin>
+    <estado>False</estado>
+    <activo>True</activo>
+  </docente>
 </Docentes>

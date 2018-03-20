@@ -6,4 +6,10 @@
     <codHorario>005</codHorario>
     <activo>True</activo>
   </docenteCurso>
+  <docenteCurso>
+    <cedDocente>207500700</cedDocente>
+    <codCurso>LEIN-400</codCurso>
+    <codHorario>004</codHorario>
+    <activo>True</activo>
+  </docenteCurso>
 </DocentesCursos>

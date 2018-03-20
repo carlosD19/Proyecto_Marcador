@@ -35,6 +35,11 @@ namespace RelojMarcadorBOL
             return dal.VerificarPin(pin);
         }
 
+        public List<Reporte> CargarTodo(string ruta)
+        {
+            return dal.CargarTodo(ruta);
+        }
+
         public void Guardar(Reporte reporte, string desc)
         {
             if(reporte.Numero == 0 || reporte.Numero == 1 || reporte.Numero == 4)

@@ -99,6 +99,7 @@ namespace Marcador
             try
             {
                 docenteCursoBOL.VerificarDocCur(docenteCurso, rutaDocCur, true);
+                lblError.Text = "Asignacion realizada.";
             }
             catch (Exception ex)
             {

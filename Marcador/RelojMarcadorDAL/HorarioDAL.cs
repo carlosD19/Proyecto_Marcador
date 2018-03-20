@@ -15,7 +15,11 @@ namespace RelojMarcadorDAL
         {
             doc = new XmlDocument();
         }
-
+        /// <summary>
+        /// Crea el archivo Horario
+        /// </summary>
+        /// <param name="ruta">ruta del archivo</param>
+        /// <param name="nodoRaiz">ruta del nodo raiz</param>
         public void CrearArchivo(string ruta, string nodoRaiz)
         {
             try
@@ -37,7 +41,12 @@ namespace RelojMarcadorDAL
                 throw new Exception("Error al crear el archivo xml.");
             }
         }
-
+        /// <summary>
+        /// Modifica el horario 
+        /// </summary>
+        /// <param name="horario">horario que se desea modificar</param>
+        /// <param name="ruta">ruta del archivo</param>
+        /// <param name="cod">codigo del horario que se desea modificar</param>
         public void ModificarHorario(Horario horario, string ruta, string cod)
         {
             try
@@ -67,7 +76,11 @@ namespace RelojMarcadorDAL
                 throw new Exception("Error al modificar horario.");
             }
         }
-
+        /// <summary>
+        /// Agrega un Horario al archivo
+        /// </summary>
+        /// <param name="horarioP">horario que se desea agregar</param>
+        /// <param name="ruta">ruta del archivo</param>
         public void AñadirHorario(Horario horarioP, string ruta)
         {
             try
@@ -91,7 +104,11 @@ namespace RelojMarcadorDAL
                 throw new Exception(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Crea el nodo horario para archivarlo
+        /// </summary>
+        /// <param name="horarioP">horario que se desea convertir en nodo</param>
+        /// <returns>el nodo horario</returns>
         private XmlNode CrearHorario(Horario horarioP)
         {
             try
@@ -125,7 +142,11 @@ namespace RelojMarcadorDAL
                 throw new Exception("Error al crear horario.");
             }
         }
-
+        /// <summary>
+        /// Carga todos los horarios que estan archivados.
+        /// </summary>
+        /// <param name="ruta">ruta del archivo</param>
+        /// <returns>lista de horarios</returns>
         public List<Horario> CargarTodo(string ruta)
         {
             try
@@ -157,7 +178,12 @@ namespace RelojMarcadorDAL
                 throw new Exception("Error al cargar horarios.");
             }
         }
-
+        /// <summary>
+        /// Desactiva el horario
+        /// </summary>
+        /// <param name="horario">horario que se desea desactivar</param>
+        /// <param name="codigo">codigo del horario</param>
+        /// <param name="ruta">ruta del horario</param>
         public void EliminarHorario(Horario horario, string codigo, string ruta)
         {
             try
@@ -184,6 +210,12 @@ namespace RelojMarcadorDAL
                 throw new Exception("Error al eliminar horario.");
             }
         }
+        ///<summary>
+        ///Verifica la existencia del horario 
+        /// </summary>
+        /// <param name="codigo">codigo del horario</param>
+        /// <param name="ruta">ruta del horario</param>
+        /// <returns>false si no existe y una exception si si</returns>
         private bool VerificarExistencia(string codigo, string ruta)
         {
             try

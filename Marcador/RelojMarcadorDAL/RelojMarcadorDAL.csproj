@@ -44,6 +44,7 @@
     <Compile Include="CursoHorarioDAL.cs" />
     <Compile Include="DocenteCursoDAL.cs" />
     <Compile Include="DocenteDAL.cs" />
+    <Compile Include="HistorialDAL.cs" />
     <Compile Include="HorarioDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReporteDAL.cs" />

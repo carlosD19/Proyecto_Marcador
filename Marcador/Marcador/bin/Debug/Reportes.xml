@@ -1,2 +1,23 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Reportes />
+<Reportes>
+  <reporte>
+    <cedDocente>207500700</cedDocente>
+    <ausencia>0</ausencia>
+    <tardia>0</tardia>
+    <salidaAnticipada>1</salidaAnticipada>
+    <horaEntrada>30/3/2018 12:18:00</horaEntrada>
+    <horaSalida>30/3/2018 14:19:00</horaSalida>
+    <descripcionEntrada>Consulta y Curso</descripcionEntrada>
+    <descripcionSalida>Salida Anticipada</descripcionSalida>
+  </reporte>
+  <reporte>
+    <cedDocente>207970377</cedDocente>
+    <ausencia>0</ausencia>
+    <tardia>1</tardia>
+    <salidaAnticipada>0</salidaAnticipada>
+    <horaEntrada>17/3/2018 08:20:00</horaEntrada>
+    <horaSalida>17/3/2018 13:20:00</horaSalida>
+    <descripcionEntrada>Entrada Registrada</descripcionEntrada>
+    <descripcionSalida>Curso y Reunión</descripcionSalida>
+  </reporte>
+</Reportes>

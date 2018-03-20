@@ -131,6 +131,7 @@
     <None Include="Properties\DataSources\RelojMarcadorENL.Curso.datasource" />
     <None Include="Properties\DataSources\RelojMarcadorENL.Docente.datasource" />
     <None Include="Properties\DataSources\RelojMarcadorENL.Horario.datasource" />
+    <None Include="Properties\DataSources\RelojMarcadorENL.Reporte.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

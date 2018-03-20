@@ -15,7 +15,11 @@ namespace RelojMarcadorDAL
         {
             doc = new XmlDocument();
         }
-
+        /// <summary>
+        /// Crea el archivo Docentes
+        /// </summary>
+        /// <param name="ruta">ruta del archivo</param>
+        /// <param name="nodoRaiz">nodo raiz del archivo</param>
         public void CrearArchivo(string ruta, string nodoRaiz)
         {
             try
@@ -37,7 +41,11 @@ namespace RelojMarcadorDAL
                 throw new Exception("Error al crear el archivo xml.");
             }
         }
-
+        /// <summary>
+        /// Añade el docente al archivo
+        /// </summary>
+        /// <param name="docenteP">docente que se desea guardar</param>
+        /// <param name="ruta">ruta del archivo</param>
         public void AnnadirDocente(Docente docenteP, string ruta)
         {
             try
@@ -49,11 +57,11 @@ namespace RelojMarcadorDAL
                         rutaXML = ruta;
                         doc.Load(rutaXML);
 
-                        XmlNode horario = CrearDocente(docenteP);
+                        XmlNode docen = CrearDocente(docenteP);
 
                         XmlNode nodoRaiz = doc.DocumentElement;
 
-                        nodoRaiz.InsertAfter(horario, nodoRaiz.LastChild);
+                        nodoRaiz.InsertAfter(docen, nodoRaiz.LastChild);
 
                         doc.Save(rutaXML);
                     }
@@ -64,7 +72,12 @@ namespace RelojMarcadorDAL
                 throw new Exception(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Verifica que el pin no se repita
+        /// </summary>
+        /// <param name="pin">pin del docente</param>
+        /// <param name="ruta">ruta del archivo</param>
+        /// <returns>excepcion si ya existe y false si no</returns>
         private bool VerificarPin(int pin, string ruta)
         {
             try
@@ -90,7 +103,11 @@ namespace RelojMarcadorDAL
                 throw new Exception(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Modifica el estado del docente
+        /// </summary>
+        /// <param name="docente">docente que se desea modificar</param>
+        /// <param name="ruta">ruta del archivo</param>
         public void ModificarEstado(Docente docente, string ruta)
         {
             try
@@ -120,7 +137,11 @@ namespace RelojMarcadorDAL
                 throw new Exception("Error al modificar horario.");
             }
         }
-
+        /// <summary>
+        /// Crea el nodo docente
+        /// </summary>
+        /// <param name="docenteP">docente que se desea crear</param>
+        /// <returns>nodo de docente</returns>
         private XmlNode CrearDocente(Docente docenteP)
         {
             try
@@ -174,7 +195,12 @@ namespace RelojMarcadorDAL
                 throw new Exception("Error al crear docente.");
             }
         }
-
+        /// <summary>
+        /// Verifica que el docente no este registrado
+        /// </summary>
+        /// <param name="cedula">cedula del docente</param>
+        /// <param name="ruta">ruta del archivo</param>
+        /// <returns>Excepcion si ya existe y false si no</returns>
         private bool VerificarExistencia(string cedula, string ruta)
         {
             try
@@ -200,7 +226,12 @@ namespace RelojMarcadorDAL
                 throw new Exception(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Desactiva el docente
+        /// </summary>
+        /// <param name="docente">docente que se desea desactivar</param>
+        /// <param name="cedula">cedula del docente</param>
+        /// <param name="ruta">ruta del archivo</param>
         public void EliminarDocente(Docente docente, string cedula, string ruta)
         {
             try
@@ -227,7 +258,11 @@ namespace RelojMarcadorDAL
                 throw new Exception("Error al eliminar docente.");
             }
         }
-
+        /// <summary>
+        /// Metodo de cargar Docentes
+        /// </summary>
+        /// <param name="ruta">ruta del archivo</param>
+        /// <returns>lista de docentes</returns>
         public List<Docente> CargarTodo(string ruta)
         {
             try
@@ -264,7 +299,12 @@ namespace RelojMarcadorDAL
                 throw new Exception("Error al cargar docentes.");
             }
         }
-
+        /// <summary>
+        /// Modifica el docente
+        /// </summary>
+        /// <param name="docente">docente que se desea modificar</param>
+        /// <param name="ruta">ruta del archivo</param>
+        /// <param name="ced">ceudla del docente</param>
         public void ModificarDocente(Docente docente, string ruta, string ced)
         {
             try
