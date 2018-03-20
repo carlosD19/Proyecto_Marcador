@@ -13,7 +13,13 @@ namespace RelojMarcadorBOL
         {
             dal = new CursoDAL();
         }
-
+        /// <summary>
+        /// Valida los datos del archivo
+        /// </summary>
+        /// <param name="curso">Objeto Curso</param>
+        /// <param name="funcion">funcion del metodo</param>
+        /// <param name="cod">codigo del curso</param>
+        /// <param name="ruta">ruta del archivo</param>
         public void ValidarCurso(Curso curso, bool funcion, string cod, string ruta)
         {
             if (String.IsNullOrEmpty(curso.Codigo))
@@ -42,11 +48,20 @@ namespace RelojMarcadorBOL
                 dal.AñadirCurso(curso, ruta);
             }
         }
+        /// <summary>
+        /// Carga la lista de cursos
+        /// </summary>
+        /// <param name="ruta">ruta del archivo</param>
+        /// <returns>lista de cursos</returns>
         public List<Curso> CargarTodo(string ruta)
         {
             return dal.CargarTodo(ruta);
         }
-
+        /// <summary>
+        /// Crea el archivo
+        /// </summary>
+        /// <param name="ruta">ruta del archivo</param>
+        /// <param name="nodoRaiz">nodo raiz del archivo</param>
         public void CrearArchivo(string ruta, string nodoRaiz)
         {
             if (String.IsNullOrEmpty(ruta)
@@ -56,7 +71,12 @@ namespace RelojMarcadorBOL
             }
             dal.CrearArchivo(ruta, nodoRaiz);
         }
-
+        /// <summary>
+        /// Elimina el curso
+        /// </summary>
+        /// <param name="curso">Objeto Curso</param>
+        /// <param name="cod">codigo del curso</param>
+        /// <param name="ruta">ruta del archivo</param>
         public void EliminarCurso(Curso curso, string cod, string ruta)
         {
             dal.EliminarCurso(curso, cod, ruta);

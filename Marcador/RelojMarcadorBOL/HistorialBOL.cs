@@ -15,7 +15,10 @@ namespace RelojMarcadorBOL
         {
             dal = new HistorialDAL();
         }
-        
+        /// <summary>
+        /// Carga los historiales
+        /// </summary>
+        /// <returns>lista de historiales</returns>
         public List<Historial> CargarTodo()
         {
             return dal.CargarTodo();

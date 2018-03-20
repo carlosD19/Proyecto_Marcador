@@ -18,6 +18,11 @@ namespace RelojMarcadorBOL
         {
             dal = new CursoHorarioDAL();
         }
+        /// <summary>
+        /// Crea el archivo
+        /// </summary>
+        /// <param name="ruta">ruta del archivo</param>
+        /// <param name="nodoRaiz">nodo raiz del archivo</param>
         public void CrearArchivo(string ruta, string nodoRaiz)
         {
             if (String.IsNullOrEmpty(ruta)
@@ -27,7 +32,12 @@ namespace RelojMarcadorBOL
             }
             dal.CrearArchivo(ruta, nodoRaiz);
         }
-
+        /// <summary>
+        /// Verifica los datos de la asignacion
+        /// </summary>
+        /// <param name="cursoHorario">Objeto asignacion</param>
+        /// <param name="ruta">ruta del archivo</param>
+        /// <param name="funcion">funcion del metodo</param>
         public void VerificarDocCur(CursoHorario cursoHorario, string ruta, Boolean funcion)
         {
             if (String.IsNullOrEmpty(cursoHorario.CodCurso))
@@ -47,12 +57,20 @@ namespace RelojMarcadorBOL
                 dal.AsignarCurHor(cursoHorario, ruta);
             }
         }
-
+        /// <summary>
+        /// Desactiva la asignacion
+        /// </summary>
+        /// <param name="cursoHorario">Objeto asignacion</param>
+        /// <param name="ruta">ruta del archivo</param>
         public void EliminarCurHor(CursoHorario cursoHorario, string ruta)
         {
             dal.EliminarCurHor(cursoHorario, ruta);
         }
-
+        /// <summary>
+        /// Carga la lista de asignaciones
+        /// </summary>
+        /// <param name="ruta">ruta del archivo</param>
+        /// <returns>lista de asignaciones</returns>
         public List<CursoHorario> CargarTodo(string ruta)
         {
             return dal.CargarTodo(ruta);

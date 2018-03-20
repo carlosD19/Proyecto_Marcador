@@ -16,16 +16,11 @@ namespace RelojMarcadorBOL
         {
             dal = new ReporteDAL();
         }
-        //public bool VerificarRegistro(int pin, string ruta)
-        //{
-            
-        //    if (String.IsNullOrEmpty(ruta))
-        //    {
-        //        throw new Exception("Ruta requerida.");
-        //    }
-        //    //return dal.VerificarRegistro(pin, ruta);
-        //    return true;
-        //}
+        /// <summary>
+        /// Verificar el pin
+        /// </summary>
+        /// <param name="pin">pin del docente</param>
+        /// <returns>el objeto reporte</returns>
         public Reporte VerificarPIN(int pin)
         {
             if (pin < 0)
@@ -34,12 +29,20 @@ namespace RelojMarcadorBOL
             }
             return dal.VerificarPin(pin);
         }
-
+        /// <summary>
+        /// Carga lista de reportes
+        /// </summary>
+        /// <param name="ruta">ruta del archivo</param>
+        /// <returns>lista de reportes</returns>
         public List<Reporte> CargarTodo(string ruta)
         {
             return dal.CargarTodo(ruta);
         }
-
+        /// <summary>
+        /// Guarda el reporte
+        /// </summary>
+        /// <param name="reporte">reporte que se desea guardar</param>
+        /// <param name="desc">descripcion del reporte</param>
         public void Guardar(Reporte reporte, string desc)
         {
             if(reporte.Numero == 0 || reporte.Numero == 1 || reporte.Numero == 4)

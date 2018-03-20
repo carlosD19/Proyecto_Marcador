@@ -13,7 +13,13 @@ namespace RelojMarcadorBOL
         {
             dal = new HorarioDAL();
         }
-
+        /// <summary>
+        /// Verifica los datos del horario
+        /// </summary>
+        /// <param name="horario">horario que se desea verificar</param>
+        /// <param name="funcion">funcion del metodo</param>
+        /// <param name="ruta">ruta del archivo</param>
+        /// <param name="cod">codigo del horario</param>
         public void VerificarHorario(Horario horario, bool funcion, string ruta, string cod)
         {
             if (String.IsNullOrEmpty(horario.Dia.ToString()))
@@ -38,7 +44,11 @@ namespace RelojMarcadorBOL
                 dal.AñadirHorario(horario, ruta);
             }
         }
-
+        /// <summary>
+        /// Crea el archivo
+        /// </summary>
+        /// <param name="ruta">ruta del archivo</param>
+        /// <param name="nodoRaiz">nodo raiz del archivo</param>
         public void CrearArchivo(string ruta, string nodoRaiz)
         {
             if (String.IsNullOrEmpty(ruta)
@@ -48,12 +58,21 @@ namespace RelojMarcadorBOL
             }
             dal.CrearArchivo(ruta, nodoRaiz);
         }
-
+        /// <summary>
+        /// Carga la lista de Horarios
+        /// </summary>
+        /// <param name="ruta">ruta del archivo</param>
+        /// <returns>lista de horarios</returns>
         public List<Horario> CargarTodo(string ruta)
         {
             return dal.CargarTodo(ruta);
         }
-
+        /// <summary>
+        /// Desactiva el horario
+        /// </summary>
+        /// <param name="horario">objeto horario</param>
+        /// <param name="cod">codigo de horario</param>
+        /// <param name="ruta">ruta del archivo</param>
         public void EliminarHorario(Horario horario, string cod, string ruta)
         {
             dal.EliminarHorario(horario, cod, ruta);
