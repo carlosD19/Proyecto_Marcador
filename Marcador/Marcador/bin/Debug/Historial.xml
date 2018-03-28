@@ -1,15 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <Historial>
   <historial>
-    <cedDocente>207500700</cedDocente>
+    <cedDocente>207970377</cedDocente>
     <tardia>0</tardia>
     <ausencia>1</ausencia>
     <anticipada>1</anticipada>
   </historial>
   <historial>
-    <cedDocente>207970377</cedDocente>
-    <tardia>1</tardia>
-    <ausencia>2</ausencia>
+    <cedDocente>207500700</cedDocente>
+    <tardia>0</tardia>
+    <ausencia>0</ausencia>
     <anticipada>0</anticipada>
+  </historial>
+  <historial>
+    <cedDocente>209870678</cedDocente>
+    <tardia>2</tardia>
+    <ausencia>1</ausencia>
+    <anticipada>1</anticipada>
   </historial>
 </Historial>

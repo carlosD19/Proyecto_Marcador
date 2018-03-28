@@ -30,6 +30,16 @@ namespace RelojMarcadorBOL
             return dal.VerificarPin(pin);
         }
         /// <summary>
+        /// Crea el archivo
+        /// </summary>
+        /// <param name="ruta">ruta</param>
+        /// <param name="nodoRaiz">nodo raiz</param>
+        public void CrearArchivo(string ruta, string nodoRaiz)
+        {
+            dal.CrearArchivo(ruta, nodoRaiz);
+        }
+
+        /// <summary>
         /// Carga lista de reportes
         /// </summary>
         /// <param name="ruta">ruta del archivo</param>
@@ -45,7 +55,7 @@ namespace RelojMarcadorBOL
         /// <param name="desc">descripcion del reporte</param>
         public void Guardar(Reporte reporte, string desc)
         {
-            if(reporte.Numero == 0 || reporte.Numero == 1 || reporte.Numero == 4)
+            if (reporte.Numero == 0 || reporte.Numero == 1 || reporte.Numero == 4)
             {
                 reporte.DescripcionE = desc;
             }

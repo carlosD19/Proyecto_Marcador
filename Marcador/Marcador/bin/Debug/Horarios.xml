@@ -35,4 +35,11 @@
     <horaFinal>8/3/2018 21:30:00</horaFinal>
     <activo>False</activo>
   </horario>
+  <horario>
+    <codigo>002</codigo>
+    <dia>6/3/2018 00:00:00</dia>
+    <horaInicio>8/3/2018 11:00:00</horaInicio>
+    <horaFinal>8/3/2018 13:00:00</horaFinal>
+    <activo>True</activo>
+  </horario>
 </Horarios>

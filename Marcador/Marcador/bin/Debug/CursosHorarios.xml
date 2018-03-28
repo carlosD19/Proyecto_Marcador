@@ -15,4 +15,14 @@
     <codHorario>005</codHorario>
     <activo>True</activo>
   </cursoHorario>
+  <cursoHorario>
+    <codCurso>ME-003</codCurso>
+    <codHorario>004</codHorario>
+    <activo>True</activo>
+  </cursoHorario>
+  <cursoHorario>
+    <codCurso>ISW-401</codCurso>
+    <codHorario>002</codHorario>
+    <activo>True</activo>
+  </cursoHorario>
 </CursosHorarios>

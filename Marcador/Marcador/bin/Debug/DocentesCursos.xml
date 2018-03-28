@@ -3,13 +3,25 @@
   <docenteCurso>
     <cedDocente>207970377</cedDocente>
     <codCurso>ISW-411</codCurso>
-    <codHorario>005</codHorario>
+    <codHorario>004</codHorario>
     <activo>True</activo>
   </docenteCurso>
   <docenteCurso>
     <cedDocente>207500700</cedDocente>
     <codCurso>LEIN-400</codCurso>
+    <codHorario>005</codHorario>
+    <activo>True</activo>
+  </docenteCurso>
+  <docenteCurso>
+    <cedDocente>208990788</cedDocente>
+    <codCurso>ME-003</codCurso>
     <codHorario>004</codHorario>
+    <activo>True</activo>
+  </docenteCurso>
+  <docenteCurso>
+    <cedDocente>209870678</cedDocente>
+    <codCurso>ISW-401</codCurso>
+    <codHorario>002</codHorario>
     <activo>True</activo>
   </docenteCurso>
 </DocentesCursos>

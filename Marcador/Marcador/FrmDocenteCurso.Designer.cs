@@ -66,6 +66,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnAsignar = new System.Windows.Forms.Button();
             this.lblError = new System.Windows.Forms.Label();
+            this.lblC = new System.Windows.Forms.Label();
+            this.lblH = new System.Windows.Forms.Label();
+            this.lblD = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHorarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCursos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDocentes)).BeginInit();
@@ -256,6 +259,7 @@
             this.dgvDocentes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDocentes.Size = new System.Drawing.Size(837, 150);
             this.dgvDocentes.TabIndex = 4;
+            this.dgvDocentes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDocentes_CellClick);
             // 
             // Cedula
             // 
@@ -358,12 +362,48 @@
             this.lblError.Size = new System.Drawing.Size(0, 18);
             this.lblError.TabIndex = 9;
             // 
+            // lblC
+            // 
+            this.lblC.AutoSize = true;
+            this.lblC.BackColor = System.Drawing.Color.Transparent;
+            this.lblC.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblC.Location = new System.Drawing.Point(676, 215);
+            this.lblC.Name = "lblC";
+            this.lblC.Size = new System.Drawing.Size(60, 18);
+            this.lblC.TabIndex = 10;
+            this.lblC.Text = "Codigo";
+            // 
+            // lblH
+            // 
+            this.lblH.AutoSize = true;
+            this.lblH.BackColor = System.Drawing.Color.Transparent;
+            this.lblH.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblH.Location = new System.Drawing.Point(673, 398);
+            this.lblH.Name = "lblH";
+            this.lblH.Size = new System.Drawing.Size(60, 18);
+            this.lblH.TabIndex = 11;
+            this.lblH.Text = "Codigo";
+            // 
+            // lblD
+            // 
+            this.lblD.AutoSize = true;
+            this.lblD.BackColor = System.Drawing.Color.Transparent;
+            this.lblD.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblD.Location = new System.Drawing.Point(918, 29);
+            this.lblD.Name = "lblD";
+            this.lblD.Size = new System.Drawing.Size(60, 18);
+            this.lblD.TabIndex = 12;
+            this.lblD.Text = "Codigo";
+            // 
             // FrmDocenteCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(992, 577);
+            this.Controls.Add(this.lblD);
+            this.Controls.Add(this.lblH);
+            this.Controls.Add(this.lblC);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnAsignar);
             this.Controls.Add(this.label3);
@@ -409,5 +449,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaFin;
         private System.Windows.Forms.Button btnAsignar;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.Label lblC;
+        private System.Windows.Forms.Label lblH;
+        private System.Windows.Forms.Label lblD;
     }
 }

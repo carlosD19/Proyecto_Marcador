@@ -21,6 +21,30 @@
     <email>jenim24@hotmail.com</email>
     <telefono>61316016</telefono>
     <pin>1234</pin>
+    <estado>True</estado>
+    <activo>True</activo>
+  </docente>
+  <docente>
+    <cedula>208990788</cedula>
+    <nombre>Luis</nombre>
+    <primerApellido>Perez</primerApellido>
+    <segundoApellido>Mora</segundoApellido>
+    <sexo>True</sexo>
+    <email>luis@hotmail.com</email>
+    <telefono>89788899</telefono>
+    <pin>1212</pin>
+    <estado>False</estado>
+    <activo>True</activo>
+  </docente>
+  <docente>
+    <cedula>209870678</cedula>
+    <nombre>Allan</nombre>
+    <primerApellido>Murillo</primerApellido>
+    <segundoApellido>Alfaro</segundoApellido>
+    <sexo>True</sexo>
+    <email>allan@hotmail.com</email>
+    <telefono>65789867</telefono>
+    <pin>1111</pin>
     <estado>False</estado>
     <activo>True</activo>
   </docente>

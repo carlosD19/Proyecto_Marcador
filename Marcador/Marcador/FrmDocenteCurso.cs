@@ -129,6 +129,8 @@ namespace Marcador
                     {
                         if (item.CodHorario.Equals(h.Codigo))
                         {
+                            docenteCurso.CodCurso = dgvCursos.Rows[e.RowIndex].Cells[0].Value.ToString();
+                            lblC.Text = docenteCurso.CodCurso;
                             dgvHorarios.Rows.Add(h.Codigo, h.Dia, h.HoraIni, h.HoraFin);
                         }
                     }
@@ -139,10 +141,15 @@ namespace Marcador
 
         private void dgvHorarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            docenteCurso.CedDocente = dgvDocentes.Rows[e.RowIndex].Cells[0].Value.ToString();
-            docenteCurso.CodCurso = dgvCursos.Rows[e.RowIndex].Cells[0].Value.ToString();
             docenteCurso.CodHorario = dgvHorarios.Rows[e.RowIndex].Cells[0].Value.ToString();
+            lblH.Text = docenteCurso.CodHorario;
             docenteCurso.Activo = true;
+        }
+
+        private void dgvDocentes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            docenteCurso.CedDocente = dgvDocentes.Rows[e.RowIndex].Cells[0].Value.ToString();
+            lblD.Text = docenteCurso.CedDocente;
         }
     }
 }

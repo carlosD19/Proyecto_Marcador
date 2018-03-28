@@ -39,11 +39,15 @@ namespace RelojMarcadorBOL
             {
                 throw new Exception("Fecha de inicio y fecha final requeridas.");
             }
+            if (curso.FechaFin.CompareTo(curso.FechaIni) == -1)
+            {
+                throw new Exception("Fecha de inicio debe de ser menor a la fecha final.");
+            }
             if (!funcion)
             {
                 dal.ModificarCurso(curso, ruta, cod);
             }
-            else if(funcion)
+            else if (funcion)
             {
                 dal.AñadirCurso(curso, ruta);
             }

@@ -35,6 +35,10 @@ namespace RelojMarcadorBOL
             {
                 throw new Exception("Hora de inicio y fin requeridas.");
             }
+            if (horario.HoraFin.CompareTo(horario.HoraIni) == -1)
+            {
+                throw new Exception("Hora de inicio debe ser menor a la hora fin.");
+            }
             if (!funcion)
             {
                 dal.ModificarHorario(horario, ruta, cod);

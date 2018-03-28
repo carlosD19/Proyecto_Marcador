@@ -25,6 +25,7 @@ namespace Marcador
         private void Form1_Load(object sender, EventArgs e)
         {
             reporteBOL = new ReporteBOL();
+            reporteBOL.CrearArchivo("Reportes.xml", "Reportes");
             reporte = new Reporte();
             desc = "";
             pin = "";
@@ -112,6 +113,7 @@ namespace Marcador
                     }
                     LimpiarTexto();
                 }
+                lblError.Text = "";
             }
             catch (Exception ex)
             {

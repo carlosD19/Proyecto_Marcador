@@ -2,18 +2,34 @@
 <Cursos>
   <curso>
     <codigo>ISW-411</codigo>
-    <nombre>Programación lll</nombre>
-    <aula>108</aula>
-    <fechaInicio>15/3/2018 00:00:00</fechaInicio>
-    <fechaFinal>20/7/2018 00:00:00</fechaFinal>
+    <nombre>Programación lV</nombre>
+    <aula>102</aula>
+    <fechaInicio>20/3/2018 00:00:00</fechaInicio>
+    <fechaFinal>25/7/2018 00:00:00</fechaFinal>
     <activo>True</activo>
   </curso>
   <curso>
     <codigo>LEIN-400</codigo>
     <nombre>Inglés lV</nombre>
-    <aula>105</aula>
+    <aula>103</aula>
     <fechaInicio>20/3/2018 00:00:00</fechaInicio>
-    <fechaFinal>20/7/2018 00:00:00</fechaFinal>
+    <fechaFinal>25/7/2018 00:00:00</fechaFinal>
+    <activo>True</activo>
+  </curso>
+  <curso>
+    <codigo>ME-003</codigo>
+    <nombre>Calculo</nombre>
+    <aula>104</aula>
+    <fechaInicio>20/3/2018 00:00:00</fechaInicio>
+    <fechaFinal>30/7/2018 00:00:00</fechaFinal>
+    <activo>True</activo>
+  </curso>
+  <curso>
+    <codigo>ISW-401</codigo>
+    <nombre>Progra lll</nombre>
+    <aula>109</aula>
+    <fechaInicio>8/1/2018 00:00:00</fechaInicio>
+    <fechaFinal>1/6/2018 00:00:00</fechaFinal>
     <activo>True</activo>
   </curso>
 </Cursos>

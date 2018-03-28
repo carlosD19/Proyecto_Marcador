@@ -236,7 +236,6 @@ namespace Marcador
             if (row >= 0)
             {
                 cedula = dgvDocentes.Rows[e.RowIndex].Cells[0].Value.ToString();
-                MessageBox.Show(cedula);
             }
         }
         /// <summary>

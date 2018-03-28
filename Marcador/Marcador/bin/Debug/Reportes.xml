@@ -1,23 +1,75 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Reportes>
   <reporte>
-    <cedDocente>207500700</cedDocente>
+    <cedDocente>207970377</cedDocente>
     <ausencia>0</ausencia>
     <tardia>0</tardia>
     <salidaAnticipada>1</salidaAnticipada>
-    <horaEntrada>30/3/2018 12:18:00</horaEntrada>
-    <horaSalida>30/3/2018 14:19:00</horaSalida>
-    <descripcionEntrada>Consulta y Curso</descripcionEntrada>
+    <horaEntrada>23/3/2018 13:28:00</horaEntrada>
+    <horaSalida>23/3/2018 13:28:00</horaSalida>
+    <descripcionEntrada>Entrada Registrada</descripcionEntrada>
     <descripcionSalida>Salida Anticipada</descripcionSalida>
   </reporte>
   <reporte>
-    <cedDocente>207970377</cedDocente>
+    <cedDocente>207500700</cedDocente>
+    <ausencia>0</ausencia>
+    <tardia>0</tardia>
+    <salidaAnticipada>0</salidaAnticipada>
+    <horaEntrada>24/3/2018 06:29:00</horaEntrada>
+    <horaSalida>1/1/0001 00:00:00</horaSalida>
+    <descripcionEntrada>Consulta y Curso</descripcionEntrada>
+    <descripcionSalida>
+    </descripcionSalida>
+  </reporte>
+  <reporte>
+    <cedDocente>207500700</cedDocente>
+    <ausencia>0</ausencia>
+    <tardia>0</tardia>
+    <salidaAnticipada>0</salidaAnticipada>
+    <horaEntrada>1/1/0001 00:00:00</horaEntrada>
+    <horaSalida>24/3/2018 12:30:00</horaSalida>
+    <descripcionEntrada>Reunión y Curso</descripcionEntrada>
+    <descripcionSalida>
+    </descripcionSalida>
+  </reporte>
+  <reporte>
+    <cedDocente>209870678</cedDocente>
+    <ausencia>0</ausencia>
+    <tardia>0</tardia>
+    <salidaAnticipada>0</salidaAnticipada>
+    <horaEntrada>1/1/0001 00:00:00</horaEntrada>
+    <horaSalida>20/3/2018 14:51:00</horaSalida>
+    <descripcionEntrada>Reunión</descripcionEntrada>
+    <descripcionSalida>Curso y Reunión</descripcionSalida>
+  </reporte>
+  <reporte>
+    <cedDocente>209870678</cedDocente>
+    <ausencia>0</ausencia>
+    <tardia>0</tardia>
+    <salidaAnticipada>0</salidaAnticipada>
+    <horaEntrada>20/3/2018 09:51:00</horaEntrada>
+    <horaSalida>20/3/2018 14:51:00</horaSalida>
+    <descripcionEntrada>Consulta y Curso</descripcionEntrada>
+    <descripcionSalida>Curso y Reunión</descripcionSalida>
+  </reporte>
+  <reporte>
+    <cedDocente>209870678</cedDocente>
     <ausencia>0</ausencia>
     <tardia>1</tardia>
-    <salidaAnticipada>0</salidaAnticipada>
-    <horaEntrada>17/3/2018 08:20:00</horaEntrada>
-    <horaSalida>17/3/2018 13:20:00</horaSalida>
+    <salidaAnticipada>1</salidaAnticipada>
+    <horaEntrada>20/3/2018 11:05:00</horaEntrada>
+    <horaSalida>20/3/2018 11:05:00</horaSalida>
     <descripcionEntrada>Entrada Registrada</descripcionEntrada>
-    <descripcionSalida>Curso y Reunión</descripcionSalida>
+    <descripcionSalida>Salida Anticipada</descripcionSalida>
+  </reporte>
+  <reporte>
+    <cedDocente>209870678</cedDocente>
+    <ausencia>0</ausencia>
+    <tardia>1</tardia>
+    <salidaAnticipada>1</salidaAnticipada>
+    <horaEntrada>20/3/2018 11:05:00</horaEntrada>
+    <horaSalida>20/3/2018 11:05:00</horaSalida>
+    <descripcionEntrada>Entrada Registrada</descripcionEntrada>
+    <descripcionSalida>Salida Anticipada</descripcionSalida>
   </reporte>
 </Reportes>
